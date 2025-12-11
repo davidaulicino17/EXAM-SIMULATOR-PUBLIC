@@ -12,6 +12,7 @@ Il software è stato progettato per simulare l'ambiente di test reale, con funzi
 
 ### 📦 Contenuto del Repository
 * **ExamSimulator.exe**: Il programma principale (Versione 2.0).
+* * **Database CCDE 400-007**: Una raccolta completa di domande basate sulla guida ufficiale, suddivise per capitoli.
 * **Database CCNA 200-301**: Una raccolta completa di domande basate sul Volume 1 della guida ufficiale (Networking, IP, Switching, Wireless), suddivise per capitoli.
 * **Modelli CSV**: File di esempio per creare i propri test.
 
