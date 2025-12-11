@@ -1,4 +1,4 @@
-# 🎓 Exam Simulator - Professional Edition v2.0
+# 🎓 Exam Simulator - v2.0
 
 **Un simulatore d'esame desktop leggero, portatile e potente per prepararsi alle certificazioni IT (CCNA, CompTIA, ecc.) e non solo.**
 
