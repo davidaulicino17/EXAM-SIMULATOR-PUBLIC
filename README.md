@@ -59,7 +59,7 @@ Il modo più semplice è usare Excel o Google Sheets.
 
 | Capitolo | Argomento | Domanda | A | B | C | D | Risposta | Spiegazione |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Cap 1 | Reti | Cos'è un IP? | Un cavo | Un indirizzo | Un PC | Un virus | B | L'IP è logico. |
+| Cap 1 | Reti | Cos'è un IP? | Un cavo | Un indirizzo | Un PC | Un virus | B | L'IP è ecc... |
 | Cap 1 | Sicurezza | Protocolli sicuri? | Telnet | SSH | HTTP | HTTPS | B,D | SSH/HTTPS criptano. |
 
 *Nota: Per le risposte multiple, separale con una virgola (es. "B,D"). Il software rileva automaticamente se usi la virgola o il punto e virgola.*
