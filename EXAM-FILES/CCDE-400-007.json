@@ -1,0 +1,2186 @@
+[
+    {
+        "id": 12001,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "Zero-Touch Provisioning (ZTP)",
+        "tipo": "singola",
+        "domanda": "Qual è lo scopo principale del Zero-Touch Provisioning (ZTP) in una rete moderna?",
+        "opzioni": [
+            "A. Configurare manualmente ogni dispositivo tramite console.",
+            "B. Automatizzare il processo di installazione e configurazione iniziale dei dispositivi di rete senza intervento manuale in loco.",
+            "C. Monitorare il traffico di rete in tempo reale.",
+            "D. Creare tunnel VPN automaticamente tra i siti."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "ZTP permette di collegare un nuovo dispositivo alla rete e farlo configurare automaticamente scaricando l'immagine del sistema operativo e la configurazione da un server, riducendo errori e tempi di deployment."
+    },
+    {
+        "id": 12002,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "ZTP Components",
+        "tipo": "singola",
+        "domanda": "In un processo ZTP standard, quale servizio di rete è essenziale per fornire al nuovo dispositivo l'indirizzo IP e la posizione del server da cui scaricare la configurazione?",
+        "opzioni": [
+            "A. DNS",
+            "B. DHCP",
+            "C. NTP",
+            "D. SMTP"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il server DHCP è fondamentale in ZTP poiché non solo fornisce l'indirizzo IP al dispositivo, ma tramite opzioni specifiche (es. Option 67) indica il nome del file di configurazione e l'indirizzo del server (TFTP/HTTP) da cui scaricarlo."
+    },
+    {
+        "id": 12003,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "Infrastructure as Code (IaC)",
+        "tipo": "singola",
+        "domanda": "Qual è il concetto fondamentale dietro 'Infrastructure as Code' (IaC)?",
+        "opzioni": [
+            "A. Gestire e provisionare l'infrastruttura attraverso file di definizione leggibili dalla macchina (codice) invece che configurazione manuale hardware.",
+            "B. Scrivere codice per creare nuove applicazioni software.",
+            "C. Utilizzare solo hardware virtualizzato.",
+            "D. Sostituire i router con server Linux."
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "IaC tratta la configurazione dell'infrastruttura come se fosse codice software. Questo permette di usare version control, test automatici e garantisce che l'ambiente sia riproducibile e coerente (evitando il 'configuration drift')."
+    },
+    {
+        "id": 12004,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "IaC Benefits",
+        "tipo": "singola",
+        "domanda": "Quale dei seguenti è un vantaggio chiave dell'adozione di Infrastructure as Code?",
+        "opzioni": [
+            "A. Aumento della variabilità delle configurazioni (Snowflake servers).",
+            "B. Idempotenza e coerenza, assicurando che l'applicazione dello stesso codice produca sempre lo stesso ambiente.",
+            "C. Necessità di più personale per gestire i dispositivi manualmente.",
+            "D. Eliminazione completa della necessità di testare le configurazioni."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "L'idempotenza è una proprietà chiave di IaC: eseguire lo stesso script di configurazione più volte produce sempre lo stesso risultato finale, senza effetti collaterali indesiderati, garantendo coerenza tra ambienti di sviluppo, test e produzione."
+    },
+    {
+        "id": 12005,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "CI/CD Pipeline",
+        "tipo": "singola",
+        "domanda": "Nel contesto di una pipeline CI/CD per l'automazione di rete, cosa si intende per 'Continuous Integration' (CI)?",
+        "opzioni": [
+            "A. Il deployment automatico delle configurazioni in produzione senza approvazione.",
+            "B. La pratica di unire frequentemente le modifiche al codice (configurazioni) in un repository centrale, dove vengono eseguite build e test automatici.",
+            "C. L'integrazione continua di nuovi dispositivi hardware nella rete.",
+            "D. La connessione fisica continua dei cavi di rete."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "CI si riferisce al processo in cui gli sviluppatori (o network engineer) integrano il loro lavoro frequentemente (commit). Ogni integrazione è verificata da una build automatica (inclusi test) per rilevare errori di integrazione il più rapidamente possibile."
+    },
+    {
+        "id": 12006,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "CI/CD Stages",
+        "tipo": "singola",
+        "domanda": "Qual è l'ordine logico corretto delle fasi in una tipica pipeline CI/CD applicata alla rete?",
+        "opzioni": [
+            "A. Deploy -> Test -> Source -> Build",
+            "B. Source -> Build -> Test -> Deploy",
+            "C. Test -> Source -> Deploy -> Build",
+            "D. Build -> Deploy -> Source -> Test"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il flusso standard è: 1. Source (creazione/modifica codice/configurazione), 2. Build (preparazione dell'artefatto/configurazione), 3. Test (validazione in ambiente di staging/simulazione), 4. Deploy (applicazione in produzione)."
+    },
+    {
+        "id": 12007,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "Automation Tools",
+        "tipo": "singola",
+        "domanda": "Quale strumento di automazione è spesso utilizzato in IaC, è 'agentless' (non richiede agenti sui dispositivi) e utilizza playbook scritti in YAML?",
+        "opzioni": [
+            "A. Chef",
+            "B. Puppet",
+            "C. Ansible",
+            "D. SaltStack"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Ansible è popolare nel networking perché è agentless (usa SSH/NETCONF per connettersi) e usa un linguaggio dichiarativo semplice (YAML) per i suoi playbook, rendendolo accessibile e facile da implementare per le configurazioni di rete."
+    },
+    {
+        "id": 12008,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "Network Design & Automation",
+        "tipo": "singola",
+        "domanda": "Dal punto di vista del design di rete, qual è un requisito fondamentale per implementare con successo l'automazione su larga scala?",
+        "opzioni": [
+            "A. Avere configurazioni 'Snowflake' uniche per ogni dispositivo.",
+            "B. Standardizzazione e modularità delle configurazioni e delle architetture (building blocks).",
+            "C. Utilizzare protocolli proprietari non standard.",
+            "D. Evitare l'uso di template."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "L'automazione si basa sulla ripetibilità. Per automatizzare efficacemente, il design deve essere standardizzato e modulare. Le eccezioni e le configurazioni uniche ('Snowflakes') rendono l'automazione complessa, fragile e costosa da mantenere."
+    },
+    {
+        "id": 1001,
+        "capitolo": "Chapter 1: Network Design",
+        "argomento": "Design Methodologies",
+        "tipo": "singola",
+        "domanda": "Stai iniziando un nuovo progetto di rete. Quale approccio di progettazione dovresti adottare per garantire che le esigenze aziendali e i requisiti delle applicazioni siano soddisfatti prima di selezionare le tecnologie specifiche?",
+        "opzioni": [
+            "A. Bottom-up approach",
+            "B. Top-down approach",
+            "C. Technology-centric approach",
+            "D. Cost-based approach"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "L'approccio Top-down inizia con l'analisi degli obiettivi aziendali e dei requisiti delle applicazioni. Al contrario, l'approccio Bottom-up parte dalla selezione delle tecnologie e rischia di portare a fallimenti di progettazione perché potrebbe non soddisfare i requisiti aziendali."
+    },
+    {
+        "id": 1002,
+        "capitolo": "Chapter 1: Network Design",
+        "argomento": "Design Fundamentals",
+        "tipo": "singola",
+        "domanda": "Quale termine definisce le specifiche 'comportamentali' di un sistema, come ad esempio 'il router deve instradare il traffico VoIP su un link a bassa latenza'?",
+        "opzioni": [
+            "A. Requisiti Tecnici",
+            "B. Requisiti Funzionali",
+            "C. Vincoli di Business",
+            "D. Requisiti Applicativi"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "I requisiti funzionali definiscono cosa un sistema deve fare e le sue funzioni tecnologiche specifiche (comportamento), come il percorso specifico per un tipo di traffico."
+    },
+    {
+        "id": 1003,
+        "capitolo": "Chapter 1: Network Design",
+        "argomento": "Design Use Cases",
+        "tipo": "singola",
+        "domanda": "Quale Design Use Case è spesso considerato il più difficile per un network designer, poiché comporta la separazione di un'architettura esistente in due o più entità operative indipendenti?",
+        "opzioni": [
+            "A. Merger (Fusione)",
+            "B. Greenfield",
+            "C. Divestment (Scissione)",
+            "D. Technology Add"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "La scissione (Divestment) è considerata la più difficile perché costringe a smembrare un'architettura funzionante, lasciando sistemi disgiunti che devono continuare a operare e generare profitto indipendentemente."
+    },
+    {
+        "id": 1004,
+        "capitolo": "Chapter 1: Network Design",
+        "argomento": "Constraints",
+        "tipo": "singola",
+        "domanda": "Durante l'analisi dei vincoli (Constraints), scopri che un'applicazione legacy richiede connettività Layer 2 tra i data center perché ha indirizzi IP hard-coded. Questo è un esempio di:",
+        "opzioni": [
+            "A. Business Constraint",
+            "B. Application Constraint",
+            "C. Technology Constraint",
+            "D. Operational Constraint"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "I vincoli applicativi derivano da come un'applicazione è stata sviluppata (es. IP hard-coded o dipendenza dal Layer 2), limitando le opzioni di progettazione disponibili."
+    },
+    {
+        "id": 1005,
+        "capitolo": "Chapter 1: Network Design",
+        "argomento": "Security Principles",
+        "tipo": "singola",
+        "domanda": "Quale concetto di sicurezza si è evoluto dal modello perimetrale e presuppone che la rete sia sempre ostile, richiedendo autenticazione e autorizzazione per ogni flusso?",
+        "opzioni": [
+            "A. VPN Overlay",
+            "B. Zero Trust Architecture",
+            "C. Perimeter Security",
+            "D. Turtle Shell Model"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "L'architettura Zero Trust assume che la rete sia ostile e che le minacce siano ovunque (interne ed esterne). Richiede la verifica continua di ogni utente, dispositivo e flusso."
+    },
+    {
+        "id": 1006,
+        "capitolo": "Chapter 1: Network Design",
+        "argomento": "Availability Principles",
+        "tipo": "singola",
+        "domanda": "Nel contesto della disponibilità (Availability), qual è la definizione corretta di 'Resilienza'?",
+        "opzioni": [
+            "A. Avere componenti duplicati per evitare singoli punti di fallimento.",
+            "B. La misura di quanto i dati arrivano correttamente a destinazione.",
+            "C. La capacità della rete di eseguire automaticamente il failover e recuperare quando si verifica un disservizio.",
+            "D. La percentuale di tempo in cui la rete è operativa."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "La resilienza è la capacità del piano di controllo della rete o del sistema di reagire automaticamente a un guasto (failover) per mantenere il servizio attivo."
+    },
+    {
+        "id": 1007,
+        "capitolo": "Chapter 1: Network Design",
+        "argomento": "Design Techniques",
+        "tipo": "singola",
+        "domanda": "Quale tecnica di progettazione viene utilizzata per limitare l'impatto di un guasto (come un broadcast storm o un errore di routing) creando confini logici o fisici?",
+        "opzioni": [
+            "A. Failure Isolation (Isolamento dei guasti)",
+            "B. Fate Sharing",
+            "C. Fast Convergence",
+            "D. Overdesigning"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "La Failure Isolation (isolamento dei guasti) serve a contenere un problema all'interno di un dominio limitato (failure domain), impedendo che si propaghi all'intera rete."
+    },
+    {
+        "id": 1008,
+        "capitolo": "Chapter 1: Network Design",
+        "argomento": "Design Techniques",
+        "tipo": "singola",
+        "domanda": "Due router BGP svolgono sia la funzione di peering IPv4 che IPv6. Se un bug nel processo IPv4 causa il riavvio dei router, anche il servizio IPv6 viene interrotto. Questo è un esempio di:",
+        "opzioni": [
+            "A. Failure Isolation",
+            "B. Shared Failure State (Fate Sharing)",
+            "C. Modular Design",
+            "D. Hierarchy"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Shared Failure State (o Fate Sharing) si verifica quando un elemento gestisce più funzioni critiche; il fallimento di una funzione o del dispositivo impatta tutte le altre funzioni ospitate."
+    },
+    {
+        "id": 1009,
+        "capitolo": "Chapter 1: Network Design",
+        "argomento": "Design Pitfalls",
+        "tipo": "singola",
+        "domanda": "Un ingegnere progetta una rete eliminando non solo i singoli punti di fallimento (Single Points of Failure), ma anche i doppi punti di fallimento, aumentando drasticamente costi e complessità senza che ci sia un requisito di business. Come viene definita questa trappola?",
+        "opzioni": [
+            "A. Best Practice",
+            "B. Future Proofing",
+            "C. Gold Plating (Overdesigning)",
+            "D. Strategic Planning"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Gold Plating (o Overdesigning) è l'errore di aggiungere complessità o funzionalità non richieste ('campanelli e fischietti') credendo di aggiungere valore, ma sprecando risorse."
+    },
+    {
+        "id": 1010,
+        "capitolo": "Chapter 1: Network Design",
+        "argomento": "Design Principles",
+        "tipo": "singola",
+        "domanda": "Quale concetto descrive i requisiti che i clienti spesso non verbalizzano perché assumono siano scontati (come il fatto che la rete debba essere sempre disponibile o sicura)?",
+        "opzioni": [
+            "A. Functional Requirements",
+            "B. Unstated Requirements",
+            "C. Business Drivers",
+            "D. Technical Constraints"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Gli 'Unstated Requirements' sono aspettative implicite del cliente (es. 'Internet deve funzionare sempre', 'la rete deve essere sicura') che il designer deve identificare e soddisfare anche se non esplicitamente richiesti."
+    },
+    {
+        "id": 1011,
+        "capitolo": "Chapter 1: Network Design",
+        "argomento": "Design Techniques",
+        "tipo": "singola",
+        "domanda": "Qual è il vantaggio principale dell'utilizzo della 'Modularità' (Modularity) nella progettazione di una rete campus o data center?",
+        "opzioni": [
+            "A. Riduce il costo dell'hardware utilizzando dispositivi più economici.",
+            "B. Permette di replicare blocchi funzionali (pod) rendendo la rete scalabile e più facile da gestire.",
+            "C. Elimina la necessità di protocolli di routing dinamico.",
+            "D. Garantisce che non ci siano mai guasti hardware."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "La modularità permette di creare blocchi funzionali (es. Core block, Access block) che sono ripetibili e scalabili. Se l'azienda cresce, si aggiunge un nuovo modulo senza ridisegnare l'intera rete."
+    },
+    {
+        "id": 1012,
+        "capitolo": "Chapter 1: Network Design",
+        "argomento": "Design Pitfalls",
+        "tipo": "singola",
+        "domanda": "Perché fare affidamento ciecamente sulle 'Best Practices' può essere una trappola (Pitfall) nel network design?",
+        "opzioni": [
+            "A. Perché le Best Practices sono sempre obsolete.",
+            "B. Perché le Best Practices non tengono conto dei vincoli specifici e dei requisiti di business unici di ogni cliente.",
+            "C. Perché le Best Practices sono scritte solo per piccole reti.",
+            "D. Perché le Best Practices richiedono sempre l'hardware più costoso."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Le Best Practices sono linee guida generali, non regole assolute. Applicarle senza capire il contesto specifico del cliente (requisiti e vincoli) può portare a design inefficaci o troppo costosi."
+    },
+    {
+        "id": 1013,
+        "capitolo": "Chapter 1: Network Design",
+        "argomento": "Fundamentals",
+        "tipo": "singola",
+        "domanda": "Quale tecnica di interrogazione è consigliata per arrivare alla radice di un requisito quando un cliente richiede una tecnologia specifica senza una chiara giustificazione?",
+        "opzioni": [
+            "A. Il metodo dei 'Cinque Perché' (Five Whys).",
+            "B. Accettare la richiesta come un vincolo rigido.",
+            "C. Proporre immediatamente una tecnologia alternativa più economica.",
+            "D. Ignorare la richiesta e progettare secondo gli standard."
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "Il metodo dei 'Cinque Perché' (ispirato a Toyota) aiuta il designer a scavare sotto la superficie per capire la vera motivazione di business o tecnica dietro una richiesta superficiale."
+    },
+    {
+        "id": 1014,
+        "capitolo": "Chapter 1: Network Design",
+        "argomento": "Design Techniques",
+        "tipo": "singola",
+        "domanda": "In un design gerarchico, quale livello è responsabile per l'aggregazione delle connessioni, l'applicazione delle policy e il controllo dei confini tra Layer 2 e Layer 3?",
+        "opzioni": [
+            "A. Access Layer",
+            "B. Core Layer",
+            "C. Distribution Layer",
+            "D. WAN Edge"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il livello di Distribuzione (Distribution Layer) funge da punto di aggregazione per gli switch di accesso e da confine tra i domini L2 e il routing L3, applicando policy e riassumendo i percorsi."
+    },
+    {
+        "id": 1015,
+        "capitolo": "Chapter 1: Network Design",
+        "argomento": "Network Design Fundamentals",
+        "tipo": "singola",
+        "domanda": "Qual è l'elemento più importante che un candidato CCDE o un network designer deve possedere per avere successo, oltre alla conoscenza tecnica?",
+        "opzioni": [
+            "A. Capacità di programmazione Python.",
+            "B. Un 'Mindset' (mentalità) orientato al design e al business, non solo all'implementazione.",
+            "C. Memorizzazione di tutti i comandi CLI.",
+            "D. Certificazioni su più vendor."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il 'Design Mindset' è fondamentale. Un designer deve capire il 'perché' delle decisioni e come queste impattano il business, differenziandosi da un approccio puramente implementativo (il 'come')."
+    },
+    {
+        "id": 10001,
+        "capitolo": "Chapter 10: Security",
+        "argomento": "Infrastructure Security",
+        "tipo": "singola",
+        "domanda": "Quale meccanismo di sicurezza è progettato specificamente per proteggere la CPU di un router da un eccessivo traffico di piano di controllo (Control Plane), come aggiornamenti di routing o pacchetti di gestione, che potrebbero causare un DoS?",
+        "opzioni": [
+            "A. uRPF (Unicast Reverse Path Forwarding)",
+            "B. CoPP (Control Plane Policing)",
+            "C. ACL di infrastruttura (iACL)",
+            "D. Stateful Packet Inspection"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "CoPP (Control Plane Policing) permette di trattare il piano di controllo come un'interfaccia separata, applicando policy di QoS (rate-limiting) per proteggere la CPU da traffico eccessivo o malevolo diretto al router stesso."
+    },
+    {
+        "id": 10002,
+        "capitolo": "Chapter 10: Security",
+        "argomento": "DDoS Mitigation",
+        "tipo": "singola",
+        "domanda": "Quale tecnica utilizza BGP per propagare una rotta specifica verso una destinazione 'Null0' su tutti i router di bordo (Edge) al fine di scartare il traffico destinato a una vittima di un attacco DDoS volumetrico direttamente all'ingresso della rete?",
+        "opzioni": [
+            "A. BGP FlowSpec",
+            "B. Source-Based Remotely Triggered Black Hole (S/RTBH)",
+            "C. Destination-Based Remotely Triggered Black Hole (D/RTBH)",
+            "D. Access Control Lists (ACL)"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Destination-Based RTBH utilizza BGP per annunciare l'IP della vittima con una next-hop speciale che forza i router riceventi a installare una rotta verso Null0, scartando tutto il traffico diretto a quell'IP ai bordi della rete."
+    },
+    {
+        "id": 10003,
+        "capitolo": "Chapter 10: Security",
+        "argomento": "IP Spoofing Mitigation",
+        "tipo": "singola",
+        "domanda": "Quale modalità di uRPF (Unicast Reverse Path Forwarding) è più appropriata per un router di bordo in un ambiente con routing asimmetrico (dove il traffico di ritorno potrebbe arrivare da un'interfaccia diversa rispetto a quella di uscita)?",
+        "opzioni": [
+            "A. Strict Mode",
+            "B. Loose Mode",
+            "C. VRF Mode",
+            "D. Source Mode"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "uRPF Loose Mode verifica solo se l'indirizzo sorgente esiste nella tabella di routing (FIB), indipendentemente dall'interfaccia. La modalità Strict richiede che il pacchetto arrivi dalla stessa interfaccia che il router userebbe per raggiungere la sorgente, il che fallirebbe con routing asimmetrico."
+    },
+    {
+        "id": 10004,
+        "capitolo": "Chapter 10: Security",
+        "argomento": "Firewall Deployment",
+        "tipo": "singola",
+        "domanda": "Stai progettando l'inserimento di un firewall in una rete esistente. Quale modalità di deployment permette di inserire il firewall come un 'bump-in-the-wire' senza richiedere la riconfigurazione degli indirizzi IP sui router adiacenti o sugli host?",
+        "opzioni": [
+            "A. Routed Mode (L3)",
+            "B. Transparent Mode (L2)",
+            "C. Virtual Wire Mode",
+            "D. High Availability Mode"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "In Transparent Mode (o Layer 2 mode), il firewall agisce come un bridge. Non partecipa al routing L3 e non richiede modifiche allo schema di indirizzamento IP esistente, rendendolo invisibile ai traceroute."
+    },
+    {
+        "id": 10005,
+        "capitolo": "Chapter 10: Security",
+        "argomento": "Network Access Control (802.1X)",
+        "tipo": "singola",
+        "domanda": "Quale metodo EAP (Extensible Authentication Protocol) è considerato il più sicuro perché richiede certificati digitali sia sul server di autenticazione che sul client (autenticazione mutua)?",
+        "opzioni": [
+            "A. EAP-MD5",
+            "B. PEAP (Protected EAP)",
+            "C. EAP-TLS (Transport Layer Security)",
+            "D. EAP-FAST"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "EAP-TLS è considerato il gold standard per la sicurezza wireless e cablata. Richiede l'installazione di certificati sia lato server che lato client, garantendo una forte autenticazione reciproca, anche se aumenta la complessità di gestione (PKI)."
+    },
+    {
+        "id": 10006,
+        "capitolo": "Chapter 10: Security",
+        "argomento": "Identity Management",
+        "tipo": "singola",
+        "domanda": "Quale tecnologia Cisco permette di applicare policy di sicurezza indipendenti dalla topologia di rete, assegnando un 'tag' (SGT) al traffico utente dopo l'autenticazione, e applicando le regole (SGACL) sull'hardware di destinazione?",
+        "opzioni": [
+            "A. TrustSec",
+            "B. VLAN dinamiche",
+            "C. VRF-Lite",
+            "D. MPLS VPN"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "Cisco TrustSec utilizza i Security Group Tags (SGT) per classificare il traffico in base al ruolo (identità) piuttosto che all'indirizzo IP. Questo permette di definire policy di segmentazione logica che vengono applicate indipendentemente dalla VLAN o dall'indirizzo IP."
+    },
+    {
+        "id": 10007,
+        "capitolo": "Chapter 10: Security",
+        "argomento": "Data Confidentiality",
+        "tipo": "singola",
+        "domanda": "Quale protocollo standard IEEE fornisce crittografia hop-by-hop a velocità di linea (Line Rate) al livello 2 (Data Link Layer) per proteggere il traffico su collegamenti Ethernet fisici?",
+        "opzioni": [
+            "A. IPsec",
+            "B. MACsec (802.1AE)",
+            "C. SSL/TLS",
+            "D. GRE"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "MACsec (802.1AE) fornisce crittografia, integrità e autenticazione dell'origine dei dati a livello di link (L2). A differenza di IPsec (L3), MACsec cifra tutto il traffico sul link, inclusi i protocolli di controllo come CDP, LLDP e DHCP."
+    },
+    {
+        "id": 10008,
+        "capitolo": "Chapter 10: Security",
+        "argomento": "IPS/IDS",
+        "tipo": "singola",
+        "domanda": "Qual è la differenza operativa principale tra un IDS (Intrusion Detection System) e un IPS (Intrusion Prevention System) in termini di posizionamento nella rete?",
+        "opzioni": [
+            "A. L'IPS è posizionato 'in-line' (nel percorso del traffico) e può bloccare attacchi attivamente. L'IDS è posizionato 'out-of-path' (promiscuo) e riceve una copia del traffico.",
+            "B. L'IDS è più veloce dell'IPS.",
+            "C. L'IPS non può analizzare il traffico criptato.",
+            "D. Non c'è differenza, sono sinonimi."
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "Un IPS deve essere in linea per poter scartare i pacchetti malevoli prima che raggiungano la destinazione. Un IDS lavora su una copia del traffico (SPAN/TAP) e può solo allertare o inviare reset TCP, ma non bloccare il singolo pacchetto in tempo reale."
+    },
+    {
+        "id": 11001,
+        "capitolo": "Chapter 11: Wireless",
+        "argomento": "Wireless Architectures",
+        "tipo": "singola",
+        "domanda": "In un'architettura wireless centralizzata (Local Mode), quale protocollo viene utilizzato per incapsulare e trasportare il traffico dati dei client (802.11) dagli Access Point al Wireless LAN Controller (WLC)?",
+        "opzioni": [
+            "A. GRE (Generic Routing Encapsulation)",
+            "B. CAPWAP (Control and Provisioning of Wireless Access Points)",
+            "C. LWAPP (Lightweight Access Point Protocol)",
+            "D. IPsec Tunnel"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "CAPWAP (RFC 5415) è il protocollo standard utilizzato per la gestione degli AP e il tunneling del traffico dati verso il controller. Utilizza UDP 5246 per il controllo e UDP 5247 per i dati."
+    },
+    {
+        "id": 11002,
+        "capitolo": "Chapter 11: Wireless",
+        "argomento": "High Density Design",
+        "tipo": "singola",
+        "domanda": "Quando si progetta una rete wireless per un ambiente ad alta densità (High Density) come uno stadio o un auditorio, quale delle seguenti azioni è raccomandata per ridurre la dimensione della cella e aumentare la capacità aggregata?",
+        "opzioni": [
+            "A. Aumentare la potenza di trasmissione (Tx Power) al massimo.",
+            "B. Abilitare le velocità di trasmissione dati (Data Rates) più basse per garantire la copertura.",
+            "C. Disabilitare i data rate più bassi (es. 1, 2, 5.5, 11 Mbps).",
+            "D. Utilizzare solo canali a 2.4 GHz per una migliore penetrazione."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Disabilitare i data rate bassi riduce l'overhead di gestione (beacon frame più veloci) e costringe i client a connettersi solo se hanno un segnale forte (SNR alto), riducendo efficacemente la dimensione della cella e liberando 'airtime'."
+    },
+    {
+        "id": 11003,
+        "capitolo": "Chapter 11: Wireless",
+        "argomento": "Wireless Security",
+        "tipo": "singola",
+        "domanda": "Quale standard di sicurezza wireless introduce 'Simultaneous Authentication of Equals' (SAE) per mitigare gli attacchi a dizionario offline comuni contro WPA2-PSK?",
+        "opzioni": [
+            "A. WPA2-Enterprise",
+            "B. WPA3-Personal",
+            "C. WEP",
+            "D. WPA-TKIP"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "WPA3-Personal sostituisce il Pre-Shared Key (PSK) con SAE (Simultaneous Authentication of Equals), che fornisce una protezione molto più robusta contro tentativi di indovinare la password e attacchi offline."
+    },
+    {
+        "id": 11004,
+        "capitolo": "Chapter 11: Wireless",
+        "argomento": "Branch Wireless Design",
+        "tipo": "singola",
+        "domanda": "Per una filiale remota (Branch Office) con connessione WAN limitata, quale modalità di Access Point permette di commutare il traffico dati dei client localmente sulla VLAN della filiale, mantenendo la gestione centralizzata sul WLC in sede centrale?",
+        "opzioni": [
+            "A. Local Mode",
+            "B. Sniffer Mode",
+            "C. FlexConnect (precedentemente H-REAP)",
+            "D. Bridge Mode"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "FlexConnect permette all'AP di commutare il traffico dati localmente (local switching) senza doverlo inviare al controller via CAPWAP. Questo riduce il carico sulla WAN e garantisce la sopravvivenza della rete locale se il WLC diventa irraggiungibile."
+    },
+    {
+        "id": 11005,
+        "capitolo": "Chapter 11: Wireless",
+        "argomento": "Voice over WLAN",
+        "tipo": "singola",
+        "domanda": "Qual è il valore minimo raccomandato di SNR (Signal-to-Noise Ratio) per un design wireless che deve supportare applicazioni voce (VoWLAN) e video in tempo reale?",
+        "opzioni": [
+            "A. 10 dB",
+            "B. 15 dB",
+            "C. 20 dB",
+            "D. 25 dB"
+        ],
+        "risposta_corretta": "D",
+        "spiegazione": "Per applicazioni 'Data' è sufficiente un SNR di 20 dB, ma per applicazioni in tempo reale come Voce e Video, le best practice Cisco raccomandano un SNR di almeno 25 dB per garantire stabilità e qualità."
+    },
+    {
+        "id": 11006,
+        "capitolo": "Chapter 11: Wireless",
+        "argomento": "RF Design",
+        "tipo": "singola",
+        "domanda": "In un design wireless dual-band, perché è spesso preferibile incoraggiare i client a utilizzare la banda a 5 GHz rispetto a quella a 2.4 GHz?",
+        "opzioni": [
+            "A. La banda 5 GHz ha una portata maggiore (copre distanze più lunghe).",
+            "B. La banda 5 GHz offre più canali non sovrapposti (non-overlapping channels) e subisce meno interferenze da dispositivi non Wi-Fi.",
+            "C. La banda 5 GHz consuma meno batteria sui dispositivi client.",
+            "D. La banda 5 GHz è compatibile con i dispositivi legacy 802.11b."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il vantaggio principale dei 5 GHz è lo spettro disponibile: offre molti più canali (fino a 25 in alcune regioni) rispetto ai soli 3 canali non sovrapposti della 2.4 GHz, riducendo drasticamente la Co-Channel Interference (CCI)."
+    },
+    {
+        "id": 11007,
+        "capitolo": "Chapter 11: Wireless",
+        "argomento": "Roaming",
+        "tipo": "singola",
+        "domanda": "Quale standard IEEE (noto come Fast Transition) permette di accelerare il processo di roaming riducendo il numero di scambi di frame necessari per la ri-autenticazione quando un client passa da un AP all'altro?",
+        "opzioni": [
+            "A. 802.11k",
+            "B. 802.11v",
+            "C. 802.11r",
+            "D. 802.11w"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "802.11r (Fast Transition o FT) permette ai client di eseguire l'handshake di sicurezza iniziale una sola volta e poi scambiare rapidamente le chiavi durante il roaming, fondamentale per le applicazioni voce per evitare interruzioni."
+    },
+    {
+        "id": 11008,
+        "capitolo": "Chapter 11: Wireless",
+        "argomento": "CAPWAP Security",
+        "tipo": "singola",
+        "domanda": "Quale protocollo viene utilizzato per criptare il canale di controllo CAPWAP tra l'Access Point e il Wireless LAN Controller?",
+        "opzioni": [
+            "A. IPsec",
+            "B. DTLS (Datagram Transport Layer Security)",
+            "C. SSL/TLS",
+            "D. GRE"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "CAPWAP utilizza DTLS per autenticare e criptare il traffico di controllo (e opzionalmente il traffico dati) tra AP e WLC. DTLS è basato su UDP, ideale per applicazioni sensibili al ritardo."
+    },
+    {
+        "id": 13001,
+        "capitolo": "Chapter 13: Multicast Design",
+        "argomento": "Layer 2 Multicast",
+        "tipo": "singola",
+        "domanda": "In una rete Layer 2 commutata, quale meccanismo viene utilizzato per prevenire che il traffico multicast venga inondato (flooded) su tutte le porte dello switch, comportandosi come un broadcast?",
+        "opzioni": [
+            "A. PIM Snooping",
+            "B. CGMP",
+            "C. IGMP Snooping",
+            "D. Storm Control"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "IGMP Snooping permette allo switch di 'ascoltare' i messaggi IGMP tra host e router per determinare quali porte necessitano effettivamente del flusso multicast, inviandolo solo a quelle porte."
+    },
+    {
+        "id": 13002,
+        "capitolo": "Chapter 13: Multicast Design",
+        "argomento": "Multicast Routing Protocols",
+        "tipo": "singola",
+        "domanda": "Quale modalità di PIM (Protocol Independent Multicast) costruisce un albero di distribuzione 'Shared Tree' (RPT) radicato in un punto di incontro (Rendezvous Point - RP) e richiede l'invio esplicito di messaggi 'Join' dai ricevitori?",
+        "opzioni": [
+            "A. PIM Dense Mode (PIM-DM)",
+            "B. PIM Sparse Mode (PIM-SM)",
+            "C. PIM Source Specific Multicast (PIM-SSM)",
+            "D. DVMRP"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "PIM-SM assume che nessuno voglia il traffico multicast a meno che non lo richieda esplicitamente. Utilizza un RP come punto di incontro tra sorgenti e ricevitori, creando inizialmente uno Shared Tree (*,G)."
+    },
+    {
+        "id": 13003,
+        "capitolo": "Chapter 13: Multicast Design",
+        "argomento": "PIM Bidirectional",
+        "tipo": "singola",
+        "domanda": "In quali scenari applicativi è particolarmente raccomandato l'uso di PIM Bidirectional (PIM-BIDIR)?",
+        "opzioni": [
+            "A. Applicazioni 'One-to-Many' come IPTV.",
+            "B. Applicazioni 'Many-to-Many' come le applicazioni di trading finanziario o videoconferenza multipunto.",
+            "C. Quando si vuole evitare l'uso di un Rendezvous Point (RP).",
+            "D. Quando la sicurezza della sorgente è la preoccupazione principale."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "PIM-BIDIR è ottimizzato per applicazioni molti-a-molti. Elimina la necessità di mantenere stati (S,G) specifici per la sorgente, utilizzando solo stati (*,G) e alberi condivisi bidirezionali, migliorando notevolmente la scalabilità."
+    },
+    {
+        "id": 13004,
+        "capitolo": "Chapter 13: Multicast Design",
+        "argomento": "Source Specific Multicast (SSM)",
+        "tipo": "singola",
+        "domanda": "Qual è il vantaggio principale di PIM-SSM (Source Specific Multicast) rispetto a PIM-SM?",
+        "opzioni": [
+            "A. Supporta solo IPv4.",
+            "B. Richiede un RP per funzionare.",
+            "C. Elimina la necessità di un Rendezvous Point (RP) e la gestione degli Shared Tree, costruendo direttamente Shortest Path Trees (SPT).",
+            "D. Utilizza il flooding iniziale come PIM-DM."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "PIM-SSM assume che il ricevitore conosca già l'indirizzo IP della sorgente (tramite canali out-of-band come una pagina web). Il ricevitore richiede specificamente (S,G), permettendo al router di costruire direttamente un SPT verso la sorgente, bypassando l'RP."
+    },
+    {
+        "id": 13005,
+        "capitolo": "Chapter 13: Multicast Design",
+        "argomento": "Rendezvous Point (RP) Redundancy",
+        "tipo": "singola",
+        "domanda": "Quale meccanismo permette di configurare lo stesso indirizzo IP su più RP per fornire ridondanza e bilanciamento del carico, utilizzando MSDP (Multicast Source Discovery Protocol) per sincronizzare le informazioni sulle sorgenti attive?",
+        "opzioni": [
+            "A. Auto-RP",
+            "B. BSR (Bootstrap Router)",
+            "C. Anycast-RP",
+            "D. Static RP"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Anycast-RP permette a più router di condividere lo stesso indirizzo IP unicast (configurato su interfacce di loopback). I router multicast e le sorgenti usano il routing unicast per raggiungere l'RP topologicamente più vicino. MSDP sincronizza le sorgenti tra gli RP."
+    },
+    {
+        "id": 13006,
+        "capitolo": "Chapter 13: Multicast Design",
+        "argomento": "Multicast Security",
+        "tipo": "singola",
+        "domanda": "Qual è il rischio principale di sicurezza se non si controllano i messaggi PIM in una rete multicast?",
+        "opzioni": [
+            "A. Esaurimento degli indirizzi IP multicast.",
+            "B. Un attaccante potrebbe diventare illegittimamente il Designated Router (DR) o iniettare messaggi PIM falsi per manipolare l'albero di distribuzione.",
+            "C. Aumento della latenza per il traffico unicast.",
+            "D. Le tabelle MAC degli switch si riempiono."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Senza autenticazione PIM o filtri sui confini, un dispositivo non autorizzato potrebbe inviare messaggi PIM Hello per diventare DR o inviare Join/Prune falsi, interrompendo il servizio o dirottando il traffico."
+    },
+    {
+        "id": 13007,
+        "capitolo": "Chapter 13: Multicast Design",
+        "argomento": "Multicast Boundaries",
+        "tipo": "singola",
+        "domanda": "Quale strumento viene utilizzato per confinare il traffico multicast e i messaggi di controllo (come le elezioni di Auto-RP o BSR) all'interno di uno specifico dominio amministrativo?",
+        "opzioni": [
+            "A. TTL Threshold",
+            "B. Multicast Boundary (filter auto-rp / bsr)",
+            "C. RPF Check",
+            "D. IGMP Querier"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "I confini multicast (Multicast Boundaries) configurati sulle interfacce dei router di bordo impediscono che il traffico dati o i messaggi di controllo (come gli annunci RP) escano o entrino nel dominio, garantendo isolamento e sicurezza."
+    },
+    {
+        "id": 13008,
+        "capitolo": "Chapter 13: Multicast Design",
+        "argomento": "First Hop Redundancy",
+        "tipo": "singola",
+        "domanda": "In un segmento LAN dove sono presenti due router configurati con HSRP e PIM, come viene eletto il PIM Designated Router (DR)?",
+        "opzioni": [
+            "A. Il DR è sempre il router Active HSRP.",
+            "B. Il DR è eletto indipendentemente da HSRP, basandosi sulla priorità PIM e sull'indirizzo IP più alto.",
+            "C. Il DR è il router con l'indirizzo IP più basso.",
+            "D. PIM non elegge un DR se HSRP è attivo."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Di default, l'elezione PIM DR è indipendente dallo stato HSRP. Questo può causare problemi se il traffico multicast segue un percorso diverso da quello unicast. Tecnologie come 'HSRP Aware PIM' permettono di sincronizzare i due ruoli."
+    },
+    {
+        "id": 14001,
+        "capitolo": "Chapter 14: Network Services and Management",
+        "argomento": "IPv6 Transition Mechanisms",
+        "tipo": "singola",
+        "domanda": "Quale meccanismo di transizione IPv6 è considerato il più scalabile e preferibile a lungo termine, poiché permette ai dispositivi di utilizzare entrambi i protocolli (IPv4 e IPv6) nativamente senza necessità di tunneling o traduzione complessa?",
+        "opzioni": [
+            "A. ISATAP Tunnels",
+            "B. NAT64",
+            "C. Dual Stack",
+            "D. 6to4 Tunnels"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Dual Stack è la strategia preferita perché permette la coesistenza nativa di entrambi i protocolli. Non introduce l'overhead dei tunnel né la complessità della traduzione (NAT), offrendo la massima compatibilità e prestazioni."
+    },
+    {
+        "id": 14002,
+        "capitolo": "Chapter 14: Network Services and Management",
+        "argomento": "IPv6 Translation",
+        "tipo": "singola",
+        "domanda": "In uno scenario in cui client puramente IPv6 devono accedere a server puramente IPv4 su Internet, quale combinazione di tecnologie è solitamente richiesta per facilitare la comunicazione?",
+        "opzioni": [
+            "A. Dual Stack e OSPFv3",
+            "B. NAT64 e DNS64",
+            "C. 6RD e DHCPv6",
+            "D. GRE Multipoint"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "DNS64 sintetizza un record AAAA da un record A (IPv4) per ingannare il client IPv6 facendogli credere che la destinazione sia IPv6. NAT64 poi traduce i pacchetti IPv6 in IPv4 al confine della rete per raggiungere il server reale."
+    },
+    {
+        "id": 14003,
+        "capitolo": "Chapter 14: Network Services and Management",
+        "argomento": "QoS Models",
+        "tipo": "singola",
+        "domanda": "Quale modello di QoS è più scalabile e adatto per le moderne reti Enterprise e Service Provider, basandosi sulla classificazione e marcatura dei pacchetti ai bordi della rete per ricevere un trattamento differenziato (Per-Hop Behavior) all'interno della rete?",
+        "opzioni": [
+            "A. IntServ (Integrated Services)",
+            "B. Best Effort",
+            "C. DiffServ (Differentiated Services)",
+            "D. RSVP (Resource Reservation Protocol)"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "DiffServ è altamente scalabile perché non richiede ai router di mantenere lo stato per ogni singolo flusso (come fa IntServ/RSVP). Invece, classifica il traffico in classi aggregate e applica policy basate su queste classi (PHB)."
+    },
+    {
+        "id": 14004,
+        "capitolo": "Chapter 14: Network Services and Management",
+        "argomento": "QoS Trust Boundary",
+        "tipo": "singola",
+        "domanda": "Nel design della QoS, dove dovrebbe essere posizionato idealmente il 'Trust Boundary' per garantire che la marcatura (Marking) dei pacchetti sia affidabile e non manipolata dagli utenti?",
+        "opzioni": [
+            "A. Il più vicino possibile al Core della rete.",
+            "B. Sul router di uscita verso Internet.",
+            "C. Il più vicino possibile alla sorgente (es. IP Phone o Switch di Accesso).",
+            "D. Sui server nel Data Center."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il Trust Boundary dovrebbe essere il più vicino possibile alla sorgente. Se l'endpoint è fidato (es. IP Phone), il trust è sulla porta dello switch verso il telefono. Se non lo è (es. PC), lo switch di accesso deve riclassificare e marcare il traffico in ingresso."
+    },
+    {
+        "id": 14005,
+        "capitolo": "Chapter 14: Network Services and Management",
+        "argomento": "Congestion Management",
+        "tipo": "singola",
+        "domanda": "Quale meccanismo di queuing è raccomandato per il traffico voce (VoIP) per garantire bassa latenza e basso jitter, assicurando che i pacchetti voce siano sempre serviti prima degli altri?",
+        "opzioni": [
+            "A. WFQ (Weighted Fair Queuing)",
+            "B. CBWFQ (Class-Based Weighted Fair Queuing)",
+            "C. LLQ (Low Latency Queuing)",
+            "D. FIFO (First-In, First-Out)"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "LLQ (spesso implementato come Priority Queue all'interno di CBWFQ) è essenziale per il traffico Real-Time come il VoIP. Garantisce che questi pacchetti vengano trasmessi immediatamente, prevenendo ritardi dovuti ad altro traffico in coda."
+    },
+    {
+        "id": 14006,
+        "capitolo": "Chapter 14: Network Services and Management",
+        "argomento": "Traffic Conditioning",
+        "tipo": "singola",
+        "domanda": "Qual è la differenza principale tra Traffic Policing e Traffic Shaping?",
+        "opzioni": [
+            "A. Il Policing ritarda i pacchetti in eccesso usando un buffer, lo Shaping li scarta.",
+            "B. Lo Shaping ritarda i pacchetti in eccesso usando un buffer per 'lisciare' il tasso di trasmissione, mentre il Policing scarta o rimarca i pacchetti che superano il limite immediatamente.",
+            "C. Il Policing si usa solo in uscita, lo Shaping solo in ingresso.",
+            "D. Non c'è differenza tecnica."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Lo Shaping è 'gentile' e usa la memoria per bufferizzare i picchi di traffico, rendendolo ideale per adattarsi alla velocità di un link remoto (es. WAN). Il Policing è 'duro' e taglia (drop) o penalizza (remark) immediatamente il traffico in eccesso."
+    },
+    {
+        "id": 14007,
+        "capitolo": "Chapter 14: Network Services and Management",
+        "argomento": "Network Management Models",
+        "tipo": "singola",
+        "domanda": "Nel modello di gestione FCAPS (standard ISO), cosa rappresenta la 'F'?",
+        "opzioni": [
+            "A. Financial Management",
+            "B. Fault Management",
+            "C. File Management",
+            "D. Flow Management"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "FCAPS sta per: Fault, Configuration, Accounting, Performance, Security. Fault Management si occupa di rilevare, isolare, notificare e correggere i guasti nella rete."
+    },
+    {
+        "id": 14008,
+        "capitolo": "Chapter 14: Network Services and Management",
+        "argomento": "Network Monitoring Protocols",
+        "tipo": "singola",
+        "domanda": "Quale protocollo è più indicato per l'analisi dettagliata del traffico, la pianificazione della capacità e l'identificazione delle applicazioni che consumano banda (Accounting/Performance), rispetto al semplice monitoraggio dello stato dei dispositivi?",
+        "opzioni": [
+            "A. SNMP (Simple Network Management Protocol)",
+            "B. Syslog",
+            "C. NetFlow / IPFIX",
+            "D. ICMP (Ping)"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Mentre SNMP è ottimo per lo stato dei dispositivi e contatori semplici, NetFlow (o IPFIX) fornisce visibilità granulare sui flussi di traffico (chi parla con chi, quale applicazione, quanto volume), essenziale per l'Accounting e il Performance Management avanzato."
+    },
+    {
+        "id": 15001,
+        "capitolo": "Chapter 15: Scalable Enterprise Campus Architecture Design",
+        "argomento": "Routed Access Design",
+        "tipo": "singola",
+        "domanda": "Qual è il vantaggio principale di spostare il confine Layer 3 (routing boundary) direttamente agli switch di Accesso (Routed Access Model), invece che mantenerlo al livello Distribution?",
+        "opzioni": [
+            "A. Risparmiare indirizzi IP.",
+            "B. Eliminare la necessità di Spanning Tree Protocol (STP) per la prevenzione dei loop e abilitare l'uso di tutti gli uplink tramite ECMP (Equal Cost Multipath).",
+            "C. Ridurre il costo degli switch di accesso.",
+            "D. Permettere il roaming Layer 2 delle VLAN su tutto il campus."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il modello Routed Access elimina i loop di livello 2 (e quindi la dipendenza da STP) convertendo i link di uplink in connessioni Layer 3. Ciò permette di utilizzare tutti i link attivamente (load balancing ECMP) e garantisce una convergenza più rapida."
+    },
+    {
+        "id": 15002,
+        "capitolo": "Chapter 15: Scalable Enterprise Campus Architecture Design",
+        "argomento": "Switch Virtualization (VSS/Stacking)",
+        "tipo": "singola",
+        "domanda": "Tecnologie come VSS (Virtual Switching System) o StackWise Virtual permettono di combinare due switch fisici in un'unica entità logica. Quale vantaggio offre questa configurazione per i dispositivi a valle collegati tramite EtherChannel?",
+        "opzioni": [
+            "A. Aumenta la latenza.",
+            "B. Richiede VRRP per il gateway.",
+            "C. Permette il Multichassis EtherChannel (MEC), utilizzando entrambi gli uplink attivamente senza che STP ne blocchi uno per prevenire loop.",
+            "D. Separa il piano di controllo dei due switch."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "VSS/StackWise presenta i due switch come uno solo logico. I dispositivi a valle possono collegarsi con un EtherChannel distribuito sui due chassis (MEC), eliminando i loop fisici e permettendo l'uso attivo di tutta la banda disponibile (loop-free topology)."
+    },
+    {
+        "id": 15003,
+        "capitolo": "Chapter 15: Scalable Enterprise Campus Architecture Design",
+        "argomento": "Hierarchical Design Models",
+        "tipo": "singola",
+        "domanda": "In quale scenario di progettazione è accettabile utilizzare un modello 'Collapsed Core' (dove i livelli Core e Distribution sono combinati)?",
+        "opzioni": [
+            "A. In grandi campus universitari con decine di edifici.",
+            "B. In reti piccole o medie dove i requisiti di scalabilità non giustificano il costo e la complessità di un livello Core fisico dedicato.",
+            "C. Quando si richiede la massima isolazione dei guasti.",
+            "D. Mai, è sempre una cattiva pratica."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il Collapsed Core è un design valido per reti di piccole/medie dimensioni. Combina le funzioni di aggregazione e trasporto ad alta velocità in un unico livello per ridurre costi e hardware, pur mantenendo una separazione logica dall'accesso."
+    },
+    {
+        "id": 15004,
+        "capitolo": "Chapter 15: Scalable Enterprise Campus Architecture Design",
+        "argomento": "Oversubscription",
+        "tipo": "singola",
+        "domanda": "Secondo le best practice generali di Cisco per il design del campus, quale rapporto di oversubscription (sovrasottoscrizione) è tipicamente raccomandato tra il livello Access e il livello Distribution?",
+        "opzioni": [
+            "A. 1:1 (Non-blocking)",
+            "B. 4:1",
+            "C. 20:1",
+            "D. 100:1"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Una regola empirica comune per il campus enterprise è un rapporto di 20:1 tra Accesso e Distribuzione (poiché gli utenti non trasmettono tutti contemporaneamente alla massima velocità). Tra Distribuzione e Core, il rapporto raccomandato scende a 4:1."
+    },
+    {
+        "id": 15005,
+        "capitolo": "Chapter 15: Scalable Enterprise Campus Architecture Design",
+        "argomento": "Layer 2 Access Challenges",
+        "tipo": "singola",
+        "domanda": "Qual è il rischio principale dell'estendere le VLAN (Layer 2) attraverso l'intero livello di distribuzione e accesso (Spanned VLANs) invece di confinarle localmente?",
+        "opzioni": [
+            "A. Aumento del consumo di indirizzi IP.",
+            "B. Creazione di un singolo, vasto dominio di fallimento (Failure Domain), dove un broadcast storm o un loop STP può impattare l'intera rete.",
+            "C. Impossibilità di usare QoS.",
+            "D. Lentezza nel routing inter-VLAN."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Le VLAN estese (End-to-End) creano un dominio di broadcast e spanning-tree unico e vasto. Un problema in un armadio di cablaggio può propagarsi attraverso il livello di distribuzione a tutto il campus (Failure Domain esteso)."
+    },
+    {
+        "id": 15006,
+        "capitolo": "Chapter 15: Scalable Enterprise Campus Architecture Design",
+        "argomento": "Core Layer Functions",
+        "tipo": "singola",
+        "domanda": "Quale delle seguenti attività dovrebbe essere EVITATA a livello di Core in un design gerarchico?",
+        "opzioni": [
+            "A. Commutazione di pacchetti ad alta velocità.",
+            "B. Applicazione di policy complesse, packet filtering o manipolazione intensiva del traffico che potrebbero causare latenza.",
+            "C. Ridondanza dei link.",
+            "D. Routing dinamico (OSPF/EIGRP/BGP)."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il Core deve essere progettato per la velocità pura e l'affidabilità ('Fast Transport'). Applicare policy complesse, QoS granulare o ispezione pacchetti nel Core introduce latenza e complessità, andando contro il suo scopo primario."
+    },
+    {
+        "id": 15007,
+        "capitolo": "Chapter 15: Scalable Enterprise Campus Architecture Design",
+        "argomento": "Distribution Layer Functions",
+        "tipo": "singola",
+        "domanda": "Qual è una funzione primaria del livello Distribution in un design Campus tradizionale?",
+        "opzioni": [
+            "A. Connettere gli end-point (PC, telefoni).",
+            "B. Fornire aggregazione dei link dagli switch di accesso, applicare policy di sicurezza/QoS e agire come confine tra i domini Layer 2 e Layer 3.",
+            "C. Fornire connettività WAN diretta.",
+            "D. Gestire solo il traffico Internet."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il livello Distribution aggrega le connessioni dagli armadi di accesso (Wiring Closets). È il punto ideale per applicare policy, inter-VLAN routing, summarization e terminare i domini L2 (STP boundary)."
+    },
+    {
+        "id": 15008,
+        "capitolo": "Chapter 15: Scalable Enterprise Campus Architecture Design",
+        "argomento": "Campus Virtualization",
+        "tipo": "singola",
+        "domanda": "Un'università vuole separare completamente il traffico degli studenti da quello dell'amministrazione e della ricerca, utilizzando la stessa infrastruttura fisica di campus. Quale tecnologia è più appropriata per creare reti logiche separate end-to-end?",
+        "opzioni": [
+            "A. VLANs",
+            "B. VRF-Lite (Virtual Routing and Forwarding) o MPLS VPN L3",
+            "C. Port Security",
+            "D. Private VLANs"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "VRF-Lite (o tecnologie di fabric come EVPN) permette di virtualizzare il livello 3, mantenendo tabelle di routing separate per ogni gruppo (Studenti, Admin, Ricerca) sulla stessa infrastruttura fisica, garantendo isolamento completo del traffico."
+    },
+    {
+        "id": 16001,
+        "capitolo": "Chapter 16: Enterprise Internet Edge Architecture Design",
+        "argomento": "BGP Multihoming Attributes",
+        "tipo": "singola",
+        "domanda": "In uno scenario di multihoming BGP, quale attributo viene configurato sui router di bordo dell'azienda per influenzare il traffico in uscita (outbound) verso Internet, preferendo un ISP rispetto a un altro?",
+        "opzioni": [
+            "A. AS-Path Prepending",
+            "B. MED (Multi-Exit Discriminator)",
+            "C. Local Preference",
+            "D. Weight"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Local Preference è l'attributo standard utilizzato per influenzare il traffico in uscita in un ambiente BGP. Viene propagato a tutti i router iBGP all'interno dell'AS, assicurando una decisione di instradamento coerente per tutto il traffico in uscita."
+    },
+    {
+        "id": 16002,
+        "capitolo": "Chapter 16: Enterprise Internet Edge Architecture Design",
+        "argomento": "BGP Traffic Engineering",
+        "tipo": "singola",
+        "domanda": "Quale tecnica BGP viene comunemente utilizzata per influenzare il traffico in entrata (inbound) da Internet, rendendo un percorso meno preferibile agli occhi degli altri Autonomous System?",
+        "opzioni": [
+            "A. Impostare un Local Preference più alto.",
+            "B. AS-Path Prepending.",
+            "C. Modificare il Router ID.",
+            "D. Usare route-map per cambiare il Next-Hop."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "L'AS-Path Prepending consiste nell'aggiungere il proprio numero di AS più volte nel path annunciato. Poiché BGP preferisce il percorso con l'AS-Path più breve, rendere il percorso artificialmente più lungo scoraggia il traffico in entrata su quel link specifico."
+    },
+    {
+        "id": 16003,
+        "capitolo": "Chapter 16: Enterprise Internet Edge Architecture Design",
+        "argomento": "IP Addressing Strategy",
+        "tipo": "singola",
+        "domanda": "Per un'azienda che desidera implementare un vero multihoming BGP con più ISP ed essere in grado di cambiare provider senza dover rinumerare la propria rete interna, quale tipo di spazio di indirizzamento IP è necessario ottenere?",
+        "opzioni": [
+            "A. PA (Provider Assigned)",
+            "B. PI (Provider Independent)",
+            "C. RFC 1918 (Private Addressing)",
+            "D. Link-Local Addresses"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Lo spazio di indirizzamento PI (Provider Independent) è assegnato direttamente all'azienda dai registri Internet (RIR) e non appartiene a un ISP specifico. Questo permette all'azienda di annunciare gli stessi prefissi a qualsiasi ISP scelga, garantendo portabilità e ridondanza reale."
+    },
+    {
+        "id": 16004,
+        "capitolo": "Chapter 16: Enterprise Internet Edge Architecture Design",
+        "argomento": "Asymmetric Routing Challenges",
+        "tipo": "singola",
+        "domanda": "In un design con due router di bordo e firewall stateful, quale problema critico può causare il routing asimmetrico (traffico esce dal Router A e rientra dal Router B)?",
+        "opzioni": [
+            "A. Aumento della latenza dovuto al percorso più lungo.",
+            "B. Il firewall sul percorso di ritorno scarterà il traffico perché non ha nella sua tabella di stato le informazioni della connessione iniziata sull'altro percorso.",
+            "C. BGP andrà in errore e disabiliterà i vicini.",
+            "D. Si creerà un loop di routing infinito."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "I firewall stateful tengono traccia dello stato delle connessioni (es. TCP handshake). Se il traffico di andata passa attraverso il Firewall A e il traffico di ritorno arriva al Firewall B, il Firewall B non riconoscerà la connessione e bloccherà il pacchetto, interrompendo la comunicazione."
+    },
+    {
+        "id": 16005,
+        "capitolo": "Chapter 16: Enterprise Internet Edge Architecture Design",
+        "argomento": "Edge Router Design",
+        "tipo": "singola",
+        "domanda": "Quando si utilizzano due router di bordo connessi a due ISP diversi, perché è fondamentale stabilire una sessione iBGP tra i due router di bordo interni?",
+        "opzioni": [
+            "A. Per bilanciare il carico del traffico Layer 2.",
+            "B. Per evitare che un router diventi un 'black hole' per il traffico se perde la sua connessione esterna e per prevenire routing subottimale.",
+            "C. È richiesto dallo standard BGP per formare adiacenze eBGP.",
+            "D. Per sincronizzare le tabelle ARP."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Una sessione iBGP tra i router di bordo permette loro di scambiarsi le rotte apprese dai rispettivi ISP. Se il link esterno di un router fallisce, può usare la sessione iBGP per instradare il traffico verso l'altro router che ha ancora connettività, evitando la perdita di pacchetti."
+    },
+    {
+        "id": 16006,
+        "capitolo": "Chapter 16: Enterprise Internet Edge Architecture Design",
+        "argomento": "Design Topologies",
+        "tipo": "singola",
+        "domanda": "Quale vantaggio offre il modello di design 'Active/Standby' per la connettività Internet rispetto al modello 'Active/Active' (Load Sharing)?",
+        "opzioni": [
+            "A. Utilizza la larghezza di banda in modo più efficiente.",
+            "B. È l'unico modello supportato da BGP.",
+            "C. È deterministico e semplifica la configurazione e il troubleshooting, evitando problemi di flussi asimmetrici complessi.",
+            "D. Richiede router più costosi."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il modello Active/Standby è deterministico: si sa sempre da dove entra e esce il traffico. Questo semplifica notevolmente la gestione dei firewall (evitando asimmetrie) e il troubleshooting, a costo di sottoutilizzare il link di backup."
+    },
+    {
+        "id": 16007,
+        "capitolo": "Chapter 16: Enterprise Internet Edge Architecture Design",
+        "argomento": "DMZ Design",
+        "tipo": "singola",
+        "domanda": "In un'architettura Internet Edge sicura, qual è lo scopo principale di una DMZ (Demilitarized Zone)?",
+        "opzioni": [
+            "A. Ospitare i controller di dominio interni.",
+            "B. Creare un segmento di rete isolato per i servizi accessibili pubblicamente (es. Web, DNS, Email), separandoli dalla rete interna (Inside) per sicurezza.",
+            "C. Terminare le connessioni VPN degli utenti remoti direttamente sulla LAN interna.",
+            "D. Bypassare il firewall per il traffico veloce."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "La DMZ è progettata per ospitare servizi che devono essere esposti a Internet. Se un server in DMZ viene compromesso, le regole del firewall impediscono all'attaccante di accedere liberamente alla rete interna (Inside), contenendo la minaccia."
+    },
+    {
+        "id": 16008,
+        "capitolo": "Chapter 16: Enterprise Internet Edge Architecture Design",
+        "argomento": "BGP Communities",
+        "tipo": "singola",
+        "domanda": "Come possono essere utilizzate le BGP Communities in un design di Internet Edge multihomed?",
+        "opzioni": [
+            "A. Per criptare il traffico BGP.",
+            "B. Per segnalare all'ISP di applicare determinate policy al traffico (es. 'non annunciare questo prefisso agli altri peer' o 'fai prepend del mio AS').",
+            "C. Per aumentare la banda del link.",
+            "D. Per sostituire l'uso di indirizzi IP pubblici."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Le BGP Communities sono tag numerici attaccati alle rotte. Molti ISP permettono ai clienti di inviare community specifiche per influenzare la routing policy dell'ISP, come ad esempio abbassare la Local Preference lato ISP o eseguire AS-Path Prepending selettivo."
+    },
+    {
+        "id": 17001,
+        "capitolo": "Chapter 17: Enterprise WAN Architecture Design",
+        "argomento": "WAN Transport Models",
+        "tipo": "singola",
+        "domanda": "Un'azienda desidera mantenere il controllo completo sul piano di routing della WAN e richiede il supporto nativo per protocolli non-IP tra i siti remoti. Quale modello di trasporto WAN è più appropriato?",
+        "opzioni": [
+            "A. MPLS L3VPN",
+            "B. MPLS L2VPN (VPLS o VPWS)",
+            "C. Internet as WAN con DMVPN",
+            "D. SD-WAN"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "MPLS L2VPN offre una connettività Layer 2 trasparente. L'azienda gestisce il proprio routing (Layer 3) e può trasportare qualsiasi protocollo (inclusi quelli non-IP) poiché il provider vede solo frame Ethernet."
+    },
+    {
+        "id": 17002,
+        "capitolo": "Chapter 17: Enterprise WAN Architecture Design",
+        "argomento": "MPLS L3VPN",
+        "tipo": "singola",
+        "domanda": "Qual è il principale vantaggio operativo di MPLS L3VPN per un'azienda con centinaia di siti remoti rispetto a una soluzione Layer 2 o Overlay fai-da-te?",
+        "opzioni": [
+            "A. Supporto nativo per la crittografia.",
+            "B. Il Service Provider gestisce la complessità del routing del core WAN, richiedendo all'azienda solo un peering con il PE locale.",
+            "C. Minore latenza assoluta.",
+            "D. Supporto multicast nativo senza configurazione aggiuntiva."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Con MPLS L3VPN, l'azienda scarica (offload) la gestione del routing del core al Service Provider. I router aziendali (CE) devono solo stabilire una adiacenza con il router del provider (PE), semplificando la configurazione e la scalabilità."
+    },
+    {
+        "id": 17003,
+        "capitolo": "Chapter 17: Enterprise WAN Architecture Design",
+        "argomento": "Overlay Technologies (DMVPN)",
+        "tipo": "singola",
+        "domanda": "Quale tecnologia di overlay VPN permette la comunicazione dinamica diretta 'spoke-to-spoke' senza che il traffico debba attraversare l'hub, riducendo la latenza e il carico sull'hub?",
+        "opzioni": [
+            "A. IPsec VTI Point-to-Point",
+            "B. GRE Point-to-Point",
+            "C. DMVPN (Dynamic Multipoint VPN)",
+            "D. MPLS over GRE"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "DMVPN (in particolare Fase 2 e 3) utilizza NHRP (Next Hop Resolution Protocol) per permettere agli spoke di scoprire dinamicamente l'indirizzo IP pubblico degli altri spoke e stabilire tunnel IPsec diretti on-demand."
+    },
+    {
+        "id": 17004,
+        "capitolo": "Chapter 17: Enterprise WAN Architecture Design",
+        "argomento": "Overlay Technologies (GETVPN)",
+        "tipo": "singola",
+        "domanda": "Un'azienda utilizza una WAN privata MPLS e necessita di crittografare tutto il traffico multicast 'any-to-any' senza aggiungere l'overhead di un tunnel overlay (come GRE) e mantenendo l'intestazione IP originale. Quale tecnologia è indicata?",
+        "opzioni": [
+            "A. DMVPN",
+            "B. GETVPN (Group Encrypted Transport VPN)",
+            "C. FlexVPN",
+            "D. IPsec Tunnel Mode"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "GETVPN utilizza il concetto di 'Tunnel Header Preservation', mantenendo l'intestazione IP originale. È ideale per reti private (come MPLS) dove non è necessario il tunneling per il routing, ma solo la crittografia (group-based)."
+    },
+    {
+        "id": 17005,
+        "capitolo": "Chapter 17: Enterprise WAN Architecture Design",
+        "argomento": "Internet as WAN",
+        "tipo": "singola",
+        "domanda": "Quando si progetta una soluzione 'Internet as WAN' (ad esempio, utilizzando DMVPN o SD-WAN su Internet), qual è la limitazione principale rispetto a una WAN MPLS privata?",
+        "opzioni": [
+            "A. La mancanza di indirizzi IP pubblici.",
+            "B. L'impossibilità di usare protocolli di routing dinamico.",
+            "C. La mancanza di garanzie QoS end-to-end (Best Effort).",
+            "D. La larghezza di banda massima limitata a 10 Mbps."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Internet è una rete 'Best Effort'. Non è possibile garantire QoS (latenza, jitter, packet loss) end-to-end attraverso i vari provider Internet, a differenza di una rete MPLS privata che offre SLA garantiti."
+    },
+    {
+        "id": 17006,
+        "capitolo": "Chapter 17: Enterprise WAN Architecture Design",
+        "argomento": "WAN Virtualization",
+        "tipo": "singola",
+        "domanda": "Per estendere la virtualizzazione della rete (VRF) attraverso una WAN MPLS L3VPN fornita da un Service Provider che non supporta 'Carrier Supporting Carrier' (CsC), quale approccio 'Over-the-Top' è il più scalabile per un'architettura Hub-and-Spoke?",
+        "opzioni": [
+            "A. Configurare tunnel GRE Point-to-Point per ogni VRF verso ogni sito.",
+            "B. Usare 2547oDMVPN (MPLS over DMVPN).",
+            "C. Usare connessioni fisiche dedicate per ogni VRF.",
+            "D. Usare il NAT per unire tutte le VRF."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "2547oDMVPN (MPLS over DMVPN) permette di trasportare traffico MPLS etichettato (quindi mantenendo la distinzione delle VRF/VPN) all'interno di tunnel multipoint DMVPN, offrendo una soluzione scalabile per estendere la segmentazione."
+    },
+    {
+        "id": 17007,
+        "capitolo": "Chapter 17: Enterprise WAN Architecture Design",
+        "argomento": "WAN Edge High Availability",
+        "tipo": "singola",
+        "domanda": "In un design WAN Edge con due router e due link WAN diversi, quale meccanismo lato LAN permette agli host interni di utilizzare entrambi i router come gateway predefinito e fornisce un rapido failover?",
+        "opzioni": [
+            "A. BGP",
+            "B. OSPF",
+            "C. FHRP (HSRP, VRRP, GLBP)",
+            "D. STP"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "I protocolli FHRP (First Hop Redundancy Protocol) come HSRP, VRRP o GLBP presentano un indirizzo IP virtuale ai client LAN, gestendo la ridondanza e il failover tra i due router fisici in modo trasparente per gli host."
+    },
+    {
+        "id": 17008,
+        "capitolo": "Chapter 17: Enterprise WAN Architecture Design",
+        "argomento": "Hybrid WAN",
+        "tipo": "singola",
+        "domanda": "In uno scenario Hybrid WAN (MPLS + Internet), quale è una best practice per la gestione del traffico?",
+        "opzioni": [
+            "A. Usare sempre Internet come primario per tutto il traffico.",
+            "B. Usare MPLS solo per il traffico di management.",
+            "C. Instradare il traffico critico/real-time su MPLS (SLA garantito) e fare offload del traffico bulk/Internet sul link Internet (VPN).",
+            "D. Disabilitare la crittografia sul link Internet per migliorare le prestazioni."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "L'approccio ibrido sfrutta i punti di forza di entrambi: MPLS per le applicazioni sensibili alle prestazioni (VoIP, Video) grazie alle garanzie SLA, e Internet (più economico e con banda maggiore) per il traffico dati generico o bulk, spesso protetto da VPN."
+    },
+    {
+        "id": 3001,
+        "capitolo": "Chapter 3: What's the Purpose of the Network?",
+        "argomento": "Application Models",
+        "tipo": "singola",
+        "domanda": "In un modello applicativo a 3 livelli (3-tier model), quale livello è responsabile dell'elaborazione delle attività, delle funzioni, dei comandi e delle decisioni logiche?",
+        "opzioni": [
+            "A. Presentation Layer (Web tier)",
+            "B. Intermediate Layer (Application tier)",
+            "C. Database Layer",
+            "D. User Interface Layer"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il livello intermedio (Intermediate/Application tier) è dove risiede la logica dell'applicazione. Elabora comandi, prende decisioni e sposta i dati tra il livello di presentazione e il database."
+    },
+    {
+        "id": 3002,
+        "capitolo": "Chapter 3: What's the Purpose of the Network?",
+        "argomento": "Service Models",
+        "tipo": "singola",
+        "domanda": "Quale modello di servizio cloud offre all'azienda il controllo completo sull'infrastruttura (storage, networking, virtualizzazione) con un modello di pagamento 'pay-as-you-go', evitando investimenti in hardware on-site?",
+        "opzioni": [
+            "A. SaaS (Software as a Service)",
+            "B. PaaS (Platform as a Service)",
+            "C. IaaS (Infrastructure as a Service)",
+            "D. On-premises"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "IaaS fornisce risorse infrastrutturali (calcolo, rete, storage) come servizio. È ideale per le aziende che vogliono mantenere il controllo sull'infrastruttura virtuale senza acquistare hardware fisico."
+    },
+    {
+        "id": 3003,
+        "capitolo": "Chapter 3: What's the Purpose of the Network?",
+        "argomento": "Service Models",
+        "tipo": "singola",
+        "domanda": "Quale modello di servizio è indirizzato principalmente agli sviluppatori di applicazioni, fornendo hardware e strumenti software per creare applicazioni senza doversi preoccupare dell'infrastruttura sottostante?",
+        "opzioni": [
+            "A. SaaS",
+            "B. IaaS",
+            "C. PaaS",
+            "D. Colocation"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "PaaS (Platform as a Service) fornisce una piattaforma che include strumenti hardware e software, utilizzata principalmente dagli sviluppatori per creare applicazioni senza gestire il sistema operativo o l'hardware."
+    },
+    {
+        "id": 3004,
+        "capitolo": "Chapter 3: What's the Purpose of the Network?",
+        "argomento": "Cloud Types",
+        "tipo": "singola",
+        "domanda": "Un'azienda desidera mantenere i dati sensibili all'interno del proprio data center per motivi di conformità, ma vuole utilizzare risorse cloud pubbliche per gestire picchi di traffico web. Quale tipo di deployment cloud descrive meglio questo scenario?",
+        "opzioni": [
+            "A. Private Cloud",
+            "B. Public Cloud",
+            "C. Hybrid Cloud",
+            "D. Community Cloud"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il cloud ibrido (Hybrid Cloud) è l'uso combinato di cloud privato e pubblico, permettendo all'azienda di ottenere i benefici di entrambi (scalabilità del pubblico, sicurezza del privato)."
+    },
+    {
+        "id": 3005,
+        "capitolo": "Chapter 3: What's the Purpose of the Network?",
+        "argomento": "Cloud Connectivity",
+        "tipo": "singola",
+        "domanda": "Quale metodo di connettività cloud consente a un sito remoto di accedere alle applicazioni SaaS direttamente tramite Internet, bypassando la latenza del tunneling verso un sito centrale?",
+        "opzioni": [
+            "A. Cloud Access Point (CAP)",
+            "B. Direct Cloud Access (DCA) / DIA",
+            "C. MPLS Direct Connect",
+            "D. Cloud Gateway"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Direct Cloud Access (DCA) o Direct Internet Access (DIA) permette al traffico di uscire localmente verso Internet per raggiungere le applicazioni SaaS, migliorando le prestazioni rispetto al backhauling."
+    },
+    {
+        "id": 3006,
+        "capitolo": "Chapter 3: What's the Purpose of the Network?",
+        "argomento": "Cloud Architecture",
+        "tipo": "singola",
+        "domanda": "In un'architettura 'Cloud-Agnostic', quale concetto si riferisce alla capacità di spostare applicazioni e servizi tra diversi Cloud Service Provider (CSP) senza dover riprogettare l'applicazione?",
+        "opzioni": [
+            "A. Abstraction",
+            "B. Portability",
+            "C. Interoperability",
+            "D. Decoupling"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "La portabilità (Portability) è la capacità di muovere applicazioni e servizi tra diversi provider cloud. Se non architettata correttamente, si rischia il vendor lock-in."
+    },
+    {
+        "id": 3007,
+        "capitolo": "Chapter 3: What's the Purpose of the Network?",
+        "argomento": "Containerization",
+        "tipo": "multipla",
+        "domanda": "Quali sono i vantaggi dell'utilizzo dei Container rispetto alle macchine virtuali (VM) tradizionali? (Seleziona due)",
+        "opzioni": [
+            "A. I container includono un sistema operativo completo per ogni istanza.",
+            "B. I container sono leggeri e condividono il sistema operativo.",
+            "C. I container sono disaccoppiati dall'infrastruttura sottostante, facilitando la portabilità.",
+            "D. I container richiedono sempre un Hypervisor di tipo 1.",
+            "E. I container non possono essere orchestrati."
+        ],
+        "risposta_corretta": [
+            "B",
+            "C"
+        ],
+        "spiegazione": "I container condividono il sistema operativo rendendoli leggeri (a differenza delle VM che hanno OS dedicato) e sono disaccoppiati dall'infrastruttura, facilitando la migrazione tra cloud diversi."
+    },
+    {
+        "id": 3008,
+        "capitolo": "Chapter 3: What's the Purpose of the Network?",
+        "argomento": "Application Constraints",
+        "tipo": "singola",
+        "domanda": "Durante la progettazione della rete, scopri che un'applicazione legacy ha indirizzi IP 'hard-coded' nel codice sorgente. Quale soluzione di rete può mitigare questo problema senza riscrivere l'applicazione?",
+        "opzioni": [
+            "A. Implementare QoS.",
+            "B. Usare tecniche come NAT (Network Address Translation) o Traffic Engineering.",
+            "C. Passare a IPv6.",
+            "D. Aumentare la larghezza di banda."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Per mitigare il problema degli IP hard-coded senza modificare il codice, i network designer possono usare NAT, traffic engineering o source routing per gestire il traffico."
+    },
+    {
+        "id": 3009,
+        "capitolo": "Chapter 3: What's the Purpose of the Network?",
+        "argomento": "Data Management",
+        "tipo": "singola",
+        "domanda": "Quale pilastro del Data Management si occupa della pianificazione di tutti gli aspetti della gestione dei dati, inclusa la disponibilità, l'usabilità, l'integrità e la sicurezza?",
+        "opzioni": [
+            "A. Data Architecture",
+            "B. Data Quality",
+            "C. Data Governance",
+            "D. Metadata Management"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Data Governance è la pianificazione di tutti gli aspetti della gestione dei dati (disponibilità, integrità, sicurezza, ecc.) all'interno dell'organizzazione."
+    },
+    {
+        "id": 3010,
+        "capitolo": "Chapter 3: What's the Purpose of the Network?",
+        "argomento": "Service-Oriented Architecture",
+        "tipo": "singola",
+        "domanda": "Qual è uno dei benefici principali dell'adozione di una Service-Oriented Architecture (SOA)?",
+        "opzioni": [
+            "A. Richiede un unico linguaggio di programmazione per tutte le funzioni.",
+            "B. Il codice può essere creato per essere riutilizzabile, riducendo il tempo di sviluppo.",
+            "C. Aumenta l'interazione client-server rendendo il sistema meno efficiente.",
+            "D. Obbliga l'uso di hardware proprietario."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "SOA permette di creare codice riutilizzabile, riducendo il tempo speso nel processo di sviluppo, e supporta l'uso di molteplici linguaggi di codifica."
+    },
+    {
+        "id": 3011,
+        "capitolo": "Chapter 3: What's the Purpose of the Network?",
+        "argomento": "Service Models",
+        "tipo": "singola",
+        "domanda": "Un'azienda vuole utilizzare un'applicazione (come Office 365 o Webex) senza doversi preoccupare di manutenzione, installazione o gestione dei server. Quale modello di servizio è più appropriato?",
+        "opzioni": [
+            "A. IaaS",
+            "B. PaaS",
+            "C. SaaS",
+            "D. On-Premises"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "SaaS (Software as a Service) è il modello in cui il vendor gestisce tutto e fornisce il software agli utenti, solitamente tramite abbonamento, eliminando la necessità di manutenzione locale."
+    },
+    {
+        "id": 3012,
+        "capitolo": "Chapter 3: What's the Purpose of the Network?",
+        "argomento": "Cloud Types",
+        "tipo": "singola",
+        "domanda": "Quale tipo di cloud è caratterizzato dall'utilizzo di due o più Cloud Service Provider (CSP) con la capacità di spostare carichi di lavoro tra di essi in tempo reale?",
+        "opzioni": [
+            "A. Hybrid Cloud",
+            "B. Multi-cloud",
+            "C. Public Cloud",
+            "D. Distributed Cloud"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Multi-cloud è l'uso di due o più CSP, con la capacità di spostare i carichi di lavoro tra i diversi ambienti cloud in tempo reale secondo le necessità del business."
+    },
+    {
+        "id": 4001,
+        "capitolo": "Chapter 4: Security Is Pervasive",
+        "argomento": "Zero Trust Architecture",
+        "tipo": "singola",
+        "domanda": "Quale dei seguenti è considerato un pilastro fondamentale dell'architettura Zero Trust?",
+        "opzioni": [
+            "A. La rete interna è intrinsecamente sicura.",
+            "B. La rete è sempre considerata ostile e le minacce esistono sempre (sia interne che esterne).",
+            "C. La sicurezza perimetrale è sufficiente per proteggere le risorse interne.",
+            "D. Gli utenti fidati non necessitano di autenticazione continua una volta connessi via VPN."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Uno dei pilastri fondamentali della Zero Trust Architecture è che la rete è sempre assunta come ostile e le minacce sono presenti ovunque, richiedendo verifica continua."
+    },
+    {
+        "id": 4002,
+        "capitolo": "Chapter 4: Security Is Pervasive",
+        "argomento": "Zero Trust Components",
+        "tipo": "multipla",
+        "domanda": "Nel calcolo del 'Trust Score' in un'architettura Zero Trust, quali dei seguenti sono considerati 'Fattori Dinamici'? (Seleziona due)",
+        "opzioni": [
+            "A. Credenziali utente",
+            "B. Threat Intelligence",
+            "C. Posizione fisica (Location)",
+            "D. Geo-velocity (velocità di spostamento geografico)",
+            "E. Trust del dispositivo (Device Trust)"
+        ],
+        "risposta_corretta": [
+            "B",
+            "D"
+        ],
+        "spiegazione": "I fattori statici includono credenziali e device trust. I fattori dinamici, che vengono analizzati al momento dell'accesso, includono la Threat Intelligence e la Geo-velocity."
+    },
+    {
+        "id": 4003,
+        "capitolo": "Chapter 4: Security Is Pervasive",
+        "argomento": "Zero Trust Components",
+        "tipo": "singola",
+        "domanda": "Quale componente dell'architettura Zero Trust è responsabile dell'implementazione delle policy, del matching delle regole e dell'invio delle autorizzazioni ai punti di applicazione (PEP)?",
+        "opzioni": [
+            "A. Trust Engine (PIP)",
+            "B. Policy Engine (PDP)",
+            "C. Inventory",
+            "D. Endpoint Device"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il Policy Engine (spesso chiamato Policy Decision Point o PDP) è il luogo dove le regole vengono verificate e le decisioni di autorizzazione vengono prese e inviate ai PEP."
+    },
+    {
+        "id": 4004,
+        "capitolo": "Chapter 4: Security Is Pervasive",
+        "argomento": "CIA Triad",
+        "tipo": "singola",
+        "domanda": "Nel modello di sicurezza CIA Triad, quale elemento garantisce che le informazioni rimangano accurate dall'origine alla destinazione e non subiscano alterazioni non autorizzate?",
+        "opzioni": [
+            "A. Confidentiality",
+            "B. Availability",
+            "C. Integrity",
+            "D. Authenticity"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "L'integrità (Integrity) assicura che i dati non vengano modificati, corrotti o alterati da entità non autorizzate durante la trasmissione o l'archiviazione."
+    },
+    {
+        "id": 4005,
+        "capitolo": "Chapter 4: Security Is Pervasive",
+        "argomento": "Regulatory Compliance",
+        "tipo": "singola",
+        "domanda": "Stai progettando una rete per una catena di negozi al dettaglio che elabora pagamenti con carta di credito. Quale standard di conformità è mandatorio seguire?",
+        "opzioni": [
+            "A. HIPAA",
+            "B. GDPR",
+            "C. PCI DSS",
+            "D. SOX"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "PCI DSS (Payment Card Industry Data Security Standard) è lo standard obbligatorio per tutte le entità che archiviano, elaborano o trasmettono dati dei titolari di carte di credito."
+    },
+    {
+        "id": 4006,
+        "capitolo": "Chapter 4: Security Is Pervasive",
+        "argomento": "Regulatory Compliance",
+        "tipo": "singola",
+        "domanda": "Il regolamento GDPR (General Data Protection Regulation) si applica esclusivamente alle aziende che hanno una sede fisica all'interno dell'Unione Europea?",
+        "opzioni": [
+            "A. Sì, la giurisdizione è limitata al territorio fisico.",
+            "B. No, si applica a qualsiasi organizzazione che tratta dati personali di residenti UE, indipendentemente dalla sede dell'azienda.",
+            "C. Sì, ma solo per le aziende pubbliche.",
+            "D. No, è uno standard globale applicato da tutte le nazioni ONU."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il GDPR ha portata extraterritoriale: si applica a qualsiasi organizzazione, ovunque si trovi, che offre beni/servizi o monitora il comportamento di persone residenti nell'UE."
+    },
+    {
+        "id": 4007,
+        "capitolo": "Chapter 4: Security Is Pervasive",
+        "argomento": "Data Sovereignty",
+        "tipo": "singola",
+        "domanda": "Quale termine descrive il requisito legale secondo cui i dati sono soggetti alle leggi e alle normative del paese in cui sono stati raccolti o elaborati (es. i dati raccolti in Germania devono rimanere in Germania)?",
+        "opzioni": [
+            "A. Data Governance",
+            "B. Data Integrity",
+            "C. Data Sovereignty",
+            "D. Data Loss Prevention"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "La Data Sovereignty (Sovranità dei dati) stabilisce che i dati sono soggetti alle leggi della nazione in cui sono fisicamente situati o raccolti, influenzando le decisioni di design sul cloud e storage."
+    },
+    {
+        "id": 4008,
+        "capitolo": "Chapter 4: Security Is Pervasive",
+        "argomento": "Zero Trust Concepts",
+        "tipo": "singola",
+        "domanda": "In un modello Zero Trust, come viene definito il concetto di 'Entitlement'?",
+        "opzioni": [
+            "A. Il livello di rischio associato a un asset.",
+            "B. Il punteggio di fiducia (Trust Score) calcolato in tempo reale.",
+            "C. Le risorse specifiche a cui un utente o dispositivo ha diritto di accedere in base al proprio ruolo.",
+            "D. La larghezza di banda garantita per un'applicazione critica."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "L'Entitlement (Diritto) definisce a cosa un utente o dispositivo è autorizzato ad accedere (es. un utente HR può accedere ai dati HR, ma non a quelli Finanziari) in base al ruolo."
+    },
+    {
+        "id": 5001,
+        "capitolo": "Chapter 5: Reference Architecture Models and Frameworks",
+        "argomento": "Business Architecture",
+        "tipo": "singola",
+        "domanda": "Quale disciplina permette di sincronizzare i team di pianificazione strategica con i team di implementazione, assicurando che persone, processi e tecnologie siano allineati agli obiettivi aziendali?",
+        "opzioni": [
+            "A. Enterprise Architecture (EA)",
+            "B. Business Architecture (BA)",
+            "C. IT Infrastructure Library (ITIL)",
+            "D. Service Oriented Architecture (SOA)"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "La Business Architecture (BA) consente a tutti, dai team strategici a quelli di implementazione, di essere sulla 'stessa pagina', allineando risorse e processi agli obiettivi di business."
+    },
+    {
+        "id": 5002,
+        "capitolo": "Chapter 5: Reference Architecture Models and Frameworks",
+        "argomento": "Architecture Frameworks",
+        "tipo": "singola",
+        "domanda": "Quale framework di architettura è uno standard industriale che fornisce un metodo dettagliato (ADM) per lo sviluppo e la gestione del ciclo di vita dell'architettura aziendale?",
+        "opzioni": [
+            "A. Zachman Framework",
+            "B. TOGAF (The Open Group Architecture Framework)",
+            "C. FEAF (Federal Enterprise Architecture Framework)",
+            "D. BOST (Business, Operations, Systems, Technology)"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "TOGAF è un framework di alto livello che si concentra sulla progettazione, pianificazione, implementazione e governance dell'architettura IT aziendale."
+    },
+    {
+        "id": 5003,
+        "capitolo": "Chapter 5: Reference Architecture Models and Frameworks",
+        "argomento": "Architecture Frameworks",
+        "tipo": "singola",
+        "domanda": "Quale framework è descritto come una 'ontologia' o schema di classificazione (spesso rappresentato come una matrice) che utilizza interrogativi come Cosa, Come, Dove, Chi, Quando e Perché per descrivere un'impresa?",
+        "opzioni": [
+            "A. TOGAF",
+            "B. ITIL",
+            "C. Zachman Framework",
+            "D. DODAF"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Lo Zachman Framework fornisce un mezzo strutturato per classificare l'architettura di un'azienda utilizzando una matrice basata sulle primitive interrogative (5W+1H)."
+    },
+    {
+        "id": 5004,
+        "capitolo": "Chapter 5: Reference Architecture Models and Frameworks",
+        "argomento": "Service Management",
+        "tipo": "singola",
+        "domanda": "Quale framework è considerato lo standard de facto per la gestione dei servizi IT (ITSM), focalizzandosi su processi come Change Management, Incident Management e Problem Management?",
+        "opzioni": [
+            "A. COBIT",
+            "B. ITIL (Information Technology Infrastructure Library)",
+            "C. ISO 27001",
+            "D. RMF (Risk Management Framework)"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "ITIL è un insieme di best practice per la fornitura di servizi IT, con un forte focus su ITSM e ITAM, e include processi come change e incident management."
+    },
+    {
+        "id": 5005,
+        "capitolo": "Chapter 5: Reference Architecture Models and Frameworks",
+        "argomento": "Business Architecture Concepts",
+        "tipo": "singola",
+        "domanda": "In Business Architecture, come viene definito un 'Business Outcome'?",
+        "opzioni": [
+            "A. Un insieme di funzionalità tecniche.",
+            "B. Un risultato specifico e misurabile di un'attività, processo o evento all'interno del business.",
+            "C. Una lista di desideri del dipartimento IT.",
+            "D. Il budget totale assegnato a un progetto."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Un Business Outcome è un risultato misurabile (spesso definito con criteri SMART) che l'azienda intende raggiungere, come 'aumentare l'efficienza del 25%'."
+    },
+    {
+        "id": 5006,
+        "capitolo": "Chapter 5: Reference Architecture Models and Frameworks",
+        "argomento": "Business Architecture Scope",
+        "tipo": "singola",
+        "domanda": "Quale livello di ambito della Business Architecture (Scope) si concentra sull'aiutare un'azienda a trasformare le proprie capacità di business per facilitare l'innovazione e accelerare la digitalizzazione?",
+        "opzioni": [
+            "A. Technology Specific",
+            "B. Business Solutions",
+            "C. Business Transformation",
+            "D. Technology Architecture"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "L'ambito 'Business Transformation' è un approccio guidato dal business che mira a trasformare le capacità aziendali per facilitare l'innovazione."
+    },
+    {
+        "id": 5007,
+        "capitolo": "Chapter 5: Reference Architecture Models and Frameworks",
+        "argomento": "Risk Management",
+        "tipo": "singola",
+        "domanda": "Quale framework sviluppato dal NIST si concentra sull'integrazione di sicurezza, privacy e processi di cyber supply chain nel ciclo di vita dello sviluppo del sistema?",
+        "opzioni": [
+            "A. FEAF",
+            "B. RMF (Risk Management Framework)",
+            "C. DODAF",
+            "D. BOST"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il Risk Management Framework (RMF) del NIST si focalizza sulla gestione del rischio organizzativo e sull'integrazione della sicurezza nel ciclo di vita dei sistemi."
+    },
+    {
+        "id": 5008,
+        "capitolo": "Chapter 5: Reference Architecture Models and Frameworks",
+        "argomento": "Enterprise Architecture",
+        "tipo": "singola",
+        "domanda": "Nel BOST Framework, quali sono le quattro viste (views) principali che strutturano i modelli aziendali?",
+        "opzioni": [
+            "A. Build, Operate, Secure, Transform",
+            "B. Business, Operations, Systems, Technology",
+            "C. Budget, Organization, Strategy, Tactics",
+            "D. Backup, Optimization, Security, Testing"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il framework BOST fornisce una struttura basata su quattro viste: Business, Operations, Systems e Technology, dove i requisiti fluiscono verso il basso e le capacità verso l'alto."
+    },
+    {
+        "id": 6001,
+        "capitolo": "Chapter 6: Transport Technologies",
+        "argomento": "Metro Ethernet Services",
+        "tipo": "singola",
+        "domanda": "Secondo le definizioni del Metro Ethernet Forum (MEF), quale tipo di servizio Ethernet fornisce una connettività point-to-point (P2P), simile a una linea affittata virtuale?",
+        "opzioni": [
+            "A. E-LAN (Ethernet LAN)",
+            "B. E-Tree (Ethernet Tree)",
+            "C. E-Line (Ethernet Line)",
+            "D. VPLS (Virtual Private LAN Service)"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il servizio E-Line fornisce una connettività point-to-point (P2P) tra due interfacce utente (UNI), come nel caso del VPWS."
+    },
+    {
+        "id": 6002,
+        "capitolo": "Chapter 6: Transport Technologies",
+        "argomento": "VPLS Design",
+        "tipo": "singola",
+        "domanda": "Qual è la principale limitazione di scalabilità del modello di design 'Flat VPLS' (VPLS piatto) quando il numero di router PE aumenta?",
+        "opzioni": [
+            "A. Richiede l'uso obbligatorio di BGP route reflector.",
+            "B. Richiede una full-mesh di pseudowire (PW) tra tutti i router PE partecipanti.",
+            "C. Non supporta il traffico multicast.",
+            "D. Richiede l'incapsulamento QinQ su tutte le interfacce."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "In un design Flat VPLS, è necessario stabilire una full mesh di pseudowire (PW) tra tutti i PE partecipanti, il che porta a problemi di scalabilità (N * (N-1) / 2 connessioni) man mano che la rete cresce."
+    },
+    {
+        "id": 6003,
+        "capitolo": "Chapter 6: Transport Technologies",
+        "argomento": "Hierarchical VPLS (H-VPLS)",
+        "tipo": "singola",
+        "domanda": "Qual è lo scopo principale dell'introduzione di un'architettura Hierarchical VPLS (H-VPLS) rispetto a una VPLS standard?",
+        "opzioni": [
+            "A. Aumentare la sicurezza crittografando il traffico.",
+            "B. Ridurre la complessità della full-mesh di pseudowire introducendo una topologia hub-and-spoke nell'accesso.",
+            "C. Permettere il routing tra diverse subnet IP.",
+            "D. Eliminare la necessità di utilizzare MPLS nel core."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "H-VPLS introduce una gerarchia (hub-and-spoke) per aggregare le connessioni PW al livello di accesso, riducendo drasticamente il numero di PW full-mesh necessari nel core."
+    },
+    {
+        "id": 6004,
+        "capitolo": "Chapter 6: Transport Technologies",
+        "argomento": "Provider Backbone Bridging (PBB)",
+        "tipo": "singola",
+        "domanda": "Quale tecnologia IEEE (802.1ah) utilizza un meccanismo di tunneling 'MAC-in-MAC' per separare i domini MAC dei clienti dal core del provider, permettendo una scalabilità massiva?",
+        "opzioni": [
+            "A. Q-in-Q (802.1ad)",
+            "B. EVPN",
+            "C. PBB (Provider Backbone Bridging)",
+            "D. VXLAN"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "PBB (802.1ah) incapsula i frame MAC del cliente all'interno di frame MAC di backbone (MAC-in-MAC), nascondendo gli indirizzi dei clienti al core del provider e migliorando la scalabilità."
+    },
+    {
+        "id": 6005,
+        "capitolo": "Chapter 6: Transport Technologies",
+        "argomento": "EVPN (Ethernet VPN)",
+        "tipo": "singola",
+        "domanda": "A differenza di VPLS che si basa sul learning nel data-plane (flood-and-learn), quale protocollo utilizza EVPN per distribuire le informazioni di raggiungibilità MAC e IP nel control-plane?",
+        "opzioni": [
+            "A. LDP (Label Distribution Protocol)",
+            "B. OSPF",
+            "C. MP-BGP (Multiprotocol BGP)",
+            "D. IS-IS"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "EVPN utilizza MP-BGP per scambiare informazioni sui MAC address e sui segmenti Ethernet, eliminando la necessità del meccanismo flood-and-learn tipico del VPLS tradizionale."
+    },
+    {
+        "id": 6006,
+        "capitolo": "Chapter 6: Transport Technologies",
+        "argomento": "EVPN Features",
+        "tipo": "singola",
+        "domanda": "Quale funzionalità avanzata di EVPN permette a un dispositivo cliente (CE) multihomed di inviare traffico verso più router PE contemporaneamente, utilizzando tutti i link disponibili (Active/Active)?",
+        "opzioni": [
+            "A. Single-Active Load Balancing",
+            "B. All-Active Load Balancing",
+            "C. Port-Channeling standard",
+            "D. Spanning Tree Protocol"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "EVPN supporta il 'All-Active Load Balancing' (per-flow), che consente di utilizzare contemporaneamente tutti i link verso diversi PE per lo stesso segmento Ethernet, superando le limitazioni active-standby del VPLS."
+    },
+    {
+        "id": 6007,
+        "capitolo": "Chapter 6: Transport Technologies",
+        "argomento": "VPWS vs VPLS",
+        "tipo": "singola",
+        "domanda": "Qual è la differenza architetturale fondamentale tra VPWS (Virtual Private Wire Service) e VPLS?",
+        "opzioni": [
+            "A. VPWS è un servizio punto-punto, mentre VPLS è multipunto-multipunto (emulazione LAN).",
+            "B. VPWS supporta solo IP, mentre VPLS supporta multiprotocollo.",
+            "C. VPWS utilizza BGP, mentre VPLS utilizza solo LDP.",
+            "D. Non c'è differenza, sono sinonimi."
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "VPWS fornisce connettività punto-punto (come un cavo virtuale), mentre VPLS emula una LAN, permettendo connettività multipunto-multipunto tra siti dispersi."
+    },
+    {
+        "id": 7001,
+        "capitolo": "Chapter 7: Layer 2 Control Plane",
+        "argomento": "Spanning Tree Protocol",
+        "tipo": "singola",
+        "domanda": "Qual è lo scopo principale del protocollo Spanning Tree (STP) in una rete commutata Ethernet con percorsi ridondanti?",
+        "opzioni": [
+            "A. Bilanciare il carico tra tutti i link disponibili.",
+            "B. Prevenire i loop di livello 2 mettendo alcune porte in stato di blocco.",
+            "C. Fornire routing dinamico tra VLAN diverse.",
+            "D. Autenticare i dispositivi che si connettono alla rete."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Lo scopo fondamentale di STP è prevenire i loop di livello 2 (switching loops) che si creano quando ci sono percorsi ridondanti, bloccando logica-mente alcune porte."
+    },
+    {
+        "id": 7002,
+        "capitolo": "Chapter 7: Layer 2 Control Plane",
+        "argomento": "MST (Multiple Spanning Tree)",
+        "tipo": "singola",
+        "domanda": "Qual è il vantaggio principale dell'utilizzo di MST (802.1s) rispetto a PVST+ o Rapid PVST+ in una rete con centinaia di VLAN?",
+        "opzioni": [
+            "A. MST non richiede alcuna configurazione.",
+            "B. MST mappa più VLAN a una singola istanza STP, riducendo drasticamente il carico della CPU sugli switch.",
+            "C. MST converge più lentamente ma è più stabile.",
+            "D. MST elimina completamente la necessità di STP."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "MST disaccoppia le VLAN dalle istanze di spanning tree. Mappando gruppi di VLAN a singole istanze (es. 2-3 istanze per 500 VLAN), si riduce notevolmente il consumo di risorse CPU e memoria."
+    },
+    {
+        "id": 7003,
+        "capitolo": "Chapter 7: Layer 2 Control Plane",
+        "argomento": "FHRP (First Hop Redundancy Protocols)",
+        "tipo": "singola",
+        "domanda": "Stai progettando il gateway predefinito per una subnet critica. Quale protocollo FHRP proprietario Cisco permette il bilanciamento del carico (load balancing) nativo utilizzando più indirizzi MAC virtuali attivi contemporaneamente?",
+        "opzioni": [
+            "A. HSRP (Hot Standby Router Protocol)",
+            "B. VRRP (Virtual Router Redundancy Protocol)",
+            "C. GLBP (Gateway Load Balancing Protocol)",
+            "D. CARP (Common Address Redundancy Protocol)"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "GLBP è l'unico protocollo FHRP che supporta il load balancing nativo in modalità Active/Active per il traffico in uscita dagli host, rispondendo alle richieste ARP con MAC address virtuali diversi (AVF)."
+    },
+    {
+        "id": 7004,
+        "capitolo": "Chapter 7: Layer 2 Control Plane",
+        "argomento": "STP Design",
+        "tipo": "singola",
+        "domanda": "In un design di rete Layer 2, cosa succede se il 'Root Bridge' viene eletto casualmente e finisce per essere uno switch di accesso a bassa potenza?",
+        "opzioni": [
+            "A. Nulla, STP funziona ugualmente bene indipendentemente dalla posizione del Root.",
+            "B. Il traffico seguirà percorsi subottimali per attraversare la rete, creando colli di bottiglia.",
+            "C. La rete convergerà più velocemente.",
+            "D. Gli switch Core si spegneranno automaticamente."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il posizionamento del Root Bridge è critico. Se uno switch di accesso diventa Root, tutto il traffico (anche quello non destinato a lui) potrebbe doverlo attraversare, causando percorsi subottimali e congestione."
+    },
+    {
+        "id": 7005,
+        "capitolo": "Chapter 7: Layer 2 Control Plane",
+        "argomento": "Loop Prevention",
+        "tipo": "singola",
+        "domanda": "Quale funzionalità di sicurezza STP dovrebbe essere abilitata sulle porte collegate agli host finali per prevenire che un dispositivo non autorizzato diventi Root Bridge?",
+        "opzioni": [
+            "A. BPDU Guard",
+            "B. Loop Guard",
+            "C. Root Guard",
+            "D. UDLD"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Root Guard forza una porta a diventare 'Designated' e impedisce che lo switch collegato diventi il Root Bridge. Se riceve BPDU superiori, porta la porta in stato 'root-inconsistent'."
+    },
+    {
+        "id": 7006,
+        "capitolo": "Chapter 7: Layer 2 Control Plane",
+        "argomento": "STP Convergence",
+        "tipo": "singola",
+        "domanda": "Quale meccanismo introdotto da Rapid Spanning Tree (802.1w) permette a una porta di passare immediatamente allo stato di Forwarding se è collegata a un dispositivo terminale (non-switch), saltando gli stati di Listening e Learning?",
+        "opzioni": [
+            "A. UplinkFast",
+            "B. BackboneFast",
+            "C. Edge Port (PortFast)",
+            "D. BPDU Filter"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Le porte configurate come Edge Port (equivalente a PortFast in Cisco) transiscono immediatamente allo stato di Forwarding, assumendo che non creeranno loop poiché collegate a host."
+    },
+    {
+        "id": 7007,
+        "capitolo": "Chapter 7: Layer 2 Control Plane",
+        "argomento": "VLAN Design",
+        "tipo": "singola",
+        "domanda": "Nel contesto del design delle VLAN, qual è la raccomandazione principale per limitare il dominio di broadcast e il dominio di fallimento (Failure Domain)?",
+        "opzioni": [
+            "A. Estendere le VLAN attraverso tutti gli switch di accesso e core (End-to-End VLANs).",
+            "B. Limitare le VLAN ai singoli switch di accesso o coppie di switch, instradando il traffico al livello Distribution (Local VLANs).",
+            "C. Utilizzare una singola VLAN per l'intera azienda.",
+            "D. Disabilitare il pruning delle VLAN sui trunk."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il modello 'Local VLAN' limita l'estensione della VLAN al livello di accesso e distribuzione locale. Questo confina i broadcast storm e i problemi STP a un piccolo segmento della rete, migliorando la stabilità."
+    },
+    {
+        "id": 7008,
+        "capitolo": "Chapter 7: Layer 2 Control Plane",
+        "argomento": "FHRP & STP Interaction",
+        "tipo": "singola",
+        "domanda": "Perché è fondamentale allineare il Root Bridge STP con il gateway attivo HSRP/VRRP per la stessa VLAN?",
+        "opzioni": [
+            "A. Per risparmiare indirizzi IP.",
+            "B. Per evitare percorsi di traffico asimmetrici e subottimali dove i pacchetti attraversano il link inter-switch inutilmente.",
+            "C. È richiesto dal protocollo, altrimenti HSRP non funziona.",
+            "D. Per permettere il funzionamento di DHCP."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Se il Root Bridge e il gateway attivo sono su switch diversi, il traffico potrebbe dover attraversare il link tra gli switch per raggiungere il gateway, sprecando banda e aumentando la latenza."
+    },
+    {
+        "id": 7009,
+        "capitolo": "Chapter 7: Layer 2 Control Plane",
+        "argomento": "UDLD",
+        "tipo": "singola",
+        "domanda": "Quale problema specifico risolve il protocollo UDLD (UniDirectional Link Detection)?",
+        "opzioni": [
+            "A. Rileva se un cavo in fibra ottica è rotto fisicamente in modo bidirezionale.",
+            "B. Rileva situazioni in cui il traffico fluisce in una sola direzione su un link (es. fibra TX rotta ma RX funzionante), prevenendo loop che STP non vedrebbe.",
+            "C. Bilancia il traffico su link EtherChannel.",
+            "D. Rileva conflitti di indirizzi IP."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "UDLD rileva link unidirezionali (comuni nelle fibre ottiche). Se un link è unidirezionale, STP potrebbe smettere di ricevere BPDU e aprire erroneamente una porta bloccata, creando un loop. UDLD previene questo disabilitando la porta."
+    },
+    {
+        "id": 8001,
+        "capitolo": "Chapter 8: Layer 3 Control Plane",
+        "argomento": "OSPF Area Types",
+        "tipo": "singola",
+        "domanda": "In un design OSPF, quale tipo di area impedisce la propagazione degli LSA di tipo 3 (Summary), tipo 4 (ASBR Summary) e tipo 5 (External), accettando solo una rotta di default?",
+        "opzioni": [
+            "A. Stub Area",
+            "B. Totally Stubby Area",
+            "C. NSSA (Not-So-Stubby Area)",
+            "D. Backbone Area"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Una Totally Stubby Area blocca sia gli LSA esterni (Tipo 5) sia quelli inter-area (Tipo 3), sostituendoli con una singola rotta di default iniettata dall'ABR. La Stub Area standard blocca solo i Tipo 5."
+    },
+    {
+        "id": 8002,
+        "capitolo": "Chapter 8: Layer 3 Control Plane",
+        "argomento": "EIGRP Scalability",
+        "tipo": "singola",
+        "domanda": "In una topologia Hub-and-Spoke con EIGRP, quale funzionalità dovrebbe essere configurata sui router spoke per limitare lo scope delle query EIGRP e prevenire l'utilizzo degli spoke come router di transito?",
+        "opzioni": [
+            "A. EIGRP Passive Interface",
+            "B. EIGRP Stub Routing",
+            "C. Route Summarization",
+            "D. Offset-list"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "La funzionalità EIGRP Stub informa i vicini che il router non deve ricevere query per rotte perse e che non deve essere usato come transito, migliorando stabilità e convergenza."
+    },
+    {
+        "id": 8003,
+        "capitolo": "Chapter 8: Layer 3 Control Plane",
+        "argomento": "BGP Attributes",
+        "tipo": "singola",
+        "domanda": "Stai configurando BGP per influenzare il traffico in uscita (outbound traffic) dal tuo AS verso Internet. Quale attributo BGP è il più appropriato da utilizzare preferibilmente su tutti i router del tuo AS?",
+        "opzioni": [
+            "A. MED (Multi-Exit Discriminator)",
+            "B. AS-Path Prepending",
+            "C. Local Preference",
+            "D. Weight"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Local Preference è l'attributo standard per influenzare il traffico in uscita. Viene propagato a tutti i router iBGP all'interno dell'AS. Weight è proprietario Cisco e ha validità solo locale sul router."
+    },
+    {
+        "id": 8004,
+        "capitolo": "Chapter 8: Layer 3 Control Plane",
+        "argomento": "Route Redistribution",
+        "tipo": "singola",
+        "domanda": "Quando si esegue la ridistribuzione reciproca (mutual redistribution) tra due protocolli di routing su più punti di confine (multiple boundary points), qual è il meccanismo più efficace per prevenire i loop di routing?",
+        "opzioni": [
+            "A. Modificare la distanza amministrativa (AD).",
+            "B. Utilizzare Route Tagging e Filtering.",
+            "C. Affidarsi allo Split Horizon.",
+            "D. Usare solo rotte statiche."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il Route Tagging permette di 'marcare' le rotte ridistribuite in un dominio. Altri router di confine possono quindi filtrare queste rotte basandosi sul tag per impedire che vengano reiniettate nel dominio originale, prevenendo loop."
+    },
+    {
+        "id": 8005,
+        "capitolo": "Chapter 8: Layer 3 Control Plane",
+        "argomento": "BGP Scalability",
+        "tipo": "singola",
+        "domanda": "Qual è la differenza principale tra BGP Route Reflector (RR) e BGP Confederation in termini di modifica dell'attributo AS-PATH?",
+        "opzioni": [
+            "A. RR modifica l'AS-PATH, Confederation no.",
+            "B. Nessuna delle due modifica l'AS-PATH.",
+            "C. Confederation divide l'AS in sotto-AS privati che appaiono nell'AS-PATH interno ma vengono rimossi verso l'esterno. RR non modifica l'AS-PATH.",
+            "D. RR aggiunge il proprio Router ID all'AS-PATH."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "In una Confederazione, l'AS è diviso in sotto-AS. Questi numeri di AS privati sono visibili all'interno della confederazione (per evitare loop) ma vengono rimossi quando si annuncia la rotta fuori dalla confederazione. I Route Reflector non modificano l'AS-PATH."
+    },
+    {
+        "id": 8006,
+        "capitolo": "Chapter 8: Layer 3 Control Plane",
+        "argomento": "IS-IS vs OSPF",
+        "tipo": "singola",
+        "domanda": "Quale caratteristica rende IS-IS più flessibile di OSPF per quanto riguarda l'estensione del dominio di routing e la definizione dei confini delle aree?",
+        "opzioni": [
+            "A. IS-IS usa IP protocol 89.",
+            "B. In IS-IS, i confini delle aree sono sui link, non sui router. Un router appartiene interamente a un'area.",
+            "C. IS-IS supporta solo IPv4.",
+            "D. OSPF non supporta aree gerarchiche."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "In OSPF, un ABR (Area Border Router) appartiene a più aree e il confine è dentro il router. In IS-IS, il confine è sul link tra due router; un router L1 o L2 appartiene interamente a un'area, semplificando la migrazione e l'estensione."
+    },
+    {
+        "id": 8007,
+        "capitolo": "Chapter 8: Layer 3 Control Plane",
+        "argomento": "BGP Path Selection",
+        "tipo": "singola",
+        "domanda": "Nell'algoritmo di selezione del percorso BGP, qual è il primo criterio controllato (dopo che il next-hop è raggiungibile)?",
+        "opzioni": [
+            "A. AS-Path più breve.",
+            "B. Lowest Origin type.",
+            "C. Highest Local Preference.",
+            "D. Highest Weight.",
+            "E. Lowest MED."
+        ],
+        "risposta_corretta": "D",
+        "spiegazione": "L'ordine standard (su router Cisco) è: 1. Highest Weight (Cisco proprietary), 2. Highest Local Preference, 3. Locally originated, 4. Shortest AS-Path."
+    },
+    {
+        "id": 8008,
+        "capitolo": "Chapter 8: Layer 3 Control Plane",
+        "argomento": "Route Summarization",
+        "tipo": "singola",
+        "domanda": "Qual è un potenziale rischio del 'Route Summarization' (sommarizzazione) se non configurato correttamente, specialmente in reti con percorsi ridondanti?",
+        "opzioni": [
+            "A. Aumento della tabella di routing.",
+            "B. Suboptimal Routing (routing subottimale).",
+            "C. Eccessivo consumo di CPU.",
+            "D. Violazione delle licenze software."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "La sommarizzazione nasconde i dettagli topologici. Se esistono più percorsi verso una destinazione specifica, la summarization potrebbe forzare il traffico a seguire un percorso più lungo o meno efficiente perché la rotta specifica (più precisa) è nascosta."
+    },
+    {
+        "id": 8009,
+        "capitolo": "Chapter 8: Layer 3 Control Plane",
+        "argomento": "OSPF Design",
+        "tipo": "singola",
+        "domanda": "In una rete OSPF Hub-and-Spoke su Frame Relay o DMVPN, perché è spesso consigliato configurare il tipo di rete OSPF come 'Point-to-Multipoint'?",
+        "opzioni": [
+            "A. Per eleggere un DR/BDR.",
+            "B. Per evitare problemi di DR/BDR e permettere il rilevamento automatico dei vicini senza configurazione manuale dei neighbor.",
+            "C. Perché è l'unica modalità supportata da Cisco.",
+            "D. Per ridurre la dimensione dell'LSA."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "La modalità Point-to-Multipoint non elegge DR/BDR (che può essere problematico in hub-and-spoke se uno spoke diventa DR) e tratta la rete come una collezione di link punto-punto, semplificando la topologia."
+    },
+    {
+        "id": 8010,
+        "capitolo": "Chapter 8: Layer 3 Control Plane",
+        "argomento": "Administrative Distance",
+        "tipo": "singola",
+        "domanda": "Qual è lo scopo della 'Administrative Distance' (Distanza Amministrativa) quando un router apprende la stessa rotta da due protocolli di routing diversi (es. OSPF e EIGRP)?",
+        "opzioni": [
+            "A. Determinare quale protocollo ha la metrica più bassa.",
+            "B. Determinare l'affidabilità della fonte di routing; viene installata la rotta con AD minore.",
+            "C. Bilanciare il carico tra i due protocolli.",
+            "D. Prevenire i loop di livello 2."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "L'Administrative Distance è un valore che indica l'affidabilità del protocollo. Più basso è il valore, più è affidabile. Ad esempio, EIGRP (90) è preferito rispetto a OSPF (110)."
+    },
+    {
+        "id": 8011,
+        "capitolo": "Chapter 8: Layer 3 Control Plane",
+        "argomento": "BGP Loop Prevention",
+        "tipo": "singola",
+        "domanda": "Quale meccanismo utilizza BGP per prevenire i loop di routing all'interno dello stesso AS (iBGP)?",
+        "opzioni": [
+            "A. Split Horizon: non annuncia le rotte apprese da un vicino iBGP ad altri vicini iBGP.",
+            "B. AS-Path: scarta le rotte che contengono il proprio AS number.",
+            "C. TTL (Time To Live).",
+            "D. Spanning Tree Protocol."
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "La regola Split Horizon di iBGP stabilisce che una rotta appresa via iBGP non può essere annunciata a un altro peer iBGP. Questo previene i loop ma richiede una topologia full-mesh o l'uso di Route Reflectors."
+    },
+    {
+        "id": 8012,
+        "capitolo": "Chapter 8: Layer 3 Control Plane",
+        "argomento": "OSPF Virtual Link",
+        "tipo": "singola",
+        "domanda": "Quando è necessario utilizzare un 'OSPF Virtual Link'?",
+        "opzioni": [
+            "A. Per collegare due aree non-backbone attraverso l'area 0.",
+            "B. Quando un'area non-backbone non ha una connessione fisica diretta all'area 0 (Backbone).",
+            "C. Per collegare router di produttori diversi.",
+            "D. Per criptare il traffico OSPF."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Tutte le aree OSPF devono essere connesse fisicamente all'Area 0. Se ciò non è possibile (es. fusione di reti), si usa un Virtual Link per estendere logicamente l'Area 0 attraverso un'area di transito fino all'area disconnessa."
+    },
+    {
+        "id": 9001,
+        "capitolo": "Chapter 9: Network Virtualization",
+        "argomento": "MPLS L3VPN Control Plane",
+        "tipo": "singola",
+        "domanda": "In un'architettura MPLS L3VPN, qual è la funzione principale del Route Distinguisher (RD)?",
+        "opzioni": [
+            "A. Controllare l'importazione e l'esportazione delle rotte nelle VRF.",
+            "B. Rendere univoco un indirizzo IP del cliente all'interno del core MPLS, permettendo la sovrapposizione degli indirizzi IP.",
+            "C. Identificare l'interfaccia di uscita sul router PE remoto.",
+            "D. Criptare il traffico del cliente attraverso la backbone."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "L'RD è un prefisso di 64 bit aggiunto all'indirizzo IPv4 del cliente per creare un indirizzo VPNv4 univoco globale, permettendo al provider di supportare clienti con spazi di indirizzamento sovrapposti (overlapping IP)."
+    },
+    {
+        "id": 9002,
+        "capitolo": "Chapter 9: Network Virtualization",
+        "argomento": "MPLS L3VPN Control Plane",
+        "tipo": "singola",
+        "domanda": "Quale attributo viene utilizzato in MPLS L3VPN per definire la 'membership' di una VPN e controllare in quali VRF una rotta deve essere inserita?",
+        "opzioni": [
+            "A. Route Distinguisher (RD)",
+            "B. MPLS Label",
+            "C. Route Target (RT)",
+            "D. Site of Origin (SoO)"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il Route Target (RT) è una BGP Extended Community utilizzata per definire le policy di importazione ed esportazione delle rotte tra le diverse VRF, controllando la topologia della VPN (es. Full Mesh, Hub-and-Spoke)."
+    },
+    {
+        "id": 9003,
+        "capitolo": "Chapter 9: Network Virtualization",
+        "argomento": "PE-CE Routing (OSPF)",
+        "tipo": "singola",
+        "domanda": "Quando si utilizza OSPF come protocollo di routing PE-CE, quale meccanismo viene utilizzato per prevenire che una rotta appresa dalla backbone MPLS venga reiniettata nella backbone da un altro router PE, creando un loop?",
+        "opzioni": [
+            "A. OSPF Sham Link",
+            "B. Down Bit (DN Bit)",
+            "C. Route Tagging",
+            "D. Domain ID"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il DN Bit (Down Bit) viene impostato sugli LSA di tipo 3, 5 e 7 quando vengono ridistribuiti da MP-BGP in OSPF. Se un altro PE riceve un LSA con il DN Bit impostato, ignorerà l'LSA per il calcolo delle rotte, prevenendo loop."
+    },
+    {
+        "id": 9004,
+        "capitolo": "Chapter 9: Network Virtualization",
+        "argomento": "PE-CE Routing (BGP)",
+        "tipo": "singola",
+        "domanda": "In uno scenario in cui un cliente utilizza lo stesso numero di AS BGP su tutti i suoi siti remoti connessi a una MPLS L3VPN, quale funzionalità deve essere abilitata sul router PE per permettere lo scambio di rotte?",
+        "opzioni": [
+            "A. BGP AS-Override",
+            "B. BGP Allow-AS-In",
+            "C. BGP Next-Hop-Self",
+            "D. BGP Route Reflector"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "Di default, BGP scarta le rotte che contengono il proprio AS number nell'AS-PATH (loop prevention). AS-Override sul PE sostituisce l'AS del cliente con l'AS del provider, permettendo ai siti remoti di accettare le rotte."
+    },
+    {
+        "id": 9005,
+        "capitolo": "Chapter 9: Network Virtualization",
+        "argomento": "PE-CE Routing (BGP)",
+        "tipo": "singola",
+        "domanda": "Quando si utilizza 'AS-Override' o si hanno siti dual-homed con lo stesso AS, quale attributo BGP dovrebbe essere utilizzato per prevenire loop di routing identificando univocamente il sito di origine della rotta?",
+        "opzioni": [
+            "A. Weight",
+            "B. Local Preference",
+            "C. Site of Origin (SoO)",
+            "D. MED"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "SoO (Site of Origin) è una BGP Extended Community che identifica univocamente il sito da cui una rotta è stata originata. Viene usata per filtrare le rotte in ingresso verso lo stesso sito per prevenire loop, specialmente quando si usa AS-Override."
+    },
+    {
+        "id": 9006,
+        "capitolo": "Chapter 9: Network Virtualization",
+        "argomento": "SD-WAN Components",
+        "tipo": "singola",
+        "domanda": "In una architettura SD-WAN (come Cisco SD-WAN), quale componente è responsabile del piano di controllo (Control Plane), distribuendo rotte e policy ai router Edge?",
+        "opzioni": [
+            "A. vManage (Manager)",
+            "B. vSmart (Controller)",
+            "C. vBond (Orchestrator)",
+            "D. vEdge (WAN Edge)"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il vSmart (o Controller) è il cervello della rete. Gestisce il control plane, implementa le policy di routing e sicurezza, e distribuisce le informazioni di raggiungibilità ai router vEdge tramite OMP (Overlay Management Protocol)."
+    },
+    {
+        "id": 9007,
+        "capitolo": "Chapter 9: Network Virtualization",
+        "argomento": "SD-WAN Concepts",
+        "tipo": "singola",
+        "domanda": "In Cisco SD-WAN, cosa rappresenta un 'TLOC' (Transport Locator)?",
+        "opzioni": [
+            "A. L'indirizzo IP privato del router.",
+            "B. Un identificatore univoco che lega un'interfaccia di sistema, un colore (tipo di trasporto) e un tipo di incapsulamento.",
+            "C. La tabella di routing locale del sito.",
+            "D. Il tunnel IPsec verso il vSmart."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Un TLOC identifica univocamente un punto di connessione alla rete di trasporto (WAN). È composto da System IP, Color (es. mpls, biz-internet) e Encapsulation type (es. ipsec, gre)."
+    },
+    {
+        "id": 9008,
+        "capitolo": "Chapter 9: Network Virtualization",
+        "argomento": "SD-LAN (Fabric)",
+        "tipo": "singola",
+        "domanda": "In una soluzione SD-LAN (come Cisco SD-Access), quale ruolo svolge il 'Fabric Border Node'?",
+        "opzioni": [
+            "A. Connette gli endpoint (utenti e dispositivi) alla fabric.",
+            "B. Gestisce il database di mapping LISP (Host Tracking Database).",
+            "C. Serve come gateway tra il dominio di fabric e le reti esterne (es. Internet, Data Center, WAN classica).",
+            "D. Applica le policy di micro-segmentazione."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il Border Node è il punto di uscita/ingresso della fabric. Connette la fabric SD-Access al mondo esterno, gestendo la ridistribuzione delle rotte o il passaggio del traffico verso reti non-fabric."
+    },
+    {
+        "id": 9009,
+        "capitolo": "Chapter 9: Network Virtualization",
+        "argomento": "VXLAN",
+        "tipo": "singola",
+        "domanda": "Quale vantaggio offre l'utilizzo di VXLAN rispetto alle VLAN tradizionali nei data center moderni?",
+        "opzioni": [
+            "A. VXLAN supporta meno ID di rete rispetto alle VLAN.",
+            "B. VXLAN permette di estendere segmenti Layer 2 su una infrastruttura Layer 3 (Underlay), superando il limite di 4094 VLAN.",
+            "C. VXLAN cripta tutto il traffico per default.",
+            "D. VXLAN elimina la necessità di router nel data center."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "VXLAN è un protocollo di overlay che incapsula frame L2 in pacchetti UDP/IP. Questo permette di estendere le reti L2 attraverso confini L3 e offre un identificatore a 24 bit (VNI), scalando fino a 16 milioni di segmenti."
+    },
+    {
+        "id": 9010,
+        "capitolo": "Chapter 9: Network Virtualization",
+        "argomento": "PE-CE Routing (OSPF)",
+        "tipo": "singola",
+        "domanda": "Perché si utilizza un 'OSPF Sham Link' tra due router PE in un ambiente MPLS VPN?",
+        "opzioni": [
+            "A. Per connettere due VRF diverse.",
+            "B. Per forzare il traffico a passare attraverso la backbone MPLS invece che su un link di backup (backdoor) tra i siti CE, facendo apparire il percorso MPLS come intra-area.",
+            "C. Per criptare il traffico OSPF.",
+            "D. Per supportare OSPFv3."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Se esiste un link backdoor tra due siti CE, OSPF preferirà sempre quel link (Intra-area) rispetto alla VPN MPLS (spesso vista come Inter-area). Lo Sham Link crea un collegamento logico intra-area attraverso la VPN, permettendo di preferire la VPN tramite i costi."
+    }
+]
