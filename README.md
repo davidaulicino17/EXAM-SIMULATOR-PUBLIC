@@ -3,7 +3,6 @@
 **Un simulatore d'esame desktop leggero, portatile e potente per prepararsi alle certificazioni IT (CCNA, CompTIA, ecc.) e non solo.**
 
 ![Screenshot](screenshot.png)
-*(Suggerimento: Carica uno screenshot dell'app in azione e chiamalo screenshot.png per vederlo qui)*
 
 ## 📖 Descrizione
 
