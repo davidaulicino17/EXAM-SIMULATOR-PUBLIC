@@ -1,0 +1,2241 @@
+[
+    {
+        "id": 1,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "IPv4 Address Types",
+        "tipo": "singola",
+        "domanda": "Quale dei seguenti indirizzi è un indirizzo IPv4 privato secondo la RFC 1918?",
+        "opzioni": [
+            "A. 198.176.1.1",
+            "B. 172.31.16.1",
+            "C. 191.168.1.1",
+            "D. 224.130.1.1"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "I blocchi di indirizzi IPv4 privati sono 10.0.0.0/8, 172.16.0.0/12 (da 172.16.0.0 a 172.31.255.255) e 192.168.0.0/16."
+    },
+    {
+        "id": 2,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "Subnetting",
+        "tipo": "singola",
+        "domanda": "Quanti indirizzi IP sono disponibili per gli host nella sottorete 198.10.100.64/27?",
+        "opzioni": [
+            "A. 14",
+            "B. 30",
+            "C. 62",
+            "D. 126"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Una maschera /27 lascia 5 bit per la parte host. La formula è 2^5 - 2 = 30 host utilizzabili."
+    },
+    {
+        "id": 3,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "IPv4 Addressing",
+        "tipo": "singola",
+        "domanda": "Quale subnet mask dovresti usare per gli indirizzi di loopback dei router per non sprecare spazio di indirizzamento?",
+        "opzioni": [
+            "A. 255.255.255.252 (/30)",
+            "B. 255.255.255.254 (/31)",
+            "C. 255.255.255.0 (/24)",
+            "D. 255.255.255.255 (/32)"
+        ],
+        "risposta_corretta": "D",
+        "spiegazione": "Gli indirizzi di loopback dovrebbero avere una maschera /32 (255.255.255.255) poiché identificano una singola interfaccia logica e non necessitano di indirizzi di rete o broadcast."
+    },
+    {
+        "id": 4,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "IPv4 Header",
+        "tipo": "singola",
+        "domanda": "In quale campo dell'header IPv4 si trovano i bit di precedenza IP (IP Precedence)?",
+        "opzioni": [
+            "A. Priority field",
+            "B. IP Protocol field",
+            "C. Type of Service (ToS) field",
+            "D. IP Options field"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "I bit di precedenza (o DSCP nelle implementazioni più recenti) si trovano nel campo Type of Service (ToS) dell'header IPv4, utilizzato per il QoS."
+    },
+    {
+        "id": 5,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "IPv4 Address Types",
+        "tipo": "singola",
+        "domanda": "Che tipo di indirizzo è 225.10.1.1?",
+        "opzioni": [
+            "A. Unicast",
+            "B. Multicast",
+            "C. Broadcast",
+            "D. Anycast"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Gli indirizzi multicast (Classe D) variano da 224.0.0.0 a 239.255.255.255."
+    },
+    {
+        "id": 6,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "Route Summarization",
+        "tipo": "singola",
+        "domanda": "Quali sottoreti sono riassunte dalla rotta 150.10.192.0/21?",
+        "opzioni": [
+            "A. 150.10.192.0/24, 150.10.193.0/24",
+            "B. 150.10.192.0/22, 150.10.196.0/23, 150.10.197.0/24",
+            "C. 150.10.192.0/22, 150.10.199.0/22",
+            "D. 150.10.192.0/24 fino a 150.10.199.0/24"
+        ],
+        "risposta_corretta": "D",
+        "spiegazione": "Una /21 copre un blocco di 8 sottoreti /24 (da .192 a .199 nel terzo ottetto). La risposta corretta include l'intervallo completo o una combinazione che copre lo stesso spazio."
+    },
+    {
+        "id": 7,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "Subnetting",
+        "tipo": "singola",
+        "domanda": "Quale subnet mask useresti per risparmiare il maggior spazio di indirizzamento possibile in un collegamento WAN punto-punto che richiede solo due host?",
+        "opzioni": [
+            "A. /26",
+            "B. /28",
+            "C. /29",
+            "D. /30"
+        ],
+        "risposta_corretta": "D",
+        "spiegazione": "I collegamenti punto-punto necessitano solo di due indirizzi host. Una maschera /30 fornisce esattamente 2 indirizzi utilizzabili (2^2 - 2)."
+    },
+    {
+        "id": 8,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "Protocols",
+        "tipo": "singola",
+        "domanda": "Quale protocollo viene utilizzato per assegnare automaticamente gli indirizzi IP ai client?",
+        "opzioni": [
+            "A. Dynamic Host Control Protocol",
+            "B. Dedicated Host Configuration Protocol",
+            "C. Dynamic Host Configuration Protocol (DHCP)",
+            "D. Automatic Host Configuration Protocol"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "DHCP sta per Dynamic Host Configuration Protocol ed è lo standard per l'assegnazione dinamica degli indirizzi."
+    },
+    {
+        "id": 9,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "NAT",
+        "tipo": "singola",
+        "domanda": "Un'azienda deve rendere accessibili da Internet quattro server interni utilizzando indirizzi IP pubblici fissi. Quale tecnologia NAT soddisfa questo requisito?",
+        "opzioni": [
+            "A. DNS",
+            "B. IPsec",
+            "C. Static NAT",
+            "D. Dynamic NAT"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il NAT statico (Static NAT) viene utilizzato per mappare in modo permanente un indirizzo IP privato a uno specifico indirizzo IP pubblico, rendendo i server raggiungibili dall'esterno."
+    },
+    {
+        "id": 10,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "QoS/IPv4 Header",
+        "tipo": "singola",
+        "domanda": "Quanti codepoint (valori distinti) supporta il campo DS (Differentiated Services) nell'architettura DSCP?",
+        "opzioni": [
+            "A. 8",
+            "B. 32",
+            "C. 64",
+            "D. 128"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il campo DS utilizza 6 bit del byte ToS, permettendo 2^6 = 64 possibili valori (codepoints)."
+    },
+    {
+        "id": 11,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "Protocols",
+        "tipo": "singola",
+        "domanda": "Quale protocollo può essere utilizzato per configurare l'impostazione del gateway predefinito su un host?",
+        "opzioni": [
+            "A. ARP",
+            "B. DHCP",
+            "C. DNS",
+            "D. RARP"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "DHCP fornisce ai client non solo l'indirizzo IP, ma anche la subnet mask, il gateway predefinito e i server DNS."
+    },
+    {
+        "id": 12,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "IPv4 Addressing",
+        "tipo": "singola",
+        "domanda": "Quanti indirizzi host utilizzabili sono disponibili in una rete di Classe B con la maschera predefinita (/16)?",
+        "opzioni": [
+            "A. 63.998",
+            "B. 64.000",
+            "C. 65.534",
+            "D. 65.536"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Le reti di Classe B hanno 16 bit per la parte host. Il calcolo è 2^16 - 2 = 65.536 - 2 = 65.534 indirizzi."
+    },
+    {
+        "id": 13,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "Subnet Masks",
+        "tipo": "singola",
+        "domanda": "Quale delle seguenti è la rappresentazione decimale puntata di una maschera con prefisso /26?",
+        "opzioni": [
+            "A. 255.255.255.128",
+            "B. 255.255.255.192",
+            "C. 255.255.255.224",
+            "D. 255.255.255.252"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "/26 significa 26 bit a 1. Nell'ultimo ottetto abbiamo due bit a 1 (128 + 64 = 192). Quindi la maschera è 255.255.255.192."
+    },
+    {
+        "id": 14,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "Fragmentation",
+        "tipo": "singola",
+        "domanda": "Quale delle seguenti affermazioni è vera riguardo alla frammentazione dei pacchetti IPv4?",
+        "opzioni": [
+            "A. I router lungo il percorso tra sorgente e destinazione possono frammentare i pacchetti IPv4.",
+            "B. Solo il primo router nella rete può frammentare i pacchetti.",
+            "C. I pacchetti IPv4 non possono essere frammentati.",
+            "D. I pacchetti vengono riassemblati ad ogni hop."
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "In IPv4, se un pacchetto è più grande dell'MTU del link successivo, qualsiasi router lungo il percorso può frammentarlo (a meno che il bit DF non sia impostato). In IPv6, solo la sorgente può frammentare."
+    },
+    {
+        "id": 15,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "Multicast",
+        "tipo": "singola",
+        "domanda": "Un pacchetto inviato a un indirizzo multicast raggiunge quali destinazioni?",
+        "opzioni": [
+            "A. La destinazione più vicina (nearest).",
+            "B. Tutte le destinazioni che fanno parte di quello specifico gruppo multicast.",
+            "C. Tutti gli host nella rete.",
+            "D. Destinazioni globali riservate."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il multicast è una comunicazione uno-a-molti in cui il traffico viene consegnato solo agli host che hanno esplicitamente richiesto di unirsi a quel gruppo."
+    },
+    {
+        "id": 16,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "Enterprise Design",
+        "tipo": "multipla",
+        "domanda": "Quali moduli di rete NON dovrebbero utilizzare lo spazio di indirizzi IPv4 privati (RFC 1918) perché richiedono connettività pubblica diretta? (Scegline tre)",
+        "opzioni": [
+            "A. Access Layer",
+            "B. Distribution Layer",
+            "C. E-commerce",
+            "D. LAN",
+            "E. Internet connection",
+            "F. Data center",
+            "G. Remote access/VPN"
+        ],
+        "risposta_corretta": [
+            "C",
+            "E",
+            "G"
+        ],
+        "spiegazione": "I moduli E-commerce, Internet connection e Remote access/VPN si trovano nell'Enterprise Edge e spesso richiedono indirizzi IP pubblici per essere raggiungibili dall'esterno."
+    },
+    {
+        "id": 17,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "NAT",
+        "tipo": "singola",
+        "domanda": "Quale tecnologia consente a un'azienda di utilizzare un singolo indirizzo IP pubblico per consentire a molteplici host con indirizzi privati di accedere a Internet?",
+        "opzioni": [
+            "A. Redistribution",
+            "B. Static NAT",
+            "C. PAT (Port Address Translation)",
+            "D. Access List"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "PAT (o NAT Overload) mappa molteplici indirizzi privati a un singolo indirizzo pubblico (o pochi indirizzi) utilizzando numeri di porta univoci per distinguere le sessioni."
+    },
+    {
+        "id": 18,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "Addressing Management",
+        "tipo": "singola",
+        "domanda": "Quale è il RIR (Regional Internet Registry) responsabile per l'allocazione degli indirizzi IP in Europa, Medio Oriente e Asia Centrale?",
+        "opzioni": [
+            "A. IANA",
+            "B. ARIN",
+            "C. RIPE NCC",
+            "D. APNIC"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "RIPE NCC (Réseaux IP Européens Network Coordination Centre) è il registro regionale per l'Europa."
+    },
+    {
+        "id": 19,
+        "capitolo": "Chapter 1: Internet Protocol Version 4 (IPv4) Design",
+        "argomento": "VLSM",
+        "tipo": "singola",
+        "domanda": "Quale meccanismo supporta la capacità di dividere una data sottorete in sottoreti più piccole di dimensioni variabili in base alle necessità?",
+        "opzioni": [
+            "A. DNS",
+            "B. NAT",
+            "C. ARP",
+            "D. VLSM"
+        ],
+        "risposta_corretta": "D",
+        "spiegazione": "VLSM (Variable-Length Subnet Masking) consente di utilizzare maschere di sottorete di diversa lunghezza all'interno dello stesso piano di indirizzamento, ottimizzando l'uso degli indirizzi."
+    },
+    {
+        "id": 107,
+        "capitolo": "Chapter 10: SD-Access Design",
+        "argomento": "SD-Access Architecture",
+        "tipo": "singola",
+        "domanda": "Quali sono i due componenti principali dell'architettura Cisco SD-Access?",
+        "opzioni": [
+            "A. Cisco DNA Center e SD-Access Fabric",
+            "B. ISE e vManage",
+            "C. APIC e ACI Fabric",
+            "D. Prime Infrastructure e WLC"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "L'architettura SD-Access è composta da due parti principali: il controller Cisco DNA Center (che gestisce automazione e assurance) e la SD-Access Fabric (l'infrastruttura fisica e logica)."
+    },
+    {
+        "id": 108,
+        "capitolo": "Chapter 10: SD-Access Design",
+        "argomento": "Control Plane",
+        "tipo": "singola",
+        "domanda": "Quale protocollo viene utilizzato nel Control Plane di SD-Access per gestire la mappatura e la risoluzione degli indirizzi degli endpoint (EID) rispetto alla loro posizione (RLOC)?",
+        "opzioni": [
+            "A. BGP",
+            "B. OSPF",
+            "C. LISP (Locator/ID Separation Protocol)",
+            "D. IS-IS"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "LISP è il protocollo del Control Plane che disaccoppia l'identità dell'endpoint (EID) dalla sua posizione (RLOC), permettendo la mobilità degli host e riducendo le dimensioni delle tabelle di routing."
+    },
+    {
+        "id": 109,
+        "capitolo": "Chapter 10: SD-Access Design",
+        "argomento": "Data Plane",
+        "tipo": "singola",
+        "domanda": "Quale protocollo di incapsulamento viene utilizzato nel Data Plane della Fabric SD-Access per trasportare il traffico degli utenti sopra l'underlay?",
+        "opzioni": [
+            "A. GRE",
+            "B. IPsec",
+            "C. VXLAN (Virtual Extensible LAN)",
+            "D. MPLS"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il Data Plane utilizza VXLAN (specificamente VXLAN-GPO) per incapsulare i pacchetti Layer 2 o Layer 3, trasportando anche informazioni sui Virtual Network (VNI) e sui gruppi scalabili (SGT)."
+    },
+    {
+        "id": 110,
+        "capitolo": "Chapter 10: SD-Access Design",
+        "argomento": "Fabric Roles",
+        "tipo": "singola",
+        "domanda": "Nel contesto di SD-Access, quale ruolo svolge un 'Fabric Edge Node'?",
+        "opzioni": [
+            "A. Collega la fabric alle reti esterne (Internet, Data Center).",
+            "B. Gestisce il database di mappatura LISP.",
+            "C. È il punto di connessione per gli endpoint (utenti e dispositivi) alla fabric.",
+            "D. Gestisce le policy di sicurezza centralizzate."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "L'Edge Node è equivalente allo switch di accesso: è il punto dove gli endpoint (wired e wireless) si connettono alla fabric e dove avviene l'incapsulamento/decapsulamento VXLAN."
+    },
+    {
+        "id": 111,
+        "capitolo": "Chapter 10: SD-Access Design",
+        "argomento": "Fusion Router",
+        "tipo": "singola",
+        "domanda": "Qual è la funzione principale di un Fusion Router in un design SD-Access?",
+        "opzioni": [
+            "A. Gestire l'automazione LAN.",
+            "B. Fungere da server DHCP.",
+            "C. Collegare i Border Node ed eseguire il 'route leaking' tra i Virtual Network (VN) e la Global Routing Table per l'accesso ai servizi condivisi.",
+            "D. Sostituire il DNA Center in caso di guasto."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il Fusion Router (o Firewall) si trova appena fuori dalla fabric e serve a connettere i diversi VN (VRF) della fabric ai servizi condivisi (come DHCP, DNS, Internet) tramite route leaking (spesso usando BGP)."
+    },
+    {
+        "id": 112,
+        "capitolo": "Chapter 10: SD-Access Design",
+        "argomento": "Wireless Integration",
+        "tipo": "singola",
+        "domanda": "In un'integrazione 'Fabric Wireless' (o Fabric Enabled Wireless), come viene gestito il traffico dati dei client wireless?",
+        "opzioni": [
+            "A. Viene incapsulato in CAPWAP e inviato al WLC (come nel modello tradizionale).",
+            "B. Viene incapsulato in VXLAN dall'Access Point e inviato direttamente allo switch Edge della fabric.",
+            "C. Viene inviato in chiaro allo switch Core.",
+            "D. Viene gestito dal Fusion Router."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Nel Fabric Wireless, il traffico dati è incapsulato in VXLAN direttamente dall'AP (se compatibile) e immesso nella fabric a livello dell'Edge switch, ottenendo vantaggi di performance e segmentazione. Il traffico di controllo usa ancora CAPWAP verso il WLC."
+    },
+    {
+        "id": 113,
+        "capitolo": "Chapter 10: SD-Access Design",
+        "argomento": "Wireless Integration",
+        "tipo": "singola",
+        "domanda": "Quale metodo di integrazione wireless SD-Access utilizza il modello tradizionale, dove tutto il traffico (dati e controllo) è incapsulato in CAPWAP verso il WLC, trattando la fabric solo come un trasporto IP?",
+        "opzioni": [
+            "A. Fabric Wireless",
+            "B. Embedded Wireless",
+            "C. Over-the-Top (OTT)",
+            "D. SDA Wireless"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Over-the-Top (OTT) è il metodo tradizionale: la fabric SD-Access è solo un trasporto (underlay) per i tunnel CAPWAP che vanno dagli AP al WLC. Non si beneficia dell'integrazione completa della fabric."
+    },
+    {
+        "id": 114,
+        "capitolo": "Chapter 10: SD-Access Design",
+        "argomento": "Segmentation",
+        "tipo": "singola",
+        "domanda": "Quale concetto in SD-Access si riferisce alla 'Microsegmentazione', ovvero la capacità di filtrare il traffico tra dispositivi all'interno della stessa Virtual Network (VN)?",
+        "opzioni": [
+            "A. VRF",
+            "B. SGT (Scalable Group Tag)",
+            "C. VNI",
+            "D. MPLS"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "La Microsegmentazione utilizza gli SGT (gestiti da ISE e TrustSec) per applicare policy di sicurezza (SGACL) tra gruppi di utenti, anche se si trovano nella stessa subnet/VLAN (stessa VN)."
+    },
+    {
+        "id": 115,
+        "capitolo": "Chapter 10: SD-Access Design",
+        "argomento": "Underlay Network",
+        "tipo": "singola",
+        "domanda": "Quando si utilizza la funzione 'LAN Automation' di Cisco DNA Center per configurare l'underlay della fabric, quale protocollo di routing viene configurato automaticamente sugli switch?",
+        "opzioni": [
+            "A. OSPF",
+            "B. EIGRP",
+            "C. IS-IS",
+            "D. BGP"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Cisco DNA Center LAN Automation utilizza IS-IS come protocollo di routing per l'underlay per la sua scalabilità, supporto neutrale al protocollo (IPv4/IPv6) e idoneità agli ambienti fabric."
+    },
+    {
+        "id": 116,
+        "capitolo": "Chapter 10: SD-Access Design",
+        "argomento": "Virtual Networks",
+        "tipo": "singola",
+        "domanda": "In SD-Access, cosa rappresenta una 'Virtual Network' (VN)?",
+        "opzioni": [
+            "A. Una singola VLAN.",
+            "B. Una istanza VRF (Virtual Routing and Forwarding) che fornisce isolamento di routing (Macrosegmentazione).",
+            "C. Un tunnel IPsec.",
+            "D. Un gruppo di Access Point."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Una Virtual Network (VN) in SD-Access corrisponde a una VRF (Layer 3) e fornisce isolamento completo (Macrosegmentazione) tra gruppi di utenti (es. VN Ospiti vs VN Corporate)."
+    },
+    {
+        "id": 145,
+        "capitolo": "Chapter 11: SD-WAN Design",
+        "argomento": "SD-WAN Components",
+        "tipo": "singola",
+        "domanda": "Quale componente dell'architettura Cisco SD-WAN è considerato il 'cervello' della soluzione, responsabile del Control Plane, della gestione delle rotte e dell'applicazione delle policy?",
+        "opzioni": [
+            "A. vBond",
+            "B. vManage",
+            "C. vSmart",
+            "D. vEdge"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "I controller vSmart sono responsabili del Control Plane. Gestiscono il routing, applicano le policy del piano dati e la segmentazione della rete. I vEdge non si scambiano direttamente le rotte, ma le inviano ai vSmart."
+    },
+    {
+        "id": 146,
+        "capitolo": "Chapter 11: SD-WAN Design",
+        "argomento": "Orchestration Plane",
+        "tipo": "singola",
+        "domanda": "Qual è la funzione principale del componente vBond nell'architettura SD-WAN?",
+        "opzioni": [
+            "A. Fornire un'interfaccia GUI per la gestione centralizzata.",
+            "B. Eseguire l'autenticazione iniziale dei dispositivi vEdge e orchestrare la connettività verso vManage e vSmart.",
+            "C. Inoltrare il traffico dati degli utenti.",
+            "D. Calcolare le rotte migliori per il traffico applicativo."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "vBond opera nel piano di orchestrazione. È il primo punto di contatto per i dispositivi (Zero Touch Provisioning), li autentica e fornisce loro le informazioni per connettersi ai vSmart e vManage."
+    },
+    {
+        "id": 147,
+        "capitolo": "Chapter 11: SD-WAN Design",
+        "argomento": "OMP (Overlay Management Protocol)",
+        "tipo": "singola",
+        "domanda": "Quali sono i tre tipi di rotte pubblicizzate dal protocollo OMP (Overlay Management Protocol)?",
+        "opzioni": [
+            "A. Statiche, OSPF, BGP",
+            "B. OMP Routes (vRoutes), TLOC Routes, Service Routes",
+            "C. Internal, External, Summary",
+            "D. Unicast, Multicast, Anycast"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "OMP gestisce la rete overlay pubblicizzando: OMP Routes (prefissi di rete appresi dai siti locali), TLOC Routes (informazioni sui punti di terminazione del tunnel/next-hop) e Service Routes (servizi come firewall o IPS)."
+    },
+    {
+        "id": 148,
+        "capitolo": "Chapter 11: SD-WAN Design",
+        "argomento": "High Availability & Performance",
+        "tipo": "singola",
+        "domanda": "Quale protocollo viene utilizzato automaticamente da tutti i router vEdge all'interno dei tunnel IPsec per misurare latenza, jitter e perdita di pacchetti (packet loss) sui collegamenti di trasporto?",
+        "opzioni": [
+            "A. SNMP",
+            "B. IP SLA",
+            "C. BFD (Bidirectional Forwarding Detection)",
+            "D. NetFlow"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "In Cisco SD-WAN, BFD viene eseguito automaticamente all'interno di ogni tunnel IPsec tra vEdge. Oltre a rilevare i guasti del percorso, misura costantemente le prestazioni del link (latenza, jitter, perdita) per l'Application-Aware Routing."
+    },
+    {
+        "id": 149,
+        "capitolo": "Chapter 11: SD-WAN Design",
+        "argomento": "SD-WAN Security",
+        "tipo": "singola",
+        "domanda": "Quale modello di sicurezza viene utilizzato nel Control Plane di Cisco SD-WAN per garantire che solo i dispositivi autenticati e autorizzati possano accedere alla rete?",
+        "opzioni": [
+            "A. Trust but Verify",
+            "B. Zero Trust",
+            "C. Pre-Shared Key (PSK)",
+            "D. Mac Address Filtering"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il Control Plane SD-WAN utilizza un modello 'Zero Trust'. Ogni dispositivo (vEdge, Controller) deve autenticarsi reciprocamente tramite certificati digitali (white-list) prima di stabilire canali di controllo DTLS/TLS."
+    },
+    {
+        "id": 150,
+        "capitolo": "Chapter 11: SD-WAN Design",
+        "argomento": "VPN Segmentation",
+        "tipo": "singola",
+        "domanda": "A cosa è riservata la VPN 512 in un dispositivo Cisco SD-WAN?",
+        "opzioni": [
+            "A. Traffico di trasporto (Overlay), dove risiedono le interfacce fisiche WAN.",
+            "B. Traffico degli utenti Corporate.",
+            "C. Traffico di gestione fuori banda (Out-of-Band Management).",
+            "D. Servizi Guest Wi-Fi."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "In Cisco SD-WAN, la VPN 0 è per il trasporto (interfacce WAN), la VPN 512 è riservata esclusivamente per il traffico di gestione (OOB Management) e non viene instradata attraverso l'overlay."
+    },
+    {
+        "id": 151,
+        "capitolo": "Chapter 11: SD-WAN Design",
+        "argomento": "Policies",
+        "tipo": "singola",
+        "domanda": "Quale funzionalità permette di selezionare il percorso ottimale per il traffico (es. Voce o Dati critici) basandosi sulle prestazioni in tempo reale del link (SLA)?",
+        "opzioni": [
+            "A. OMP Best Path Selection",
+            "B. Application-Aware Routing (AAR)",
+            "C. ECMP (Equal Cost Multipath)",
+            "D. Policy Based Routing (PBR) statico"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "L'Application-Aware Routing (AAR) monitora le metriche BFD (perdita, latenza, jitter) e instrada il traffico applicativo sul tunnel che soddisfa i requisiti SLA definiti nella policy centralizzata."
+    },
+    {
+        "id": 152,
+        "capitolo": "Chapter 11: SD-WAN Design",
+        "argomento": "Multicast",
+        "tipo": "singola",
+        "domanda": "Come viene gestito il traffico Multicast all'interno dell'overlay SD-WAN per evitare la replicazione dei pacchetti da parte del router di ingresso (Headend)?",
+        "opzioni": [
+            "A. Viene inviato in unicast a ogni ricevitore.",
+            "B. Viene gestito da un Rendezvous Point (RP) esterno.",
+            "C. Viene inviato a un vEdge designato come 'Replicator', che si occupa di duplicare e inoltrare il traffico ai ricevitori.",
+            "D. Il multicast non è supportato in SD-WAN."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Cisco SD-WAN ottimizza il multicast eliminando la replicazione sul router di ingresso. Il router di ingresso invia il flusso a un vEdge 'Replicator', che poi lo duplica e lo inoltra ai siti destinatari."
+    },
+    {
+        "id": 153,
+        "capitolo": "Chapter 11: SD-WAN Design",
+        "argomento": "QoS",
+        "tipo": "singola",
+        "domanda": "Su un'interfaccia vEdge, quale coda (Queue) utilizza per default la schedulazione LLQ (Low Latency Queuing)?",
+        "opzioni": [
+            "A. Queue 0",
+            "B. Queue 1",
+            "C. Queue 2",
+            "D. Queue 7"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "Per default, la Queue 0 su un vEdge utilizza LLQ (priorità rigorosa) ed è riservata al traffico di controllo (es. BFD, routing) marcato DSCP 48. Le altre code usano WRR."
+    },
+    {
+        "id": 154,
+        "capitolo": "Chapter 11: SD-WAN Design",
+        "argomento": "QoS",
+        "tipo": "singola",
+        "domanda": "Quale algoritmo di 'Congestion Avoidance' viene utilizzato per la Queue 0 (LLQ) su un vEdge?",
+        "opzioni": [
+            "A. WRED (Weighted Random Early Detection)",
+            "B. Tail Drop",
+            "C. Shaping",
+            "D. Policing"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "La coda a bassa latenza (Queue 0) utilizza 'Tail Drop' come meccanismo di gestione della congestione, poiché il traffico prioritario/controllo non dovrebbe essere scartato preventivamente come con WRED."
+    },
+    {
+        "id": 155,
+        "capitolo": "Chapter 11: SD-WAN Design",
+        "argomento": "TLOC Colors",
+        "tipo": "multipla",
+        "domanda": "Quali dei seguenti sono colori 'Pubblici' (Public Colors) in SD-WAN, tipicamente usati per trasporti Internet/NAT? (Scegline due)",
+        "opzioni": [
+            "A. mpls",
+            "B. metro-ethernet",
+            "C. biz-internet",
+            "D. gold",
+            "E. private1"
+        ],
+        "risposta_corretta": [
+            "C",
+            "D"
+        ],
+        "spiegazione": "I colori pubblici (come biz-internet, public-internet, gold, silver, bronze) indicano che l'interfaccia si connette a una rete pubblica (Internet) e probabilmente utilizzerà NAT. I colori privati (mpls, metro-ethernet, privateX) indicano indirizzamento privato nativo."
+    },
+    {
+        "id": 156,
+        "capitolo": "Chapter 11: SD-WAN Design",
+        "argomento": "Direct Internet Access",
+        "tipo": "singola",
+        "domanda": "Qual è un vantaggio principale dell'implementazione del DIA (Direct Internet Access) in una filiale SD-WAN?",
+        "opzioni": [
+            "A. Aumenta il carico sul circuito MPLS.",
+            "B. Riduce la latenza e il consumo di banda WAN permettendo al traffico Internet (es. Cloud/SaaS) di uscire localmente invece di essere trasportato al Data Center.",
+            "C. Centralizza tutte le policy di sicurezza nel Data Center.",
+            "D. Richiede meno indirizzi IP pubblici."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "DIA (Direct Internet Access) permette di instradare il traffico Internet (specie SaaS come Office365) direttamente dalla filiale, migliorando l'esperienza utente e scaricando i costosi collegamenti WAN privati."
+    },
+    {
+        "id": 157,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "Data Encoding",
+        "tipo": "singola",
+        "domanda": "Quale formato di codifica dati è considerato 'leggero' (lightweight), facile da leggere per gli umani e utilizza coppie chiave/valore con parentesi graffe {}?",
+        "opzioni": [
+            "A. XML",
+            "B. JSON (JavaScript Object Notation)",
+            "C. YANG",
+            "D. HTML"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "JSON è un formato di scambio dati leggero, basato su testo, facile da leggere e scrivere per gli umani e facile da analizzare per le macchine. XML utilizza tag di apertura e chiusura."
+    },
+    {
+        "id": 158,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "Data Models",
+        "tipo": "singola",
+        "domanda": "Quale linguaggio viene utilizzato per modellare i dati di configurazione e di stato dei dispositivi di rete, descrivendo la struttura dati per protocolli come NETCONF e RESTCONF?",
+        "opzioni": [
+            "A. XML",
+            "B. Python",
+            "C. YANG (Yet Another Next Generation)",
+            "D. JSON"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "YANG è il linguaggio di modellazione dei dati standard IETF (RFC 6020) utilizzato per descrivere i dati per i protocolli di configurazione di rete NETCONF e RESTCONF."
+    },
+    {
+        "id": 159,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "NETCONF",
+        "tipo": "singola",
+        "domanda": "Quale protocollo di trasporto sicuro viene utilizzato nativamente da NETCONF per stabilire una sessione con il dispositivo di rete?",
+        "opzioni": [
+            "A. HTTP",
+            "B. Telnet",
+            "C. SSH (Secure Shell)",
+            "D. TLS"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "NETCONF è un protocollo orientato alla connessione che utilizza SSH come trasporto sicuro obbligatorio per criptare tutto il traffico."
+    },
+    {
+        "id": 160,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "NETCONF Operations",
+        "tipo": "singola",
+        "domanda": "Quale operazione NETCONF viene utilizzata per recuperare tutto o parte della configurazione *running* e dei dati operativi del dispositivo?",
+        "opzioni": [
+            "A. <get-config>",
+            "B. <get>",
+            "C. <edit-config>",
+            "D. <copy-config>"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "L'operazione <get> recupera sia la configurazione corrente che i dati di stato (operativi). L'operazione <get-config> recupera solo i dati di configurazione."
+    },
+    {
+        "id": 161,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "RESTCONF",
+        "tipo": "singola",
+        "domanda": "Quale metodo HTTP viene utilizzato in RESTCONF per creare una nuova risorsa dati (ad esempio, una nuova interfaccia loopback)?",
+        "opzioni": [
+            "A. GET",
+            "B. PUT",
+            "C. POST",
+            "D. DELETE"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "In RESTCONF (come in REST), il metodo POST viene utilizzato per creare una nuova risorsa o invocare un'operazione. PUT è usato per rimpiazzare/aggiornare una risorsa esistente."
+    },
+    {
+        "id": 162,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "YANG Models",
+        "tipo": "singola",
+        "domanda": "Quale iniziativa guidata dagli operatori di rete (come Google e Microsoft) mira a sviluppare modelli di dati YANG vendor-neutral per la gestione delle reti?",
+        "opzioni": [
+            "A. IETF",
+            "B. Cisco Native",
+            "C. OpenConfig",
+            "D. IEEE"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "OpenConfig è un gruppo di lavoro di operatori di rete focalizzato sulla creazione di modelli dati YANG vendor-neutral standardizzati per la configurazione e la gestione delle reti."
+    },
+    {
+        "id": 163,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "Telemetry",
+        "tipo": "singola",
+        "domanda": "Qual è la differenza fondamentale tra SNMP e la Model-Driven Telemetry?",
+        "opzioni": [
+            "A. SNMP usa il modello Push, la Telemetry usa il modello Pull.",
+            "B. SNMP è più efficiente e scalabile della Telemetry.",
+            "C. La Telemetry usa un modello Push (streaming continuo), mentre SNMP usa tipicamente un modello Pull (polling periodico).",
+            "D. La Telemetry non supporta dati strutturati."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "La Model-Driven Telemetry supera i limiti di SNMP (polling/pull) utilizzando un modello Push, dove il dispositivo invia continuamente i dati (streaming) al collettore, offrendo granularità in tempo reale."
+    },
+    {
+        "id": 164,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "Telemetry Modes",
+        "tipo": "singola",
+        "domanda": "Nella modalità di telemetria 'Dial-Out', chi inizia la sessione TCP?",
+        "opzioni": [
+            "A. Il server (collettore) verso il dispositivo di rete.",
+            "B. Il dispositivo di rete verso il ricevitore/collettore.",
+            "C. Un controller SDN terzo.",
+            "D. La sessione è UDP, quindi non c'è connessione."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "In modalità Dial-Out (la modalità di default), è il dispositivo di rete (router/switch) che 'chiama fuori' e invia il pacchetto SYN iniziale per stabilire la connessione verso il ricevitore."
+    },
+    {
+        "id": 165,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "Subscription Types",
+        "tipo": "singola",
+        "domanda": "Quale tipo di sottoscrizione telemetrica invia i dati solo quando avviene un cambiamento specifico (es. un'interfaccia va down), invece che a intervalli regolari?",
+        "opzioni": [
+            "A. Periodic Publication",
+            "B. On-Change Publication",
+            "C. Static Subscription",
+            "D. Dial-in Subscription"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "On-Change Publication (pubblicazione al cambiamento) invia aggiornamenti dati solo quando il valore dei dati cambia (es. stato interfaccia, vicini OSPF), utile per eventi che non cambiano frequentemente."
+    },
+    {
+        "id": 166,
+        "capitolo": "Chapter 12: Automation",
+        "argomento": "NETCONF Datastores",
+        "tipo": "singola",
+        "domanda": "Quale datastore NETCONF, definito nella RFC 6241, funge da area di lavoro per le modifiche di configurazione che non sono ancora state applicate al dispositivo (commit)?",
+        "opzioni": [
+            "A. <running>",
+            "B. <startup>",
+            "C. <candidate>",
+            "D. <operational>"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il datastore <candidate> è utilizzato per preparare le modifiche di configurazione. Le modifiche qui non influenzano il dispositivo finché non viene eseguita un'operazione di <commit> verso il datastore <running>."
+    },
+    {
+        "id": 20,
+        "capitolo": "Chapter 2: Internet Protocol Version 6 (IPv6) Design",
+        "argomento": "IPv6 Header",
+        "tipo": "singola",
+        "domanda": "Qual è la lunghezza fissa dell'header IPv6 base?",
+        "opzioni": [
+            "A. 20 byte",
+            "B. 32 byte",
+            "C. 40 byte",
+            "D. 64 byte"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "L'header IPv6 ha una lunghezza fissa di 40 byte, a differenza dell'header IPv4 che è variabile (minimo 20 byte)."
+    },
+    {
+        "id": 21,
+        "capitolo": "Chapter 2: Internet Protocol Version 6 (IPv6) Design",
+        "argomento": "IPv6 Addressing",
+        "tipo": "singola",
+        "domanda": "Qual è la rappresentazione compressa corretta dell'indirizzo IPv6 2001:0DB8:0000:0000:0000:0000:0000:0001?",
+        "opzioni": [
+            "A. 2001:DB8:0:0:0:0:0:1",
+            "B. 2001:DB8::1",
+            "C. 2001:DB8:::1",
+            "D. 2001:DB8:0::1"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Gli zeri iniziali possono essere omessi e una sequenza contigua di blocchi di zeri può essere sostituita da '::' (una sola volta per indirizzo)."
+    },
+    {
+        "id": 22,
+        "capitolo": "Chapter 2: Internet Protocol Version 6 (IPv6) Design",
+        "argomento": "IPv6 Address Types",
+        "tipo": "singola",
+        "domanda": "Quale prefisso identifica un indirizzo IPv6 Link-Local?",
+        "opzioni": [
+            "A. 2000::/3",
+            "B. FC00::/7",
+            "C. FE80::/10",
+            "D. FF00::/8"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Gli indirizzi Link-Local iniziano con FE80::/10 e sono utilizzati per la comunicazione tra nodi sullo stesso link fisico."
+    },
+    {
+        "id": 23,
+        "capitolo": "Chapter 2: Internet Protocol Version 6 (IPv6) Design",
+        "argomento": "IPv6 Mechanisms",
+        "tipo": "singola",
+        "domanda": "Quale protocollo in IPv6 sostituisce le funzioni di ARP (Address Resolution Protocol) per mappare gli indirizzi IP agli indirizzi MAC?",
+        "opzioni": [
+            "A. DHCPv6",
+            "B. ICMPv6 Neighbor Discovery (ND)",
+            "C. IGMPv6",
+            "D. SLAAC"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il protocollo Neighbor Discovery (ND), basato su ICMPv6, gestisce la risoluzione degli indirizzi (sostituendo ARP), la scoperta dei router e il rilevamento degli indirizzi duplicati (DAD)."
+    },
+    {
+        "id": 24,
+        "capitolo": "Chapter 2: Internet Protocol Version 6 (IPv6) Design",
+        "argomento": "IPv6 Address Allocations",
+        "tipo": "singola",
+        "domanda": "Qual è il prefisso assegnato agli indirizzi Global Unicast IPv6 utilizzabili su Internet?",
+        "opzioni": [
+            "A. 2000::/3",
+            "B. 3000::/3",
+            "C. FC00::/7",
+            "D. FE80::/10"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "Gli indirizzi Global Unicast, equivalenti agli indirizzi pubblici IPv4, sono assegnati dal blocco 2000::/3."
+    },
+    {
+        "id": 25,
+        "capitolo": "Chapter 2: Internet Protocol Version 6 (IPv6) Design",
+        "argomento": "EUI-64",
+        "tipo": "singola",
+        "domanda": "Quando si utilizza il formato EUI-64 per generare un Interface ID IPv6 da un indirizzo MAC a 48 bit, quali operazioni vengono eseguite?",
+        "opzioni": [
+            "A. Si aggiunge FF:FF al centro del MAC e si inverte il settimo bit.",
+            "B. Si aggiunge FF:FE al centro del MAC e si inverte il settimo bit.",
+            "C. Si aggiunge 00:00 al centro del MAC.",
+            "D. Si aggiunge il MAC address due volte."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Per creare un EUI-64, si inserisce la sequenza FFFE al centro dell'indirizzo MAC (tra il 3° e il 4° byte) e si inverte il settimo bit (Universal/Local bit) del primo byte."
+    },
+    {
+        "id": 26,
+        "capitolo": "Chapter 2: Internet Protocol Version 6 (IPv6) Design",
+        "argomento": "IPv6 Addressing",
+        "tipo": "singola",
+        "domanda": "Qual è l'equivalente IPv6 dell'indirizzo di loopback 127.0.0.1?",
+        "opzioni": [
+            "A. ::1",
+            "B. ::127",
+            "C. FE80::1",
+            "D. 0:0:0:0:0:0:0:0"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "L'indirizzo di loopback in IPv6 è 0:0:0:0:0:0:0:1, che viene compresso in ::1."
+    },
+    {
+        "id": 27,
+        "capitolo": "Chapter 2: Internet Protocol Version 6 (IPv6) Design",
+        "argomento": "IPv6 Address Types",
+        "tipo": "singola",
+        "domanda": "Quale tipo di indirizzo IPv6 viene utilizzato per inviare pacchetti al dispositivo più vicino (in termini di distanza di routing) che fa parte di un gruppo specifico?",
+        "opzioni": [
+            "A. Multicast",
+            "B. Broadcast",
+            "C. Anycast",
+            "D. Unicast"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "L'indirizzo Anycast (One-to-Nearest) identifica un gruppo di interfacce, ma il pacchetto viene consegnato solo all'interfaccia più vicina secondo la metrica di routing."
+    },
+    {
+        "id": 28,
+        "capitolo": "Chapter 2: Internet Protocol Version 6 (IPv6) Design",
+        "argomento": "Transition Mechanisms",
+        "tipo": "singola",
+        "domanda": "Quale meccanismo di transizione permette a un client IPv6-only di comunicare con un server IPv4-only utilizzando la traduzione degli indirizzi e del protocollo?",
+        "opzioni": [
+            "A. Dual Stack",
+            "B. 6to4 Tunneling",
+            "C. ISATAP",
+            "D. NAT64/DNS64"
+        ],
+        "risposta_corretta": "D",
+        "spiegazione": "NAT64 (spesso usato con DNS64) traduce i pacchetti IPv6 in IPv4 e viceversa, permettendo la comunicazione tra dispositivi che utilizzano solo una delle due versioni del protocollo."
+    },
+    {
+        "id": 29,
+        "capitolo": "Chapter 2: Internet Protocol Version 6 (IPv6) Design",
+        "argomento": "IPv6 Header",
+        "tipo": "singola",
+        "domanda": "Quale campo dell'header IPv6 sostituisce il campo 'Protocol' dell'IPv4 e viene utilizzato per indicare il tipo di header di estensione o il protocollo del livello superiore?",
+        "opzioni": [
+            "A. Traffic Class",
+            "B. Flow Label",
+            "C. Next Header",
+            "D. Hop Limit"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il campo 'Next Header' indica cosa segue l'header IPv6: può essere un Extension Header (come Routing o Fragmentation) o un protocollo Upper Layer (come TCP o UDP)."
+    },
+    {
+        "id": 30,
+        "capitolo": "Chapter 2: Internet Protocol Version 6 (IPv6) Design",
+        "argomento": "SLAAC",
+        "tipo": "singola",
+        "domanda": "In quale messaggio ICMPv6 un host cerca le informazioni sul prefisso di rete per l'autoconfigurazione stateless (SLAAC)?",
+        "opzioni": [
+            "A. Router Solicitation (RS)",
+            "B. Router Advertisement (RA)",
+            "C. Neighbor Solicitation (NS)",
+            "D. Neighbor Advertisement (NA)"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "Un host invia un messaggio Router Solicitation (RS) per richiedere ai router locali di inviare immediatamente un Router Advertisement (RA) contenente il prefisso di rete."
+    },
+    {
+        "id": 31,
+        "capitolo": "Chapter 2: Internet Protocol Version 6 (IPv6) Design",
+        "argomento": "Unique Local Addresses",
+        "tipo": "singola",
+        "domanda": "Qual è il prefisso per gli indirizzi IPv6 Unique Local (ULA), che sono analoghi agli indirizzi privati IPv4 (RFC 1918)?",
+        "opzioni": [
+            "A. FC00::/7",
+            "B. FE80::/10",
+            "C. 2001::/16",
+            "D. FF00::/8"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "Gli indirizzi Unique Local (ULA) usano il prefisso FC00::/7 (che include FD00::/8). Sono instradabili all'interno di un'organizzazione ma non su Internet globale."
+    },
+    {
+        "id": 32,
+        "capitolo": "Chapter 2: Internet Protocol Version 6 (IPv6) Design",
+        "argomento": "IPv6 Design",
+        "tipo": "singola",
+        "domanda": "Qual è la lunghezza del prefisso raccomandata per le sottoreti LAN standard in un design IPv6 (escluso i link punto-punto inter-router)?",
+        "opzioni": [
+            "A. /48",
+            "B. /64",
+            "C. /96",
+            "D. /128"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "La raccomandazione standard (RFC) per le sottoreti LAN IPv6 è di usare sempre un prefisso /64 per garantire il funzionamento di SLAAC e altri meccanismi."
+    },
+    {
+        "id": 33,
+        "capitolo": "Chapter 2: Internet Protocol Version 6 (IPv6) Design",
+        "argomento": "Transition Mechanisms",
+        "tipo": "singola",
+        "domanda": "Quale strategia di migrazione IPv6 è considerata la più preferibile e robusta perché permette ai dispositivi di supportare nativamente entrambi i protocolli simultaneamente?",
+        "opzioni": [
+            "A. Tunneling",
+            "B. Translation",
+            "C. Dual-Stack",
+            "D. 6to4"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il Dual-Stack permette ai dispositivi di eseguire sia lo stack IPv4 che IPv6 contemporaneamente, scegliendo il protocollo in base alla disponibilità della destinazione (spesso preferendo IPv6 via DNS)."
+    },
+    {
+        "id": 34,
+        "capitolo": "Chapter 2: Internet Protocol Version 6 (IPv6) Design",
+        "argomento": "Multicast",
+        "tipo": "singola",
+        "domanda": "Quale indirizzo multicast IPv6 viene utilizzato per raggiungere tutti i router OSPFv3 su un link?",
+        "opzioni": [
+            "A. FF02::1",
+            "B. FF02::2",
+            "C. FF02::5",
+            "D. FF02::6"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "FF02::5 è l'indirizzo All-OSPF-Routers. FF02::6 è l'indirizzo per i Designated Router (DR) OSPF."
+    },
+    {
+        "id": 35,
+        "capitolo": "Chapter 2: Internet Protocol Version 6 (IPv6) Design",
+        "argomento": "DNS",
+        "tipo": "singola",
+        "domanda": "Quale tipo di record DNS viene utilizzato per mappare un nome di dominio a un indirizzo IPv6?",
+        "opzioni": [
+            "A. A",
+            "B. AAAA",
+            "C. CNAME",
+            "D. PTR"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il record 'A' è per IPv4, mentre il record 'AAAA' (quad-A) è utilizzato per gli indirizzi IPv6."
+    },
+    {
+        "id": 36,
+        "capitolo": "Chapter 3: Routing Protocol Characteristics, EIGRP, and IS-IS",
+        "argomento": "Administrative Distance",
+        "tipo": "singola",
+        "domanda": "Qual è la Distanza Amministrativa (AD) predefinita per una rotta EIGRP interna?",
+        "opzioni": [
+            "A. 90",
+            "B. 100",
+            "C. 110",
+            "D. 170"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "La distanza amministrativa per le rotte EIGRP interne è 90. Per le rotte EIGRP esterne è 170. OSPF è 110."
+    },
+    {
+        "id": 37,
+        "capitolo": "Chapter 3: Routing Protocol Characteristics, EIGRP, and IS-IS",
+        "argomento": "EIGRP Metrics",
+        "tipo": "multipla",
+        "domanda": "Quali sono i due parametri utilizzati per impostazione predefinita da EIGRP per calcolare la metrica composita? (Scegline due)",
+        "opzioni": [
+            "A. Bandwidth",
+            "B. Load",
+            "C. Reliability",
+            "D. Delay",
+            "E. MTU"
+        ],
+        "risposta_corretta": [
+            "A",
+            "D"
+        ],
+        "spiegazione": "Sebbene EIGRP possa considerare Banda, Carico, Ritardo e Affidabilità, per default i valori K sono impostati in modo da utilizzare solo Banda (Bandwidth) e Ritardo (Delay)."
+    },
+    {
+        "id": 38,
+        "capitolo": "Chapter 3: Routing Protocol Characteristics, EIGRP, and IS-IS",
+        "argomento": "EIGRP Terminology",
+        "tipo": "singola",
+        "domanda": "In EIGRP, come viene chiamata una rotta di backup che soddisfa la 'Feasibility Condition' e viene memorizzata nella tabella topologica?",
+        "opzioni": [
+            "A. Successor",
+            "B. Feasible Successor",
+            "C. Active Route",
+            "D. Reported Successor"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il Feasible Successor è una rotta priva di loop che funge da backup immediato per il Successor (la rotta migliore)."
+    },
+    {
+        "id": 39,
+        "capitolo": "Chapter 3: Routing Protocol Characteristics, EIGRP, and IS-IS",
+        "argomento": "IS-IS Hierarchy",
+        "tipo": "singola",
+        "domanda": "Quale livello di routing in IS-IS viene utilizzato per il routing tra aree diverse (inter-area routing)?",
+        "opzioni": [
+            "A. Level 0",
+            "B. Level 1",
+            "C. Level 2",
+            "D. Level 3"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "IS-IS utilizza il Level 1 per il routing intra-area (all'interno della stessa area) e il Level 2 per il routing inter-area (tra aree diverse, backbone)."
+    },
+    {
+        "id": 40,
+        "capitolo": "Chapter 3: Routing Protocol Characteristics, EIGRP, and IS-IS",
+        "argomento": "EIGRP Load Balancing",
+        "tipo": "singola",
+        "domanda": "Quale comando EIGRP permette di installare nella tabella di routing percorsi con costo diseguale (Unequal-cost load balancing)?",
+        "opzioni": [
+            "A. maximum-paths",
+            "B. traffic-share balanced",
+            "C. variance",
+            "D. metric weights"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il comando 'variance' definisce un moltiplicatore. Qualsiasi rotta con una metrica inferiore alla migliore metrica moltiplicata per la varianza viene considerata per il bilanciamento del carico."
+    },
+    {
+        "id": 41,
+        "capitolo": "Chapter 3: Routing Protocol Characteristics, EIGRP, and IS-IS",
+        "argomento": "IS-IS Addressing",
+        "tipo": "singola",
+        "domanda": "Quale indirizzo viene utilizzato da un router IS-IS per identificare se stesso nell'area di routing OSI?",
+        "opzioni": [
+            "A. Router ID (RID)",
+            "B. Network Entity Title (NET)",
+            "C. MAC Address",
+            "D. Loopback IP"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "In IS-IS, ogni router è identificato da un indirizzo NET (Network Entity Title) che include l'Area ID e il System ID."
+    },
+    {
+        "id": 42,
+        "capitolo": "Chapter 3: Routing Protocol Characteristics, EIGRP, and IS-IS",
+        "argomento": "EIGRP Packets",
+        "tipo": "singola",
+        "domanda": "Quale tipo di pacchetto EIGRP viene inviato per cercare un nuovo percorso quando una rotta attiva fallisce e non esiste un Feasible Successor?",
+        "opzioni": [
+            "A. Update",
+            "B. Hello",
+            "C. Query",
+            "D. Reply"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Quando una rotta va in stato 'Active' (persa e senza backup), il router invia pacchetti Query ai vicini per chiedere se hanno un percorso alternativo."
+    },
+    {
+        "id": 43,
+        "capitolo": "Chapter 3: Routing Protocol Characteristics, EIGRP, and IS-IS",
+        "argomento": "Routing Protocols Comparison",
+        "tipo": "singola",
+        "domanda": "Quale è una differenza chiave nella definizione dei confini delle aree tra OSPF e IS-IS?",
+        "opzioni": [
+            "A. In OSPF il confine è sul link, in IS-IS è dentro il router.",
+            "B. In OSPF il confine è dentro il router (ABR), in IS-IS il confine è sul link.",
+            "C. Non c'è differenza, entrambi usano ABR.",
+            "D. IS-IS non supporta aree multiple."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "In OSPF, un router (ABR) appartiene a più aree. In IS-IS, un intero router appartiene a una sola area (L1) o al backbone (L2), quindi il confine dell'area si trova sul collegamento tra due router."
+    },
+    {
+        "id": 44,
+        "capitolo": "Chapter 3: Routing Protocol Characteristics, EIGRP, and IS-IS",
+        "argomento": "EIGRP Stub",
+        "tipo": "singola",
+        "domanda": "Qual è il vantaggio principale della configurazione 'EIGRP Stub Routing' in una topologia Hub-and-Spoke?",
+        "opzioni": [
+            "A. Aumenta la larghezza di banda disponibile.",
+            "B. Permette al router spoke di diventare un transito per il traffico.",
+            "C. Limita l'ambito delle Query EIGRP, impedendo che il router hub interroghi lo spoke per rotte perse.",
+            "D. Disabilita l'invio di pacchetti Hello."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Configurando uno spoke come Stub, si dice all'Hub che lo spoke non è un router di transito. L'Hub smette di inviare Query allo spoke, migliorando la stabilità e la convergenza."
+    },
+    {
+        "id": 45,
+        "capitolo": "Chapter 3: Routing Protocol Characteristics, EIGRP, and IS-IS",
+        "argomento": "EIGRP for IPv6",
+        "tipo": "singola",
+        "domanda": "Quale indirizzo multicast utilizza EIGRP per IPv6 per inviare gli aggiornamenti?",
+        "opzioni": [
+            "A. FF02::5",
+            "B. FF02::6",
+            "C. FF02::9",
+            "D. FF02::A"
+        ],
+        "risposta_corretta": "D",
+        "spiegazione": "EIGRP per IPv4 usa 224.0.0.10. EIGRP per IPv6 usa l'indirizzo multicast FF02::A."
+    },
+    {
+        "id": 46,
+        "capitolo": "Chapter 3: Routing Protocol Characteristics, EIGRP, and IS-IS",
+        "argomento": "IS-IS Metrics",
+        "tipo": "singola",
+        "domanda": "Qual è il valore di metrica predefinito assegnato a tutte le interfacce su un router Cisco con IS-IS (narrow metric)?",
+        "opzioni": [
+            "A. 1",
+            "B. 10",
+            "C. 64",
+            "D. 100"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Nell'implementazione Cisco legacy (narrow metrics), ogni interfaccia ha un costo predefinito di 10, indipendentemente dalla larghezza di banda."
+    },
+    {
+        "id": 47,
+        "capitolo": "Chapter 3: Routing Protocol Characteristics, EIGRP, and IS-IS",
+        "argomento": "EIGRP State",
+        "tipo": "singola",
+        "domanda": "In quale stato si trova una rotta EIGRP stabile e funzionante nella tabella topologica?",
+        "opzioni": [
+            "A. Active",
+            "B. Passive",
+            "C. Stuck-in-Active (SIA)",
+            "D. Established"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "In EIGRP, 'Passive' è lo stato buono. Significa che la rotta è stabile e il router non sta attivamente cercando un percorso alternativo (che sarebbe lo stato 'Active')."
+    },
+    {
+        "id": 48,
+        "capitolo": "Chapter 3: Routing Protocol Characteristics, EIGRP, and IS-IS",
+        "argomento": "Distance Vector Characteristics",
+        "tipo": "singola",
+        "domanda": "Quale meccanismo di prevenzione dei loop nei protocolli distance-vector impedisce a un router di inviare informazioni di routing indietro attraverso l'interfaccia da cui le ha ricevute?",
+        "opzioni": [
+            "A. Poison Reverse",
+            "B. Split Horizon",
+            "C. Route Poisoning",
+            "D. Hold-down Timer"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Split Horizon è la regola fondamentale che impedisce a un router di annunciare una rotta all'indietro verso il vicino che gliel'ha insegnata."
+    },
+    {
+        "id": 49,
+        "capitolo": "Chapter 3: Routing Protocol Characteristics, EIGRP, and IS-IS",
+        "argomento": "EIGRP Configuration",
+        "tipo": "singola",
+        "domanda": "Stai configurando EIGRP named mode. Quale comando si usa per definire l'indirizzo della famiglia di protocolli (es. IPv4 o IPv6)?",
+        "opzioni": [
+            "A. ip router eigrp",
+            "B. address-family",
+            "C. network",
+            "D. router-id"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Nella modalità EIGRP 'Named', tutti i parametri per le diverse versioni di IP (IPv4, IPv6) sono configurati sotto il blocco 'address-family'."
+    },
+    {
+        "id": 50,
+        "capitolo": "Chapter 3: Routing Protocol Characteristics, EIGRP, and IS-IS",
+        "argomento": "IS-IS Adjacency",
+        "tipo": "singola",
+        "domanda": "Su una rete broadcast (es. Ethernet), IS-IS elegge un router designato per gestire il flooding. Come viene chiamato questo router?",
+        "opzioni": [
+            "A. Designated Router (DR)",
+            "B. Designated Intermediate System (DIS)",
+            "C. Area Border Router (ABR)",
+            "D. Backbone Router"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "In IS-IS, il router eletto su segmenti multi-accesso è chiamato DIS (Designated Intermediate System). A differenza di OSPF, non esiste un Backup DIS."
+    },
+    {
+        "id": 51,
+        "capitolo": "Chapter 4: OSPF, BGP, and Route Manipulation",
+        "argomento": "OSPF Summarization",
+        "tipo": "singola",
+        "domanda": "In una rete OSPF, su quale tipo di router deve essere configurata la summarization delle rotte interne (inter-area)?",
+        "opzioni": [
+            "A. Backbone Router",
+            "B. Designated Router (DR)",
+            "C. Area Border Router (ABR)",
+            "D. Autonomous System Boundary Router (ASBR)"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "La summarization delle rotte tra aree (inter-area) avviene sugli ABR (Area Border Router). La summarization delle rotte esterne avviene sugli ASBR."
+    },
+    {
+        "id": 52,
+        "capitolo": "Chapter 4: OSPF, BGP, and Route Manipulation",
+        "argomento": "BGP Attributes",
+        "tipo": "singola",
+        "domanda": "Quale attributo BGP è specifico di Cisco, è significativo solo localmente al router e viene utilizzato per preferire un percorso in uscita rispetto a un altro?",
+        "opzioni": [
+            "A. Local Preference",
+            "B. MED",
+            "C. Weight",
+            "D. AS_Path"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "L'attributo Weight è proprietario Cisco, ha un valore di default di 0 (32768 per le rotte generate localmente) e non viene propagato ai vicini BGP. Un peso maggiore è preferito."
+    },
+    {
+        "id": 53,
+        "capitolo": "Chapter 4: OSPF, BGP, and Route Manipulation",
+        "argomento": "OSPF LSA Types",
+        "tipo": "singola",
+        "domanda": "Quale tipo di LSA OSPFv2 viene generato da un ASBR per pubblicizzare rotte esterne al dominio OSPF?",
+        "opzioni": [
+            "A. Type 1",
+            "B. Type 3",
+            "C. Type 5",
+            "D. Type 7"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "I Type 5 LSA (AS External LSA) sono generati dagli ASBR per descrivere rotte verso destinazioni esterne al sistema autonomo OSPF."
+    },
+    {
+        "id": 54,
+        "capitolo": "Chapter 4: OSPF, BGP, and Route Manipulation",
+        "argomento": "BGP Path Selection",
+        "tipo": "singola",
+        "domanda": "Nella selezione del percorso migliore BGP, qual è il primo criterio che viene valutato dopo aver scartato i percorsi con next-hop irraggiungibile?",
+        "opzioni": [
+            "A. Shortest AS_Path",
+            "B. Highest Local Preference",
+            "C. Lowest Origin type",
+            "D. Highest Weight"
+        ],
+        "risposta_corretta": "D",
+        "spiegazione": "L'ordine di selezione BGP inizia con: 1. Highest Weight (Cisco specific), 2. Highest Local Preference, 3. Locally originated routes, 4. Shortest AS_Path."
+    },
+    {
+        "id": 55,
+        "capitolo": "Chapter 4: OSPF, BGP, and Route Manipulation",
+        "argomento": "OSPFv3 Addresses",
+        "tipo": "singola",
+        "domanda": "Quale indirizzo multicast viene utilizzato da OSPFv3 per inviare pacchetti a tutti i router OSPF (AllSPFRouters)?",
+        "opzioni": [
+            "A. FF02::1",
+            "B. FF02::5",
+            "C. FF02::6",
+            "D. FF02::A"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "OSPFv3 utilizza FF02::5 per tutti i router OSPF e FF02::6 per i router designati (DR/BDR). (OSPFv2 usa 224.0.0.5 e 224.0.0.6)."
+    },
+    {
+        "id": 56,
+        "capitolo": "Chapter 4: OSPF, BGP, and Route Manipulation",
+        "argomento": "BGP Scalability",
+        "tipo": "singola",
+        "domanda": "Quale meccanismo BGP viene utilizzato per ridurre la necessità di una topologia iBGP full-mesh, consentendo a un router di propagare le rotte apprese via iBGP ad altri peer iBGP?",
+        "opzioni": [
+            "A. Confederations",
+            "B. Route Reflectors",
+            "C. Route Summarization",
+            "D. Peer Groups"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "I Route Reflectors (RR) permettono di rilassare la regola di split-horizon di iBGP, consentendo al RR di riflettere le rotte apprese da un client iBGP ad altri client o peer non-client."
+    },
+    {
+        "id": 57,
+        "capitolo": "Chapter 4: OSPF, BGP, and Route Manipulation",
+        "argomento": "Route Redistribution",
+        "tipo": "singola",
+        "domanda": "Cosa accade se si ridistribuiscono rotte da OSPF in EIGRP senza specificare manualmente una metrica (seed metric)?",
+        "opzioni": [
+            "A. Le rotte vengono installate con una metrica di 0.",
+            "B. Le rotte vengono installate con una metrica infinita e non vengono utilizzate.",
+            "C. EIGRP calcola automaticamente la metrica basandosi sulla banda dell'interfaccia.",
+            "D. Le rotte vengono installate con una distanza amministrativa di 170."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Quando si ridistribuisce in EIGRP (o RIP), se non viene specificata una metrica predefinita o una metrica nel comando di ridistribuzione, la metrica seed è considerata infinita (inaccessibile) e le rotte non entrano nella tabella di routing."
+    },
+    {
+        "id": 58,
+        "capitolo": "Chapter 4: OSPF, BGP, and Route Manipulation",
+        "argomento": "BGP Attributes",
+        "tipo": "singola",
+        "domanda": "Quale attributo BGP è 'Well-Known Discretionary' e viene utilizzato in un ambiente iBGP per indicare ai router interni quale router di bordo preferire per uscire dall'AS?",
+        "opzioni": [
+            "A. MED (Multi-Exit Discriminator)",
+            "B. Local Preference",
+            "C. Origin",
+            "D. AS_Path"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "La Local Preference è un attributo Well-Known Discretionary scambiato solo tra peer iBGP (non esce dall'AS). Il valore più alto è preferito per determinare il punto di uscita dall'AS."
+    },
+    {
+        "id": 59,
+        "capitolo": "Chapter 4: OSPF, BGP, and Route Manipulation",
+        "argomento": "OSPF Areas",
+        "tipo": "singola",
+        "domanda": "In quale tipo di area OSPF vengono bloccati gli LSA di tipo 3, 4 e 5, permettendo l'ingresso solo di una rotta di default?",
+        "opzioni": [
+            "A. Stub Area",
+            "B. Totally Stubby Area",
+            "C. Not-So-Stubby Area (NSSA)",
+            "D. Backbone Area"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Una Totally Stubby Area blocca gli LSA esterni (Type 5) e gli LSA sommari inter-area (Type 3 e 4), accettando solo una default route tramite un Type 3 LSA generato dall'ABR."
+    },
+    {
+        "id": 60,
+        "capitolo": "Chapter 4: OSPF, BGP, and Route Manipulation",
+        "argomento": "BGP Administrative Distance",
+        "tipo": "singola",
+        "domanda": "Qual è la distanza amministrativa predefinita per le rotte apprese tramite eBGP (External BGP)?",
+        "opzioni": [
+            "A. 20",
+            "B. 90",
+            "C. 110",
+            "D. 200"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "Le rotte eBGP hanno un'AD di 20. Le rotte iBGP hanno un'AD di 200. OSPF ha 110, EIGRP interno 90."
+    },
+    {
+        "id": 61,
+        "capitolo": "Chapter 4: OSPF, BGP, and Route Manipulation",
+        "argomento": "Route Manipulation",
+        "tipo": "singola",
+        "domanda": "Quale strumento viene comunemente utilizzato per implementare il Policy-Based Routing (PBR) su un router Cisco?",
+        "opzioni": [
+            "A. Route Maps applicate all'interfaccia",
+            "B. Prefix Lists applicate al processo di routing",
+            "C. Distribute Lists",
+            "D. Offset Lists"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "Il PBR viene implementato definendo una Route Map (che classifica il traffico con ACL e imposta il next-hop con 'set ip next-hop') e applicandola all'interfaccia in ingresso con il comando 'ip policy route-map'."
+    },
+    {
+        "id": 62,
+        "capitolo": "Chapter 4: OSPF, BGP, and Route Manipulation",
+        "argomento": "OSPFv3 LSA",
+        "tipo": "singola",
+        "domanda": "Quale nuovo tipo di LSA è stato introdotto in OSPFv3 per trasportare i prefissi IPv6 associati al router, separando così la topologia dalle informazioni di indirizzamento?",
+        "opzioni": [
+            "A. Router LSA (Type 1)",
+            "B. Intra-Area-Prefix LSA (Type 9)",
+            "C. Link LSA (Type 8)",
+            "D. Network LSA (Type 2)"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "In OSPFv3, i Router LSA e Network LSA non trasportano più i prefissi (indirizzi). I prefissi sono trasportati dal nuovo LSA Type 9 (Intra-Area-Prefix LSA)."
+    },
+    {
+        "id": 63,
+        "capitolo": "Chapter 4: OSPF, BGP, and Route Manipulation",
+        "argomento": "BGP MED",
+        "tipo": "singola",
+        "domanda": "Qual è lo scopo principale dell'attributo MED (Multi-Exit Discriminator) in BGP?",
+        "opzioni": [
+            "A. Influenzare il percorso che il traffico in uscita prende per lasciare l'AS.",
+            "B. Influenzare il percorso che il traffico in entrata prende per entrare nell'AS da un AS vicino.",
+            "C. Prevenire i loop di routing.",
+            "D. Aggregare le rotte."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il MED è un attributo opzionale non transitivo inviato ai peer eBGP per influenzare il modo in cui il traffico entra nel proprio AS quando esistono più punti di ingresso dallo stesso AS vicino. Un valore MED più basso è preferito."
+    },
+    {
+        "id": 64,
+        "capitolo": "Chapter 4: OSPF, BGP, and Route Manipulation",
+        "argomento": "OSPF NSSA",
+        "tipo": "singola",
+        "domanda": "Quale tipo di LSA viene utilizzato all'interno di una NSSA (Not-So-Stubby Area) per trasportare rotte esterne, che vengono poi convertite in Type 5 LSA dall'ABR?",
+        "opzioni": [
+            "A. Type 3",
+            "B. Type 4",
+            "C. Type 7",
+            "D. Type 9"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Le aree NSSA permettono la presenza di un ASBR che inietta rotte esterne come Type 7 LSA. L'ABR dell'area NSSA converte poi questi Type 7 in Type 5 LSA per il resto del dominio OSPF."
+    },
+    {
+        "id": 65,
+        "capitolo": "Chapter 4: OSPF, BGP, and Route Manipulation",
+        "argomento": "BGP Confederations",
+        "tipo": "singola",
+        "domanda": "Quando si utilizzano le BGP Confederations, quale numero di AS viene visto dai peer esterni alla confederazione?",
+        "opzioni": [
+            "A. Il Member-AS number interno.",
+            "B. Il Confederation ID (AS pubblico della confederazione).",
+            "C. L'indirizzo IP del Route Reflector.",
+            "D. 65535."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Nelle confederazioni, l'intero gruppo di sotto-AS appare come un unico AS (Confederation ID) ai peer esterni. I numeri di AS privati interni sono visibili solo all'interno della confederazione."
+    },
+    {
+        "id": 66,
+        "capitolo": "Chapter 5: IP Multicast and Network Management",
+        "argomento": "Multicast Addressing",
+        "tipo": "singola",
+        "domanda": "Quanti bit dell'indirizzo IP multicast vengono mappati direttamente nell'indirizzo MAC multicast IEEE 802 (che inizia con 01:00:5E)?",
+        "opzioni": [
+            "A. 23 bit",
+            "B. 24 bit",
+            "C. 32 bit",
+            "D. 48 bit"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "L'indirizzo MAC multicast si forma mappando i 23 bit meno significativi dell'indirizzo IP multicast nei 23 bit meno significativi dell'indirizzo MAC 01:00:5E:xx:xx:xx. Questo comporta che 32 indirizzi IP multicast diversi mappino sullo stesso indirizzo MAC (sovrapposizione 5 bit)."
+    },
+    {
+        "id": 67,
+        "capitolo": "Chapter 5: IP Multicast and Network Management",
+        "argomento": "IGMP",
+        "tipo": "singola",
+        "domanda": "Quale versione di IGMP è necessaria per supportare il Source-Specific Multicast (SSM)?",
+        "opzioni": [
+            "A. IGMPv1",
+            "B. IGMPv2",
+            "C. IGMPv3",
+            "D. IGMP non supporta SSM"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "IGMPv3 introduce il supporto per includere o escludere specifiche sorgenti multicast, funzionalità fondamentale per il funzionamento di SSM (Source-Specific Multicast)."
+    },
+    {
+        "id": 68,
+        "capitolo": "Chapter 5: IP Multicast and Network Management",
+        "argomento": "PIM Modes",
+        "tipo": "singola",
+        "domanda": "Quale modalità PIM utilizza un Rendezvous Point (RP) e costruisce alberi condivisi (Shared Trees) radicati nell'RP?",
+        "opzioni": [
+            "A. PIM-DM (Dense Mode)",
+            "B. PIM-SM (Sparse Mode)",
+            "C. PIM-SSM",
+            "D. DVMRP"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "PIM-SM (Sparse Mode) assume che nessuno voglia il traffico a meno che non lo richieda esplicitamente. Utilizza un RP come punto di incontro per sorgenti e ricevitori, costruendo inizialmente uno Shared Tree (*,G)."
+    },
+    {
+        "id": 69,
+        "capitolo": "Chapter 5: IP Multicast and Network Management",
+        "argomento": "Multicast Protocols",
+        "tipo": "singola",
+        "domanda": "Quale protocollo viene utilizzato per interconnettere domini PIM-SM diversi scambiando informazioni sulle sorgenti attive (Source-Active messages) tra i Rendezvous Point (RP)?",
+        "opzioni": [
+            "A. MBGP",
+            "B. MSDP (Multicast Source Discovery Protocol)",
+            "C. IGMP",
+            "D. BIDIR-PIM"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "MSDP (Multicast Source Discovery Protocol) permette agli RP di domini PIM-SM diversi di scambiarsi informazioni sulle sorgenti multicast attive, permettendo il routing multicast inter-dominio."
+    },
+    {
+        "id": 70,
+        "capitolo": "Chapter 5: IP Multicast and Network Management",
+        "argomento": "SNMP Security",
+        "tipo": "singola",
+        "domanda": "Quale livello di sicurezza SNMPv3 fornisce sia autenticazione che crittografia dei dati?",
+        "opzioni": [
+            "A. noAuthNoPriv",
+            "B. authNoPriv",
+            "C. authPriv",
+            "D. Community Strings"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "SNMPv3 authPriv fornisce il massimo livello di sicurezza: autentica l'utente (tramite HMAC-MD5 o SHA) e cripta il payload (tramite DES, 3DES o AES)."
+    },
+    {
+        "id": 71,
+        "capitolo": "Chapter 5: IP Multicast and Network Management",
+        "argomento": "RMON",
+        "tipo": "singola",
+        "domanda": "Qual è la differenza principale tra RMON1 e RMON2?",
+        "opzioni": [
+            "A. RMON1 monitora fino al livello Applicazione, RMON2 solo fisico.",
+            "B. RMON1 si concentra sui livelli Fisico e Data Link, mentre RMON2 estende il monitoraggio ai livelli superiori (Network, Application).",
+            "C. RMON2 usa TCP, RMON1 usa UDP.",
+            "D. Non c'è differenza, è solo un aggiornamento software."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "RMON1 fornisce statistiche relative ai livelli 1 e 2 (MAC layer). RMON2 aggiunge la visibilità sui protocolli di livello superiore (IP, TCP/UDP, Application), permettendo di analizzare il traffico per protocollo."
+    },
+    {
+        "id": 72,
+        "capitolo": "Chapter 5: IP Multicast and Network Management",
+        "argomento": "NetFlow",
+        "tipo": "singola",
+        "domanda": "Quale delle seguenti è una caratteristica distintiva di NetFlow rispetto a SNMP?",
+        "opzioni": [
+            "A. NetFlow è un modello 'Pull' (il server richiede dati).",
+            "B. NetFlow è un modello 'Push' (il dispositivo invia i dati) e fornisce statistiche dettagliate sul traffico per scopi di accounting e sicurezza.",
+            "C. NetFlow non può tracciare gli indirizzi IP sorgente e destinazione.",
+            "D. NetFlow richiede sonde hardware dedicate su ogni interfaccia."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "NetFlow utilizza un modello 'Push' dove il router esporta i record dei flussi verso un collettore. Fornisce dettagli granulari su chi sta comunicando con chi (IP, porte, ToS), utile per billing e sicurezza."
+    },
+    {
+        "id": 73,
+        "capitolo": "Chapter 5: IP Multicast and Network Management",
+        "argomento": "Syslog",
+        "tipo": "singola",
+        "domanda": "Nel protocollo Syslog, quale livello di severità (Severity Level) indica la condizione più critica, dove il sistema è inutilizzabile?",
+        "opzioni": [
+            "A. Level 0 (Emergency)",
+            "B. Level 1 (Alert)",
+            "C. Level 2 (Critical)",
+            "D. Level 7 (Debug)"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "I livelli Syslog vanno da 0 a 7. Il Livello 0 è 'Emergency' (sistema inutilizzabile), il Livello 1 è 'Alert' (azione immediata richiesta), fino al Livello 7 'Debug'."
+    },
+    {
+        "id": 74,
+        "capitolo": "Chapter 5: IP Multicast and Network Management",
+        "argomento": "Device Discovery",
+        "tipo": "singola",
+        "domanda": "Quale protocollo standard IEEE 802.1AB permette la scoperta dei dispositivi vicini in un ambiente multi-vendor?",
+        "opzioni": [
+            "A. CDP (Cisco Discovery Protocol)",
+            "B. LLDP (Link Layer Discovery Protocol)",
+            "C. OSPF",
+            "D. SNMP"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "LLDP è lo standard aperto (IEEE 802.1AB) per la scoperta dei vicini, mentre CDP è proprietario Cisco. LLDP permette ai dispositivi di annunciare identità e capacità ai vicini."
+    },
+    {
+        "id": 75,
+        "capitolo": "Chapter 5: IP Multicast and Network Management",
+        "argomento": "BIDIR-PIM",
+        "tipo": "singola",
+        "domanda": "Qual è una caratteristica chiave di Bidirectional PIM (BIDIR-PIM)?",
+        "opzioni": [
+            "A. Costruisce sempre Shortest Path Trees (SPT).",
+            "B. Non usa mai un Rendezvous Point (RP).",
+            "C. Non costruisce mai Shortest Path Trees (SPT), il traffico scorre sempre attraverso l'albero condiviso (RPT) in entrambe le direzioni.",
+            "D. È utilizzato solo per IPv6."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "BIDIR-PIM scala meglio perché non crea stato (m, S, G) specifico per le sorgenti. Utilizza solo alberi condivisi (*, G) bidirezionali radicati nell'RP, eliminando la necessità di passare allo switchover verso l'SPT."
+    },
+    {
+        "id": 76,
+        "capitolo": "Chapter 5: IP Multicast and Network Management",
+        "argomento": "Layer 2 Multicast Control",
+        "tipo": "singola",
+        "domanda": "Quale meccanismo su uno switch Layer 2 esamina i pacchetti di controllo tra host e router per limitare il flooding del traffico multicast solo alle porte che hanno richiesto il gruppo?",
+        "opzioni": [
+            "A. PIM Pruning",
+            "B. IGMP Snooping",
+            "C. CGMP",
+            "D. Broadcast Suppression"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "IGMP Snooping permette allo switch di 'ascoltare' (snoop) i messaggi IGMP (Join/Leave) per costruire una tabella di inoltro multicast, evitando di inoltrare il traffico multicast come se fosse broadcast a tutte le porte."
+    },
+    {
+        "id": 77,
+        "capitolo": "Chapter 6: Enterprise LAN Design and Technologies",
+        "argomento": "Hierarchical Network Model",
+        "tipo": "singola",
+        "domanda": "Nel modello gerarchico Cisco, qual è la funzione primaria del livello Core?",
+        "opzioni": [
+            "A. Fornire connettività agli utenti finali e PoE.",
+            "B. Applicare policy di sicurezza e QoS.",
+            "C. Fornire trasporto veloce e ad alta affidabilità tra i blocchi di distribuzione.",
+            "D. Terminare le sessioni VPN remote."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il livello Core è il backbone ad alta velocità della rete. Il suo obiettivo è commutare il traffico il più velocemente possibile senza eseguire manipolazioni intensive dei pacchetti (policy, ACL)."
+    },
+    {
+        "id": 78,
+        "capitolo": "Chapter 6: Enterprise LAN Design and Technologies",
+        "argomento": "Hierarchical Network Model",
+        "tipo": "singola",
+        "domanda": "Quale livello gerarchico funge da punto di aggregazione per gli armadi di cablaggio e da confine tra i domini Layer 2 e Layer 3 (routing)?",
+        "opzioni": [
+            "A. Access Layer",
+            "B. Distribution Layer",
+            "C. Core Layer",
+            "D. Server Farm Layer"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il Distribution Layer aggrega gli switch di accesso e tipicamente funge da demarcazione tra Layer 2 e Layer 3, applicando policy di sicurezza, routing inter-VLAN e summarization."
+    },
+    {
+        "id": 79,
+        "capitolo": "Chapter 6: Enterprise LAN Design and Technologies",
+        "argomento": "VSS",
+        "tipo": "singola",
+        "domanda": "Qual è il vantaggio principale dell'implementazione di VSS (Virtual Switching System) nel livello di distribuzione?",
+        "opzioni": [
+            "A. Aumenta il numero di VLAN supportate.",
+            "B. Elimina la necessità di Spanning Tree Protocol (STP) per la prevenzione dei loop tra Access e Distribution, permettendo l'uso di entrambi gli uplink (MEC).",
+            "C. Permette di usare cavi in rame invece che in fibra.",
+            "D. Riduce il costo degli switch."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "VSS unisce due switch fisici in uno logico. Questo permette agli switch di accesso di collegarsi tramite Multichassis EtherChannel (MEC), eliminando i link bloccati da STP e raddoppiando la banda disponibile."
+    },
+    {
+        "id": 80,
+        "capitolo": "Chapter 6: Enterprise LAN Design and Technologies",
+        "argomento": "EtherChannel",
+        "tipo": "singola",
+        "domanda": "Quale protocollo standard IEEE 802.3ad viene utilizzato per negoziare la formazione di un EtherChannel?",
+        "opzioni": [
+            "A. PAgP (Port Aggregation Protocol)",
+            "B. LACP (Link Aggregation Control Protocol)",
+            "C. UDLD",
+            "D. DTP"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "LACP è lo standard IEEE per l'aggregazione dei link. PAgP è il protocollo proprietario Cisco."
+    },
+    {
+        "id": 81,
+        "capitolo": "Chapter 6: Enterprise LAN Design and Technologies",
+        "argomento": "STP Toolkit",
+        "tipo": "singola",
+        "domanda": "Quale funzionalità del toolkit STP Cisco disabilita immediatamente una porta configurata con PortFast se riceve una BPDU, proteggendo la rete da loop accidentali?",
+        "opzioni": [
+            "A. Loop Guard",
+            "B. Root Guard",
+            "C. BPDU Guard",
+            "D. BPDU Filter"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "BPDU Guard è progettato per le porte di accesso. Se una porta PortFast riceve una BPDU (indicando che è stato collegato uno switch non autorizzato), la porta viene messa in stato err-disabled."
+    },
+    {
+        "id": 82,
+        "capitolo": "Chapter 6: Enterprise LAN Design and Technologies",
+        "argomento": "STP Toolkit",
+        "tipo": "singola",
+        "domanda": "Quale meccanismo STP dovrebbe essere abilitato sui link in fibra unidirezionali per prevenire loop causati dalla mancata ricezione di BPDU su un link fisico parzialmente guasto?",
+        "opzioni": [
+            "A. UplinkFast",
+            "B. BackboneFast",
+            "C. UDLD (Unidirectional Link Detection)",
+            "D. PortFast"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "UDLD (spesso usato in modalità Aggressive) rileva quando un link in fibra trasmette in una sola direzione e lo disabilita per prevenire loop di spanning tree e blackholing del traffico."
+    },
+    {
+        "id": 83,
+        "capitolo": "Chapter 6: Enterprise LAN Design and Technologies",
+        "argomento": "PoE Standards",
+        "tipo": "singola",
+        "domanda": "Quale standard IEEE definisce il PoE+ (Power over Ethernet Plus), in grado di fornire fino a 30 Watt per porta?",
+        "opzioni": [
+            "A. IEEE 802.3af",
+            "B. IEEE 802.3at",
+            "C. IEEE 802.3bt",
+            "D. Cisco UPOE"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "IEEE 802.3at è lo standard per PoE+ (fino a 30W). IEEE 802.3af è il PoE standard (15.4W). UPOE è proprietario Cisco (60W)."
+    },
+    {
+        "id": 84,
+        "capitolo": "Chapter 6: Enterprise LAN Design and Technologies",
+        "argomento": "Fiber Media",
+        "tipo": "singola",
+        "domanda": "Per una connessione 10 Gigabit Ethernet che deve coprire una distanza di 40 km, quale tipo di transceiver e fibra dovresti specificare?",
+        "opzioni": [
+            "A. 10GBASE-SR con fibra multimodale",
+            "B. 10GBASE-LR con fibra monomodale",
+            "C. 10GBASE-ER con fibra monomodale",
+            "D. 10GBASE-T con cavo Cat6a"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "10GBASE-ER (Extended Range) supporta fino a 40 km su fibra monomodale. LR (Long Range) arriva a 10 km. SR (Short Range) è per brevi distanze su fibra multimodale."
+    },
+    {
+        "id": 85,
+        "capitolo": "Chapter 6: Enterprise LAN Design and Technologies",
+        "argomento": "Layer 3 Access",
+        "tipo": "singola",
+        "domanda": "In un design 'Routed Access' (Layer 3 Access), dove risiede il gateway predefinito per i client finali?",
+        "opzioni": [
+            "A. Sul router Core.",
+            "B. Sugli switch di Distribuzione tramite HSRP/VRRP.",
+            "C. Direttamente sullo switch di Accesso.",
+            "D. Sul Firewall perimetrale."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Nel design Routed Access, il routing Layer 3 viene esteso fino all'Access Layer. Le SVI (Switch Virtual Interface) risiedono sullo switch di accesso, eliminando la necessità di STP e FHRP (HSRP/VRRP) tra Access e Distribution."
+    },
+    {
+        "id": 86,
+        "capitolo": "Chapter 6: Enterprise LAN Design and Technologies",
+        "argomento": "STP Protection",
+        "tipo": "singola",
+        "domanda": "Quale funzionalità STP impedisce a uno switch non autorizzato collegato a una porta di accesso di diventare il Root Bridge della rete?",
+        "opzioni": [
+            "A. Loop Guard",
+            "B. Root Guard",
+            "C. UplinkFast",
+            "D. BackboneFast"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Root Guard, configurato sulle porte designate verso i downstream switch, forza la porta in stato 'root-inconsistent' se riceve BPDU superiori (che tentano di diventare root), proteggendo la topologia."
+    },
+    {
+        "id": 117,
+        "capitolo": "Chapter 7: Advanced Enterprise Campus Design",
+        "argomento": "Layer 3 Access Design",
+        "tipo": "singola",
+        "domanda": "Qual è il vantaggio principale dell'implementazione di un design di accesso Layer 3 (Routed Access) rispetto a un design Layer 2 tradizionale?",
+        "opzioni": [
+            "A. Richiede l'uso di VLAN estese su tutto il campus.",
+            "B. Elimina la necessità di protocolli di ridondanza del primo hop (FHRP) come HSRP o VRRP.",
+            "C. Richiede switch core più costosi.",
+            "D. Obbliga all'uso di STP per prevenire i loop."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "In un design Routed Access, il gateway predefinito risiede direttamente sullo switch di accesso. Poiché i collegamenti verso la distribuzione sono instradati (Layer 3), non c'è bisogno di STP o FHRP tra accesso e distribuzione."
+    },
+    {
+        "id": 118,
+        "capitolo": "Chapter 7: Advanced Enterprise Campus Design",
+        "argomento": "VSS (Virtual Switching System)",
+        "tipo": "singola",
+        "domanda": "Quando si utilizza VSS (Virtual Switching System) nel livello di distribuzione, come vengono gestiti i collegamenti verso lo switch di accesso per evitare loop senza bloccare le porte?",
+        "opzioni": [
+            "A. Utilizzando Rapid PVST+.",
+            "B. Utilizzando un Multichassis EtherChannel (MEC).",
+            "C. Utilizzando HSRP in modalità attiva/attiva.",
+            "D. Utilizzando GLBP."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "VSS unisce due switch fisici in uno logico. Gli uplink dagli switch di accesso vengono raggruppati in un Multichassis EtherChannel (MEC), che viene visto come un singolo link logico, eliminando la necessità di bloccare le porte con STP."
+    },
+    {
+        "id": 119,
+        "capitolo": "Chapter 7: Advanced Enterprise Campus Design",
+        "argomento": "First-Hop Redundancy Protocols",
+        "tipo": "singola",
+        "domanda": "Quale protocollo di ridondanza del primo hop (FHRP) proprietario Cisco supporta nativamente il bilanciamento del carico tra più router utilizzando un singolo indirizzo IP virtuale e più indirizzi MAC virtuali?",
+        "opzioni": [
+            "A. HSRP (Hot Standby Router Protocol)",
+            "B. VRRP (Virtual Router Redundancy Protocol)",
+            "C. GLBP (Gateway Load Balancing Protocol)",
+            "D. LACP"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "GLBP permette il bilanciamento del carico tra un gruppo di router. Risponde alle richieste ARP con indirizzi MAC virtuali diversi (corrispondenti ai diversi forwarder) per lo stesso IP virtuale."
+    },
+    {
+        "id": 120,
+        "capitolo": "Chapter 7: Advanced Enterprise Campus Design",
+        "argomento": "Network Topology Design",
+        "tipo": "singola",
+        "domanda": "Nella progettazione della ridondanza tra il livello di distribuzione e il livello core, quale forma geometrica è raccomandata per garantire una convergenza deterministica e percorsi di costo uguale?",
+        "opzioni": [
+            "A. Quadrati (Squares)",
+            "B. Triangoli (Triangles)",
+            "C. Cerchi (Rings)",
+            "D. Linee (Linear)"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Si raccomanda di costruire 'triangoli' (collegamenti ridondanti diretti verso i due dispositivi del livello superiore) piuttosto che 'quadrati'. I triangoli permettono percorsi di costo uguale e una convergenza più rapida in caso di guasto."
+    },
+    {
+        "id": 121,
+        "capitolo": "Chapter 7: Advanced Enterprise Campus Design",
+        "argomento": "QoS Design",
+        "tipo": "singola",
+        "domanda": "Secondo le best practice, dove dovrebbe avvenire la classificazione e la marcatura (marking) del traffico QoS?",
+        "opzioni": [
+            "A. Nel Core layer.",
+            "B. Nel Distribution layer.",
+            "C. Il più vicino possibile alla sorgente (Access layer o endpoint).",
+            "D. Sul router WAN."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "La marcatura del traffico dovrebbe avvenire il più vicino possibile alla sorgente (es. telefono IP o switch di accesso, Trust Boundary) per garantire che il traffico sia trattato correttamente attraverso l'intera rete."
+    },
+    {
+        "id": 122,
+        "capitolo": "Chapter 7: Advanced Enterprise Campus Design",
+        "argomento": "Application Traffic Patterns",
+        "tipo": "singola",
+        "domanda": "Come viene descritta la regola '20/80' nel contesto delle reti campus moderne con server centralizzati?",
+        "opzioni": [
+            "A. Il 20% del traffico è verso Internet, l'80% è locale.",
+            "B. Il 20% del traffico è locale al segmento, l'80% è destinato fuori dal segmento (es. verso il Data Center).",
+            "C. L'80% del traffico è locale, il 20% è remoto (regola legacy).",
+            "D. Il 20% della banda è riservata alla voce."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Nelle reti moderne, la maggior parte dei server è nel data center. Pertanto, solo una piccola parte (20%) del traffico rimane locale, mentre la maggioranza (80%) attraversa il core verso il data center."
+    },
+    {
+        "id": 123,
+        "capitolo": "Chapter 7: Advanced Enterprise Campus Design",
+        "argomento": "Oversubscription Ratios",
+        "tipo": "singola",
+        "domanda": "Qual è il rapporto di oversubscription raccomandato per i collegamenti dal livello di Accesso al livello di Distribuzione?",
+        "opzioni": [
+            "A. 4:1",
+            "B. 10:1",
+            "C. 20:1",
+            "D. 1:1"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "La best practice per l'oversubscription dei dati è di 20:1 tra Accesso e Distribuzione, mentre è più conservativa (4:1) tra Distribuzione e Core."
+    },
+    {
+        "id": 124,
+        "capitolo": "Chapter 7: Advanced Enterprise Campus Design",
+        "argomento": "Distribution Layer Functions",
+        "tipo": "singola",
+        "domanda": "Quale funzione è tipicamente associata al livello di distribuzione in un design campus?",
+        "opzioni": [
+            "A. Trasporto ad alta velocità senza policy.",
+            "B. Terminazione delle VLAN utente, routing inter-VLAN e summarization.",
+            "C. Port security e PoE.",
+            "D. Connessione diretta ai server farm."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il livello di distribuzione aggrega gli switch di accesso e funge da punto di demarcazione L2/L3, gestendo il routing tra le VLAN, le policy di sicurezza e la summarization delle rotte verso il core."
+    },
+    {
+        "id": 125,
+        "capitolo": "Chapter 7: Advanced Enterprise Campus Design",
+        "argomento": "VLAN Design",
+        "tipo": "singola",
+        "domanda": "Qual è la differenza tra Local VLAN e End-to-End VLAN, e quale è raccomandata?",
+        "opzioni": [
+            "A. Le End-to-End VLAN sono raccomandate perché permettono agli utenti di muoversi ovunque mantenendo lo stesso IP.",
+            "B. Le Local VLAN sono raccomandate perché sono confinate a un singolo switch o armadio, facilitando il troubleshooting e creando un design più deterministico.",
+            "C. Le Local VLAN richiedono VTP Server mode.",
+            "D. Non c'è differenza pratica."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il modello Local VLAN (dove la VLAN non si estende oltre il livello di distribuzione) è raccomandato. Il modello End-to-End estende il dominio di broadcast su tutto il campus, rendendo la rete fragile e difficile da gestire."
+    },
+    {
+        "id": 126,
+        "capitolo": "Chapter 7: Advanced Enterprise Campus Design",
+        "argomento": "Campus Core",
+        "tipo": "singola",
+        "domanda": "Qual è una best practice fondamentale per il design del livello Core in un campus enterprise?",
+        "opzioni": [
+            "A. Applicare filtri di sicurezza complessi e QoS marking.",
+            "B. Avere una topologia 'full mesh' fisica.",
+            "C. Mantenere il diametro della rete limitato e consistente per garantire latenza prevedibile.",
+            "D. Collegare direttamente gli utenti finali."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il Core deve essere veloce e semplice. Limitare il diametro della rete garantisce latenza bassa e prevedibile e facilita la gestione e il troubleshooting."
+    },
+    {
+        "id": 97,
+        "capitolo": "Chapter 8: WAN for the Enterprise",
+        "argomento": "Enterprise Edge",
+        "tipo": "multipla",
+        "domanda": "Quali due moduli funzionali si trovano all'interno del blocco Enterprise Edge? (Scegline due)",
+        "opzioni": [
+            "A. Campus Core",
+            "B. E-commerce/DMZ",
+            "C. Building Access",
+            "D. Service Provider (SP) Edge",
+            "E. Server Farm"
+        ],
+        "risposta_corretta": [
+            "B",
+            "D"
+        ],
+        "spiegazione": "Il modulo Enterprise Edge contiene i sottomoduli che connettono l'azienda al mondo esterno, come il DMZ (per e-commerce, VPN remote) e l'SP Edge (per la connettività WAN e Internet)."
+    },
+    {
+        "id": 98,
+        "capitolo": "Chapter 8: WAN for the Enterprise",
+        "argomento": "MPLS",
+        "tipo": "singola",
+        "domanda": "Quale tecnologia WAN utilizza le etichette (labels) per prendere decisioni di inoltro, permettendo di implementare VPN Layer 3 scalabili e Traffic Engineering?",
+        "opzioni": [
+            "A. DMVPN",
+            "B. MPLS (Multiprotocol Label Switching)",
+            "C. VPLS",
+            "D. IPsec"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "MPLS inoltra i pacchetti basandosi su etichette (labels) piuttosto che su indirizzi IP a ogni hop, permettendo la creazione di VPN Layer 3 separate e ingegneria del traffico."
+    },
+    {
+        "id": 99,
+        "capitolo": "Chapter 8: WAN for the Enterprise",
+        "argomento": "Optical Technologies",
+        "tipo": "singola",
+        "domanda": "Quale tecnologia ottica aumenta la capacità di larghezza di banda di una singola fibra utilizzando diverse lunghezze d'onda (colori) di luce per trasportare canali multipli?",
+        "opzioni": [
+            "A. SONET",
+            "B. SDH",
+            "C. Dark Fiber",
+            "D. DWDM (Dense Wavelength-Division Multiplexing)"
+        ],
+        "risposta_corretta": "D",
+        "spiegazione": "DWDM (Dense Wavelength-Division Multiplexing) massimizza l'uso della fibra esistente trasmettendo canali multipli su diverse lunghezze d'onda sullo stesso filamento."
+    },
+    {
+        "id": 100,
+        "capitolo": "Chapter 8: WAN for the Enterprise",
+        "argomento": "VPN Technologies",
+        "tipo": "singola",
+        "domanda": "Quale tecnologia VPN Cisco utilizza l'interfaccia mGRE (Multipoint GRE) e il protocollo NHRP per creare tunnel dinamici spoke-to-spoke senza dover passare sempre per l'hub?",
+        "opzioni": [
+            "A. GETVPN",
+            "B. IPsec Direct Encapsulation",
+            "C. DMVPN (Dynamic Multipoint VPN)",
+            "D. SSL VPN"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "DMVPN utilizza Next Hop Resolution Protocol (NHRP) e mGRE per permettere agli spoke di risolvere dinamicamente gli indirizzi degli altri spoke e formare tunnel diretti su richiesta."
+    },
+    {
+        "id": 101,
+        "capitolo": "Chapter 8: WAN for the Enterprise",
+        "argomento": "Layer 2 VPN",
+        "tipo": "singola",
+        "domanda": "Qual è la differenza principale tra VPWS (Virtual Private Wire Service) e VPLS (Virtual Private LAN Service)?",
+        "opzioni": [
+            "A. VPWS è punto-punto (pseudowire), mentre VPLS simula una LAN multipunto (switch virtuale).",
+            "B. VPWS è Layer 3, VPLS è Layer 2.",
+            "C. VPWS supporta il routing dinamico, VPLS no.",
+            "D. VPLS usa IPsec, VPWS usa MPLS."
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "VPWS fornisce un collegamento punto-punto (simile a una leased line o pseudowire) su MPLS. VPLS estende il dominio di broadcast Ethernet simulando uno switch multipunto, permettendo a più siti di vedersi come sulla stessa LAN."
+    },
+    {
+        "id": 102,
+        "capitolo": "Chapter 8: WAN for the Enterprise",
+        "argomento": "GETVPN",
+        "tipo": "singola",
+        "domanda": "Per quale scenario di implementazione è più indicato GETVPN (Group Encrypted Transport VPN)?",
+        "opzioni": [
+            "A. Connessioni VPN remote-access su Internet pubblico.",
+            "B. Reti WAN private (come MPLS) dove si vuole cifrare il traffico mantenendo l'indirizzamento IP originale (tunnel-less) e supportare il multicast nativo.",
+            "C. Connessioni Internet che utilizzano NAT/PAT.",
+            "D. Creazione di tunnel dinamici su Internet pubblico."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "GETVPN è progettato per WAN private (es. MPLS). Non usa tunnel overlay, ma cifra il payload mantenendo l'header IP originale, permettendo al routing e al multicast sottostanti di funzionare nativamente. Non funziona attraverso il NAT (Internet)."
+    },
+    {
+        "id": 103,
+        "capitolo": "Chapter 8: WAN for the Enterprise",
+        "argomento": "Metro Ethernet",
+        "tipo": "singola",
+        "domanda": "Quale è un vantaggio chiave dell'utilizzo di Metro Ethernet come tecnologia WAN?",
+        "opzioni": [
+            "A. Richiede hardware specializzato non-Ethernet (come interfacce seriali).",
+            "B. Offre larghezza di banda flessibile e si integra facilmente con la LAN esistente senza richiedere nuovi tipi di interfacce.",
+            "C. Garantisce la crittografia nativa dei dati.",
+            "D. È limitato a 45 Mbps (velocità DS3)."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Metro Ethernet permette di usare interfacce Ethernet standard (rame o fibra) per la WAN, facilitando l'integrazione con la LAN e offrendo scalabilità della banda (es. da 10 Mbps a 10 Gbps)."
+    },
+    {
+        "id": 104,
+        "capitolo": "Chapter 8: WAN for the Enterprise",
+        "argomento": "IPsec Protocols",
+        "tipo": "singola",
+        "domanda": "In IPsec, quale protocollo fornisce confidenzialità (crittografia), autenticazione dell'origine dei dati e integrità?",
+        "opzioni": [
+            "A. AH (Authentication Header)",
+            "B. IKE (Internet Key Exchange)",
+            "C. ESP (Encapsulating Security Payload)",
+            "D. ISAKMP"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "ESP fornisce confidenzialità (tramite crittografia), autenticazione e integrità. AH fornisce solo autenticazione e integrità, ma non crittografa il payload (niente confidenzialità)."
+    },
+    {
+        "id": 105,
+        "capitolo": "Chapter 8: WAN for the Enterprise",
+        "argomento": "Wireless WAN",
+        "tipo": "singola",
+        "domanda": "Quale tecnologia wireless 4G offre velocità di picco in download fino a 300 Mbps e in upload fino a 50 Mbps?",
+        "opzioni": [
+            "A. UMTS",
+            "B. LTE (Long Term Evolution)",
+            "C. HSPA+",
+            "D. GPRS"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "LTE (o 4G LTE) offre velocità teoriche fino a 300 Mbps in download e 50 Mbps in upload."
+    },
+    {
+        "id": 106,
+        "capitolo": "Chapter 8: WAN for the Enterprise",
+        "argomento": "VPN Design",
+        "tipo": "singola",
+        "domanda": "Quando si utilizza un design VPN 'Hub-and-Spoke' con IPsec statico (Direct Encapsulation), quale limitazione si incontra tipicamente rispetto a DMVPN?",
+        "opzioni": [
+            "A. Non supporta la crittografia.",
+            "B. Richiede una configurazione manuale punto-punto per ogni tunnel sull'hub, rendendolo meno scalabile.",
+            "C. Non supporta l'autenticazione.",
+            "D. Supporta solo IPv6."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "L'incapsulamento IPsec diretto (tunnel statici) richiede una configurazione dedicata per ogni peer sull'hub, il che scala male. DMVPN risolve questo problema usando profili dinamici e mGRE."
+    },
+    {
+        "id": 107,
+        "capitolo": "Chapter 9: WAN Availability and QoS",
+        "argomento": "WAN Design Methodologies",
+        "tipo": "singola",
+        "domanda": "Quale principio chiave di progettazione WAN si riferisce alla ridondanza attraverso hardware, software e connettività per rimuovere i singoli punti di guasto?",
+        "opzioni": [
+            "A. Scalabilità",
+            "B. High Availability (Alta Disponibilità)",
+            "C. Gestibilità",
+            "D. Sicurezza"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "L'High Availability (HA) mira a garantire che la rete sia sempre operativa minimizzando i tempi di inattività attraverso la ridondanza di link, dispositivi e percorsi."
+    },
+    {
+        "id": 108,
+        "capitolo": "Chapter 9: WAN Availability and QoS",
+        "argomento": "Internet Connectivity",
+        "tipo": "singola",
+        "domanda": "Quale opzione di connettività Internet offre il massimo livello di resilienza, eliminando i singoli punti di guasto sia per il router che per il circuito e il provider?",
+        "opzioni": [
+            "A. Single-router dual-homed",
+            "B. Single-router single-homed",
+            "C. Dual-router dual-homed",
+            "D. Dual-router single-homed"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "L'opzione Dual-router dual-homed utilizza due router separati, ognuno connesso a un ISP diverso. Questo protegge dai guasti del router, del link e del provider."
+    },
+    {
+        "id": 109,
+        "capitolo": "Chapter 9: WAN Availability and QoS",
+        "argomento": "Backup Connectivity",
+        "tipo": "singola",
+        "domanda": "Quale tecnologia viene spesso utilizzata come connessione di backup a basso costo per una connessione MPLS primaria, permettendo anche di criptare il traffico su Internet pubblico?",
+        "opzioni": [
+            "A. Leased Line",
+            "B. Dark Fiber",
+            "C. IPsec VPN tunnel",
+            "D. Dial-up"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Un tunnel IPsec su Internet è un metodo comune ed economico per fornire backup a una connessione MPLS. Può essere usato in modalità standby o attivo-attivo (hybrid WAN)."
+    },
+    {
+        "id": 110,
+        "capitolo": "Chapter 9: WAN Availability and QoS",
+        "argomento": "QoS Models",
+        "tipo": "singola",
+        "domanda": "Quale modello QoS utilizza il protocollo RSVP (Resource Reservation Protocol) per riservare esplicitamente la larghezza di banda lungo tutto il percorso per un flusso di dati specifico?",
+        "opzioni": [
+            "A. Best-Effort",
+            "B. DiffServ (Differentiated Services)",
+            "C. IntServ (Integrated Services)",
+            "D. LLQ"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "IntServ (Integrated Services) è il modello che garantisce la QoS attraverso la prenotazione esplicita delle risorse (Hard QoS) per ogni flusso, utilizzando RSVP. È poco scalabile."
+    },
+    {
+        "id": 111,
+        "capitolo": "Chapter 9: WAN Availability and QoS",
+        "argomento": "QoS Mechanisms",
+        "tipo": "singola",
+        "domanda": "Qual è la differenza principale tra Traffic Shaping e Traffic Policing?",
+        "opzioni": [
+            "A. Il Policing bufferizza il traffico in eccesso, lo Shaping lo scarta.",
+            "B. Lo Shaping bufferizza il traffico in eccesso per inviarlo dopo, il Policing lo scarta (o lo rimarca).",
+            "C. Lo Shaping si applica solo in ingresso, il Policing solo in uscita.",
+            "D. Non c'è differenza, sono sinonimi."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Lo Shaping 'modella' il traffico ritardando i pacchetti in eccesso (buffer), rendendo il flusso più fluido. Il Policing è severo: taglia (drop) o penalizza (remark) i picchi che superano il limite."
+    },
+    {
+        "id": 112,
+        "capitolo": "Chapter 9: WAN Availability and QoS",
+        "argomento": "Queuing",
+        "tipo": "singola",
+        "domanda": "Quale algoritmo di accodamento (Queuing) è progettato specificamente per il traffico voce (VoIP), fornendo una coda a priorità rigorosa (Strict Priority Queue) per garantire bassa latenza?",
+        "opzioni": [
+            "A. WFQ (Weighted Fair Queuing)",
+            "B. CBWFQ (Class-Based Weighted Fair Queuing)",
+            "C. FIFO (First-In, First-Out)",
+            "D. LLQ (Low-Latency Queuing)"
+        ],
+        "risposta_corretta": "D",
+        "spiegazione": "LLQ (Low-Latency Queuing) aggiunge una coda prioritaria (PQ) al meccanismo CBWFQ. Il traffico in questa coda viene sempre servito per primo, ideale per voce e video real-time."
+    },
+    {
+        "id": 113,
+        "capitolo": "Chapter 9: WAN Availability and QoS",
+        "argomento": "Link Efficiency",
+        "tipo": "singola",
+        "domanda": "Quale meccanismo di efficienza del link (Link Efficiency) riduce il ritardo di serializzazione sui collegamenti lenti frammentando i pacchetti grandi e interfoliandoli con pacchetti piccoli sensibili al ritardo (come VoIP)?",
+        "opzioni": [
+            "A. LFI (Link Fragmentation and Interleaving)",
+            "B. cRTP (Compressed RTP)",
+            "C. TCP Window Scaling",
+            "D. Traffic Shaping"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "LFI frammenta i pacchetti dati di grandi dimensioni in modo che i pacchetti voce piccoli possano essere 'inseriti' (interleaved) tra i frammenti, riducendo il ritardo di accodamento sui link lenti."
+    },
+    {
+        "id": 114,
+        "capitolo": "Chapter 9: WAN Availability and QoS",
+        "argomento": "Availability Calculation",
+        "tipo": "singola",
+        "domanda": "Se una rete ha una disponibilità del 99,99% ('quattro nove'), a quanto ammonta circa il tempo di inattività (downtime) annuale consentito?",
+        "opzioni": [
+            "A. ~5 minuti",
+            "B. ~53 minuti",
+            "C. ~9 ore",
+            "D. ~3 giorni"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il 99,99% di disponibilità corrisponde a circa 52,56 minuti di downtime all'anno. (Il 99,999% o 'cinque nove' corrisponde a circa 5 minuti)."
+    },
+    {
+        "id": 115,
+        "capitolo": "Chapter 9: WAN Availability and QoS",
+        "argomento": "QoS Classification",
+        "tipo": "singola",
+        "domanda": "Quale tecnologia Cisco utilizza l'ispezione profonda dei pacchetti (DPI) per identificare e classificare applicazioni complesse che utilizzano porte dinamiche o URL specifici?",
+        "opzioni": [
+            "A. MPLS EXP",
+            "B. CoS (Class of Service)",
+            "C. NBAR (Network-Based Application Recognition)",
+            "D. ACL standard"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "NBAR (Network-Based Application Recognition) ispeziona il payload dei pacchetti (Layer 4-7) per riconoscere applicazioni difficili da classificare con le sole porte fisse."
+    },
+    {
+        "id": 116,
+        "capitolo": "Chapter 9: WAN Availability and QoS",
+        "argomento": "Deployment Models",
+        "tipo": "singola",
+        "domanda": "In un design 'Hybrid WAN', quali due tipi di trasporto vengono tipicamente combinati?",
+        "opzioni": [
+            "A. Due circuiti MPLS di provider diversi.",
+            "B. Un circuito MPLS (per traffico critico) e un tunnel VPN su Internet (per traffico best-effort o backup).",
+            "C. Un circuito Dark Fiber e un circuito Metro Ethernet.",
+            "D. Due connessioni 4G LTE."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "L'Hybrid WAN combina la garanzia di servizio di MPLS con il basso costo e la flessibilità di Internet (VPN), instradando il traffico in base alla criticità dell'applicazione."
+    }
+]
