@@ -1,45 +1,51 @@
-# 🎓 Exam Simulator - v2.0
+# 🎓 Exam Simulator - Professional Edition v3.0
 
-**Un simulatore d'esame desktop leggero, portatile e potente per prepararsi alle certificazioni IT (CCNA, CompTIA, ecc.) e non solo.**
+**Un simulatore d'esame desktop moderno, portatile e potente per prepararsi alle certificazioni IT (Cisco, CompTIA, ecc.).**
 
 ![Screenshot](screenshot.png)
+*(Suggerimento: Carica uno screenshot della nuova interfaccia e chiamalo screenshot.png)*
 
 ## 📖 Descrizione
 
-Questo repository contiene l'eseguibile (`.exe`) e i database delle domande per **Exam Simulator**. Non è necessaria alcuna installazione o configurazione complessa: scarica, avvia e inizia ad esercitarti.
+Questo repository contiene l'applicazione e i database delle domande per **Exam Simulator v3.0**.
+Il software è stato completamente riscritto per offrire un'interfaccia moderna, statistiche avanzate e strumenti di studio mirati.
 
-Il software è stato progettato per simulare l'ambiente di test reale, con funzionalità avanzate per l'apprendimento e la revisione.
+Non è necessaria alcuna installazione complessa: scarica, avvia e inizia ad esercitarti.
 
-### 📦 Contenuto del Repository
-* **ExamSimulator.exe**: Il programma principale (Versione 2.0).
-* * **Database CCDE 400-007**: Una raccolta completa di domande basate sulla guida ufficiale, suddivise per capitoli.
-* **Database CCNA 200-301**: Una raccolta completa di domande basate sul Volume 1 della guida ufficiale (Networking, IP, Switching, Wireless), suddivise per capitoli.
-* **Modelli CSV**: File di esempio per creare i propri test.
+### 📦 Database Inclusi
+* **CCNA 200-301**: Networking Fundamentals, IP, Switching, Security, Automation.
+* **CCNP ENSLD 300-420**: Enterprise Design, Advanced Addressing, WAN, SD-Access, SD-WAN.
+* **CCDE 400-007**: Expert Design Scenarios.
+* **Modelli CSV/JSON**: File di esempio per creare i propri test.
 
 ---
 
-## ✨ Funzionalità Principali
+## ✨ Novità della v3.0
 
-* **🚀 Portatile:** Nessuna installazione richiesta. Funziona su qualsiasi PC Windows.
-* **📄 Supporto Multi-Formato:** Carica nativamente file **JSON** e **CSV (Excel)**.
-* **⏱️ Simulazione Reale:**
+* **🎨 Modern UI:** Nuova interfaccia grafica basata su *CustomTkinter* con supporto nativo per temi Chiari/Scuri.
+* **📈 Storico & Database:** I tuoi risultati vengono salvati automaticamente. Tieni traccia dei tuoi progressi nel tempo tramite la scheda "Storico".
+* **🎯 Studio Mirato:** Seleziona specifici capitoli su cui esercitarti (es. solo "OSPF" o "SD-WAN") invece di dover affrontare tutto il database.
+* **📊 Barra di Progresso:** Feedback visivo immediato durante l'esame.
+
+### Altre Funzionalità
+* **🚀 Portatile:** Nessuna installazione richiesta.
+* **📄 Supporto Multi-Formato:** Carica nativamente file **JSON** e **CSV**.
+* **⏱️ Timer & Modalità:**
     * **Modalità Esame:** Feedback nascosto fino alla fine, timer attivo.
-    * **Modalità Allenamento:** Feedback immediato con spiegazioni dettagliate.
-* **🛠️ Editor Integrato:** Crea e salva nuove domande direttamente dall'interno dell'applicazione.
-* **🌙 Dark Mode:** Tema scuro per non affaticare la vista durante le sessioni notturne.
-* **🔀 Shuffle Avanzato:** Mischia sia l'ordine delle domande che l'ordine delle risposte (A, B, C, D) per evitare la memorizzazione visiva.
-* **👁️ Accessibilità:** Dimensione del testo regolabile (Piccolo, Medio, Grande).
-* **📊 Reportistica:** Calcolo punteggio, soglia di superamento personalizzabile e possibilità di ripassare solo gli errori.
+    * **Modalità Allenamento:** Feedback immediato per ogni risposta.
+* **🛠️ Editor Integrato:** Crea nuove domande, aggiungile a una lista e **esporta** il tutto in un nuovo file JSON condivisibile.
+* **🔀 Shuffle Avanzato:** Mischia domande e risposte per evitare la memorizzazione visiva.
 
 ---
 
 ## 🚀 Come Iniziare
 
-1.  Vai nella sezione **Releases** o scarica il file **`ExamSimulator.exe`** da questo repository.
-2.  Scarica i file delle domande (es. `batch_ccna_vol1.json` o i singoli capitoli).
-3.  Avvia `ExamSimulator.exe` (potrebbe apparire un avviso di Windows Defender la prima volta perché è un software non firmato: clicca su *Ulteriori informazioni -> Esegui comunque*).
-4.  Clicca su **📂 Carica DB** e seleziona uno o più file `.json` o `.csv`.
-5.  Premi **Start** (o imposta prima le preferenze su ⚙️).
+1.  Vai nella sezione **Releases** o scarica l'eseguibile/script da questo repository.
+2.  Scarica i file delle domande (es. `batch_ccnp_ensld.json`).
+3.  Avvia `ExamSimulator.exe` (o `exam_simulator_v3.py` se usi Python).
+4.  Clicca su **📂 Carica Database** e seleziona il file JSON o CSV.
+5.  Nella colonna di destra, **seleziona i capitoli** che vuoi studiare.
+6.  Premi **🚀 Avvia Simulazione**.
 
 ---
 
@@ -47,80 +53,64 @@ Il software è stato progettato per simulare l'ambiente di test reale, con funzi
 
 Puoi espandere il simulatore creando i tuoi quiz personali in tre modi:
 
-### Metodo 1: Usare Excel / CSV (Consigliato per principianti) 📊
-Il modo più semplice è usare Excel o Google Sheets.
-1.  Crea un file con le seguenti colonne nella prima riga:
-    `Capitolo`, `Argomento`, `Domanda`, `A`, `B`, `C`, `D`, `Risposta`, `Spiegazione`
-2.  Compila le righe (vedi tabella sotto).
-3.  Salva il file come **CSV (Comma Separated Values)**.
-4.  Caricalo nel simulatore!
+### Metodo 1: Editor Integrato (Novità v3.0) 🛠️
+1.  Apri il programma e vai alla scheda **🛠 Editor & Export**.
+2.  Compila i campi (Capitolo, Domanda, Opzioni, Risposta Corretta).
+3.  Clicca su **➕ Aggiungi alla Lista**.
+4.  Quando hai finito, clicca su **💾 Esporta in JSON** per salvare il tuo nuovo database.
 
-**Esempio struttura CSV:**
+### Metodo 2: Usare Excel / CSV 📊
+Crea un file CSV con le seguenti colonne:
+`Capitolo`, `Argomento`, `Domanda`, `A`, `B`, `C`, `D`, `Risposta`, `Spiegazione`
 
+**Esempio:**
 | Capitolo | Argomento | Domanda | A | B | C | D | Risposta | Spiegazione |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Cap 1 | Reti | Cos'è un IP? | Un cavo | Un indirizzo | Un PC | Un virus | B | L'IP è ecc... |
-| Cap 1 | Sicurezza | Protocolli sicuri? | Telnet | SSH | HTTP | HTTPS | B,D | SSH/HTTPS criptano. |
-
-*Nota: Per le risposte multiple, separale con una virgola (es. "B,D"). Il software rileva automaticamente se usi la virgola o il punto e virgola.*
-
-### Metodo 2: Editor Integrato 🛠️
-1.  Apri il programma.
-2.  Vai nel menu in alto: **Strumenti > Editor Domande**.
-3.  Compila i campi (Domanda, Opzioni, Risposta, Spiegazione).
-4.  Clicca **Aggiungi alla Sessione** per testarla subito o **Esporta in JSON** per salvare il file.
+| Cap 1 | Reti | Cos'è un IP? | Un cavo | Un indirizzo | Un PC | Un virus | B | L'IP è logico. |
+| Cap 1 | Sicurezza | Protocolli? | Telnet | SSH | HTTP | HTTPS | B,D | SSH/HTTPS criptano. |
 
 ### Metodo 3: Formato JSON (Per sviluppatori) 💻
-Se preferisci modificare il codice grezzo, usa questa struttura:
+Struttura supportata:
 
 [
   {
     "id": "1",
-    "capitolo": "Nome Capitolo",
-    "argomento": "Argomento",
+    "capitolo": "Routing",
+    "argomento": "OSPF",
     "tipo": "singola",
-    "domanda": "Testo della domanda...",
+    "domanda": "Qual è la distanza amministrativa di OSPF?",
     "opzioni": [
-      "A. Opzione 1",
-      "B. Opzione 2",
-      "C. Opzione 3",
-      "D. Opzione 4"
+      "A. 90",
+      "B. 110",
+      "C. 120",
+      "D. 170"
     ],
     "risposta_corretta": "B",
-    "spiegazione": "Dettagli sulla risposta..."
+    "spiegazione": "La AD di OSPF è 110."
   },
   {
     "id": "2",
-    "capitolo": "Nome Capitolo",
-    "argomento": "Argomento",
+    "capitolo": "Switching",
+    "argomento": "VLAN",
     "tipo": "multipla",
-    "domanda": "Esempio di domanda a risposta multipla...",
+    "domanda": "Quali comandi creano una VLAN?",
     "opzioni": [
-      "A. Opzione 1",
-      "B. Opzione 2",
-      "C. Opzione 3",
-      "D. Opzione 4"
+      "A. vlan 10",
+      "B. interface vlan 10",
+      "C. switchport access",
+      "D. name SALES"
     ],
-    "risposta_corretta": ["A", "C"],
-    "spiegazione": "Dettagli sulla risposta multipla..."
+    "risposta_corretta": [
+      "A",
+      "D"
+    ],
+    "spiegazione": "Serve definire ID e nome."
   }
 ]
-
-## ⚙️ Impostazioni Disponibili
-
-Cliccando sull'icona ingranaggio **⚙️**, puoi personalizzare:
-
-* **Timer:** Attiva/Disattiva o cambia la durata (minuti).
-* **Modalità Esame:** Nasconde i risultati fino alla fine ("Promosso/Bocciato").
-* **Shuffle Risposte:** Mischia l'ordine di apparizione di A, B, C, D.
-* **Soglia:** Cambia la percentuale richiesta per passare (Default 82% per CCNA).
-* **Font:** Ingrandisci il testo per una migliore lettura.
-
----
 
 ## 👨‍💻 Credits
 
 **Developed by David Aulicino**
-*Versione Software: 2.0*
+*Versione Software: 3.0*
 
-Questo software è distribuito gratuitamente per scopi educativi.
+Questo software è freeware e distribuito gratuitamente per scopi educativi.
