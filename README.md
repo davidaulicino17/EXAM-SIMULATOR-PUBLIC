@@ -37,6 +37,15 @@ Non è necessaria alcuna installazione complessa: scarica, avvia e inizia ad ese
 
 ---
 
+## 👨‍💻 Credits
+
+**Developed by David Aulicino**
+*Versione Software: 3.0*
+
+Questo software è freeware e distribuito gratuitamente per scopi educativi.
+
+---
+
 ## 🚀 Come Iniziare
 
 1.  Vai nella sezione **Releases** o scarica l'eseguibile/script da questo repository.
@@ -107,10 +116,3 @@ Struttura supportata:
     "spiegazione": "Serve definire ID e nome."
   }
 ]
-
-## 👨‍💻 Credits
-
-**Developed by David Aulicino**
-*Versione Software: 3.0*
-
-Questo software è freeware e distribuito gratuitamente per scopi educativi.
