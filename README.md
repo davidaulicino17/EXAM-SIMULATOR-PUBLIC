@@ -40,8 +40,8 @@ Non è necessaria alcuna installazione complessa: scarica, avvia e inizia ad ese
 ## 🚀 Come Iniziare
 
 1.  Vai nella sezione **Releases** o scarica l'eseguibile/script da questo repository.
-2.  Scarica i file delle domande (es. `batch_ccnp_ensld.json`).
-3.  Avvia `ExamSimulator.exe` (o `exam_simulator_v3.py` se usi Python).
+2.  Scarica i file delle domande da EXAM-FILES (es. `CCDE-400-007.json`).
+3.  Avvia `ExamSimulator.exe`.
 4.  Clicca su **📂 Carica Database** e seleziona il file JSON o CSV.
 5.  Nella colonna di destra, **seleziona i capitoli** che vuoi studiare.
 6.  Premi **🚀 Avvia Simulazione**.
@@ -65,7 +65,7 @@ Crea un file CSV con le seguenti colonne:
 **Esempio:**
 | Capitolo | Argomento | Domanda | A | B | C | D | Risposta | Spiegazione |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Cap 1 | Reti | Cos'è un IP? | Un cavo | Un indirizzo | Un PC | Un virus | B | L'IP è logico. |
+| Cap 1 | Reti | Cos'è un IP? | Un cavo | Un indirizzo | Un PC | Un virus | B | L'IP è ecc... |
 | Cap 1 | Sicurezza | Protocolli? | Telnet | SSH | HTTP | HTTPS | B,D | SSH/HTTPS criptano. |
 
 ### Metodo 3: Formato JSON (Per sviluppatori) 💻
