@@ -3,7 +3,6 @@
 **Un simulatore d'esame desktop moderno, portatile e potente per prepararsi alle certificazioni IT (Cisco, CompTIA, ecc.).**
 
 ![Screenshot](screenshot.png)
-*(Suggerimento: Carica uno screenshot della nuova interfaccia e chiamalo screenshot.png)*
 
 ## 📖 Descrizione
 
