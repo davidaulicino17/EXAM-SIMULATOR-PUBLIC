@@ -23,6 +23,10 @@ Questo repository contiene l'applicazione e i database delle domande per **Exam 
 
 ---
 
+![Interfaccia Exam Simulator v3.0](screenshot.png)
+
+---
+
 ## 🚀 Come Iniziare
 
 Per utilizzare il simulatore non è necessaria alcuna installazione. Segui questi semplici passaggi:
