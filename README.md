@@ -11,7 +11,6 @@ Questo repository contiene l'applicazione e i database delle domande per **Exam 
 * **CCNA 200-301**: Networking Fundamentals, IP, Switching, Security, Automation.
 * **CCNP ENSLD 300-420**: Enterprise Design, Advanced Addressing, WAN, SD-Access, SD-WAN.
 * **CCDE 400-007**: Expert Design Scenarios.
-* **Modelli CSV/JSON**: File di esempio per creare i propri test.
 
 ---
 
