@@ -1,17 +1,13 @@
 # 🎓 Exam Simulator - Professional Edition v3.0
 
-**Un simulatore d'esame desktop moderno, portatile e potente per prepararsi alle certificazioni IT (Cisco, CompTIA, ecc.).**
-
-![Screenshot](screenshot.png)
+**Un simulatore d'esame desktop moderno, portatile e potente per prepararsi alle certificazioni IT (Cisco, CompTIA, basi di rete, ecc.).**
 
 ## 📖 Descrizione
 
-Questo repository contiene l'applicazione e i database delle domande per **Exam Simulator v3.0**.
-Il software è stato completamente riscritto per offrire un'interfaccia moderna, statistiche avanzate e strumenti di studio mirati.
-
-Non è necessaria alcuna installazione complessa: scarica, avvia e inizia ad esercitarti.
+Questo repository contiene l'applicazione e i database delle domande per **Exam Simulator v3.0**. Il software è stato progettato per offrire un'interfaccia moderna, statistiche avanzate e uno studio mirato per capitoli.
 
 ### 📦 Database Inclusi
+* **NETWORKING-101 (Novità)**: Corso completo sulle basi del networking (Modello OSI/TCP-IP, Routing, DNS, SMTP, HTTP, Sicurezza e Firewall).
 * **CCNA 200-301**: Networking Fundamentals, IP, Switching, Security, Automation.
 * **CCNP ENSLD 300-420**: Enterprise Design, Advanced Addressing, WAN, SD-Access, SD-WAN.
 * **CCDE 400-007**: Expert Design Scenarios.
@@ -22,18 +18,21 @@ Non è necessaria alcuna installazione complessa: scarica, avvia e inizia ad ese
 ## ✨ Novità della v3.0
 
 * **🎨 Modern UI:** Nuova interfaccia grafica basata su *CustomTkinter* con supporto nativo per temi Chiari/Scuri.
-* **📈 Storico & Database:** I tuoi risultati vengono salvati automaticamente. Tieni traccia dei tuoi progressi nel tempo tramite la scheda "Storico".
-* **🎯 Studio Mirato:** Seleziona specifici capitoli su cui esercitarti (es. solo "OSPF" o "SD-WAN") invece di dover affrontare tutto il database.
-* **📊 Barra di Progresso:** Feedback visivo immediato durante l'esame.
+* **📈 Storico & Database:** I risultati vengono salvati automaticamente in un database SQLite (`exam_history.db`) per tracciare i progressi.
+* **🎯 Studio Mirato:** Possibilità di selezionare specifici capitoli tramite checkbox per test personalizzati.
+* **📊 Feedback Visivo:** Barra di progresso e timer integrato (90 minuti) per simulare l'ambiente d'esame reale.
 
-### Altre Funzionalità
-* **🚀 Portatile:** Nessuna installazione richiesta.
-* **📄 Supporto Multi-Formato:** Carica nativamente file **JSON** e **CSV**.
-* **⏱️ Timer & Modalità:**
-    * **Modalità Esame:** Feedback nascosto fino alla fine, timer attivo.
-    * **Modalità Allenamento:** Feedback immediato per ogni risposta.
-* **🛠️ Editor Integrato:** Crea nuove domande, aggiungile a una lista e **esporta** il tutto in un nuovo file JSON condivisibile.
-* **🔀 Shuffle Avanzato:** Mischia domande e risposte per evitare la memorizzazione visiva.
+---
+
+## 🚀 Come Iniziare
+
+Per utilizzare il simulatore non è necessaria alcuna installazione. Segui questi semplici passaggi:
+
+1. **Scarica il programma**: Preleva il file eseguibile `exam_simulator_v3.0.exe`.
+2. **Scarica i quiz**: Entra nella cartella `exam-files` e scarica i file degli esami desiderati (es. `NETWORKING-101.json` o `CCNA-200-301.json`).
+3. **Avvia e Carica**: Apri l'eseguibile, clicca sul pulsante **📂 Carica Database** e seleziona il file d'esame scaricato.
+4. **Configura**: Seleziona i capitoli su cui vuoi esercitarti nella colonna di destra.
+5. **Inizia**: Premi **🚀 Avvia Simulazione**.
 
 ---
 
@@ -42,77 +41,4 @@ Non è necessaria alcuna installazione complessa: scarica, avvia e inizia ad ese
 **Developed by David Aulicino**
 *Versione Software: 3.0*
 
-Questo software è freeware e distribuito gratuitamente per scopi educativi.
-
----
-
-## 🚀 Come Iniziare
-
-1.  Vai nella sezione **Releases** o scarica l'eseguibile/script da questo repository.
-2.  Scarica i file delle domande da EXAM-FILES (es. `CCDE-400-007.json`).
-3.  Avvia `ExamSimulator.exe`.
-4.  Clicca su **📂 Carica Database** e seleziona il file JSON o CSV.
-5.  Nella colonna di destra, **seleziona i capitoli** che vuoi studiare.
-6.  Premi **🚀 Avvia Simulazione**.
-
----
-
-## 📝 Come creare i propri esami
-
-Puoi espandere il simulatore creando i tuoi quiz personali in tre modi:
-
-### Metodo 1: Editor Integrato (Novità v3.0) 🛠️
-1.  Apri il programma e vai alla scheda **🛠 Editor & Export**.
-2.  Compila i campi (Capitolo, Domanda, Opzioni, Risposta Corretta).
-3.  Clicca su **➕ Aggiungi alla Lista**.
-4.  Quando hai finito, clicca su **💾 Esporta in JSON** per salvare il tuo nuovo database.
-
-### Metodo 2: Usare Excel / CSV 📊
-Crea un file CSV con le seguenti colonne:
-`Capitolo`, `Argomento`, `Domanda`, `A`, `B`, `C`, `D`, `Risposta`, `Spiegazione`
-
-**Esempio:**
-| Capitolo | Argomento | Domanda | A | B | C | D | Risposta | Spiegazione |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Cap 1 | Reti | Cos'è un IP? | Un cavo | Un indirizzo | Un PC | Un virus | B | L'IP è ecc... |
-| Cap 1 | Sicurezza | Protocolli? | Telnet | SSH | HTTP | HTTPS | B,D | SSH/HTTPS criptano. |
-
-### Metodo 3: Formato JSON (Per sviluppatori) 💻
-Struttura supportata:
-
-```json
-[
-  {
-    "id": "1",
-    "capitolo": "Routing",
-    "argomento": "OSPF",
-    "tipo": "singola",
-    "domanda": "Qual è la distanza amministrativa di OSPF?",
-    "opzioni": [
-      "A. 90",
-      "B. 110",
-      "C. 120",
-      "D. 170"
-    ],
-    "risposta_corretta": "B",
-    "spiegazione": "La AD di OSPF è 110."
-  },
-  {
-    "id": "2",
-    "capitolo": "Switching",
-    "argomento": "VLAN",
-    "tipo": "multipla",
-    "domanda": "Quali comandi creano una VLAN?",
-    "opzioni": [
-      "A. vlan 10",
-      "B. interface vlan 10",
-      "C. switchport access",
-      "D. name SALES"
-    ],
-    "risposta_corretta": [
-      "A",
-      "D"
-    ],
-    "spiegazione": "Serve definire ID e nome."
-  }
-]
+Questo software è distribuito per scopi educativi.
