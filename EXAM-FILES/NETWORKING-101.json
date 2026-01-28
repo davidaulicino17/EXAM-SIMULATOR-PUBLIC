@@ -1,0 +1,1202 @@
+[
+    {
+        "id": 1001,
+        "capitolo": "Chapter 1: Fondamenti e Architetture di Rete",
+        "argomento": "Componenti fondamentali di una rete",
+        "tipo": "singola",
+        "domanda": "Quale dispositivo di rete opera al Livello 3 del modello OSI ed è responsabile della connessione di reti diverse?",
+        "opzioni": [
+            "A. Switch",
+            "B. Hub",
+            "C. Router",
+            "D. Access Point"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il router è un apparato di livello 3 che inoltra i pacchetti tra diverse reti logiche utilizzando gli indirizzi IP e tabelle di routing."
+    },
+    {
+        "id": 1002,
+        "capitolo": "Chapter 1: Fondamenti e Architetture di Rete",
+        "argomento": "Il modello ISO-OSI",
+        "tipo": "singola",
+        "domanda": "Nel modello ISO-OSI, quale livello si occupa di garantire la consegna affidabile e end-to-end dei dati, gestendo il controllo del flusso e degli errori?",
+        "opzioni": [
+            "A. Livello Sessione",
+            "B. Livello Trasporto",
+            "C. Livello Rete",
+            "D. Livello Applicazione"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il livello Trasporto (Layer 4) è responsabile della segmentazione, del controllo degli errori e del controllo del flusso tra sorgente e destinazione."
+    },
+    {
+        "id": 1003,
+        "capitolo": "Chapter 1: Fondamenti e Architetture di Rete",
+        "argomento": "Il modello STACK TCP/IP",
+        "tipo": "singola",
+        "domanda": "Quale livello del modello TCP/IP corrisponde approssimativamente ai livelli 1 e 2 del modello ISO-OSI?",
+        "opzioni": [
+            "A. Internet",
+            "B. Trasporto",
+            "C. Accesso alla rete (Network Access)",
+            "D. Applicazione"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il livello di Accesso alla rete dello stack TCP/IP comprende sia le specifiche del mezzo fisico che i protocolli di gestione del collegamento dati."
+    },
+    {
+        "id": 1004,
+        "capitolo": "Chapter 1: Fondamenti e Architetture di Rete",
+        "argomento": "Encapsulation",
+        "tipo": "singola",
+        "domanda": "Come viene definita l'unità di dati (PDU) al livello 2 (Data Link) del modello OSI?",
+        "opzioni": [
+            "A. Segmento",
+            "B. Pacchetto",
+            "C. Frame (Trama)",
+            "D. Bit"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "La PDU al livello 2 è chiamata Frame. Al livello 3 si chiama Pacchetto e al livello 4 Segmento (per TCP) o Datagram (per UDP)."
+    },
+    {
+        "id": 1005,
+        "capitolo": "Chapter 1: Fondamenti e Architetture di Rete",
+        "argomento": "Mezzi trasmissivi e standard",
+        "tipo": "singola",
+        "domanda": "Quale tipo di cavo in fibra ottica è preferibile per coprire lunghe distanze (chilometri) grazie alla minore dispersione del segnale?",
+        "opzioni": [
+            "A. Multimodale (Multi-mode)",
+            "B. Monomodale (Single-mode)",
+            "C. UTP Cat 6",
+            "D. Cavo Coassiale"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "La fibra monomodale ha un nucleo molto sottile che permette la propagazione di un solo raggio di luce, riducendo la dispersione e permettendo distanze molto elevate."
+    },
+    {
+        "id": 1006,
+        "capitolo": "Chapter 1: Fondamenti e Architetture di Rete",
+        "argomento": "Modalità di trasmissione",
+        "tipo": "singola",
+        "domanda": "In quale modalità di trasmissione i dispositivi possono sia inviare che ricevere dati, ma non contemporaneamente (es. Walkie-Talkie)?",
+        "opzioni": [
+            "A. Simplex",
+            "B. Half-Duplex",
+            "C. Full-Duplex",
+            "D. Multiplex"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "L'Half-Duplex permette la comunicazione bidirezionale, ma l'invio e la ricezione devono avvenire in momenti separati."
+    },
+    {
+        "id": 1007,
+        "capitolo": "Chapter 1: Fondamenti e Architetture di Rete",
+        "argomento": "Topologie di rete",
+        "tipo": "singola",
+        "domanda": "Quale topologia di rete offre la massima resilienza ai guasti, poichè ogni nodo è connesso direttamente a tutti gli altri nodi?",
+        "opzioni": [
+            "A. Topologia a Stella",
+            "B. Topologia a Bus",
+            "C. Topologia a Maglia Completa (Full Mesh)",
+            "D. Topologia ad Anello"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Nella maglia completa, la rottura di un collegamento non interrompe la comunicazione tra gli altri nodi, garantendo ridondanza totale."
+    },
+    {
+        "id": 1008,
+        "capitolo": "Chapter 1: Fondamenti e Architetture di Rete",
+        "argomento": "Topologie di rete",
+        "tipo": "singola",
+        "domanda": "In una moderna rete LAN Ethernet commutata, quale topologia fisica viene comunemente utilizzata?",
+        "opzioni": [
+            "A. Stella",
+            "B. Bus",
+            "C. Anello",
+            "D. Punto-punto"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "Le reti moderne utilizzano una topologia a stella (o stella estesa) dove tutti i dispositivi sono collegati a un apparato centrale come uno switch."
+    },
+    {
+        "id": 1009,
+        "capitolo": "Chapter 1: Fondamenti e Architetture di Rete",
+        "argomento": "Mezzi trasmissivi e standard",
+        "tipo": "singola",
+        "domanda": "Qual è il principale vantaggio del cavo UTP (Unshielded Twisted Pair) rispetto alla fibra ottica?",
+        "opzioni": [
+            "A. Immunità alle interferenze elettromagnetiche",
+            "B. Costo inferiore e facilità di installazione",
+            "C. Maggiore larghezza di banda",
+            "D. Supporto per distanze superiori ai 2 km"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il rame (UTP) è più economico e semplice da terminare e installare rispetto alla fibra, sebbene sia limitato a 100 metri e sensibile ai disturbi elettrici."
+    },
+    {
+        "id": 1010,
+        "capitolo": "Chapter 1: Fondamenti e Architetture di Rete",
+        "argomento": "Modalità di collegamento",
+        "tipo": "singola",
+        "domanda": "Un collegamento in cui il mezzo trasmissivo è condiviso tra più dispositivi, come nel caso di un vecchio bus Ethernet o del Wi-Fi, è definito:",
+        "opzioni": [
+            "A. Punto-punto (Point-to-point)",
+            "B. Multipunto (Point-to-multipoint / Shared)",
+            "C. Simplex",
+            "D. Full-mesh"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "In un collegamento multipunto o condiviso, più dispositivi competono per l'accesso allo stesso canale trasmissivo."
+    },
+    {
+        "id": 2001,
+        "capitolo": "Chapter 2: Livello Collegamento (Data Link)",
+        "argomento": "MAC Address",
+        "tipo": "singola",
+        "domanda": "Quanti bit compongono un indirizzo MAC (Media Access Control)?",
+        "opzioni": [
+            "A. 32 bit",
+            "B. 48 bit",
+            "C. 64 bit",
+            "D. 128 bit"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Un indirizzo MAC è composto da 48 bit (6 byte), solitamente rappresentati in esadecimale."
+    },
+    {
+        "id": 2002,
+        "capitolo": "Chapter 2: Livello Collegamento (Data Link)",
+        "argomento": "MAC Address",
+        "tipo": "singola",
+        "domanda": "Cosa identificano i primi 24 bit di un indirizzo MAC?",
+        "opzioni": [
+            "A. Il numero di serie del dispositivo",
+            "B. L'identificativo univoco dell'organizzazione (OUI - Vendor)",
+            "C. L'indirizzo di rete IP",
+            "D. Il protocollo di trasmissione"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "I primi tre byte (24 bit) sono l'OUI e identificano il produttore dell'interfaccia di rete."
+    },
+    {
+        "id": 2003,
+        "capitolo": "Chapter 2: Livello Collegamento (Data Link)",
+        "argomento": "Apparati di rete di livello 2",
+        "tipo": "singola",
+        "domanda": "Qual è la differenza principale tra un Hub e uno Switch in termini di domini di collisione?",
+        "opzioni": [
+            "A. L'Hub crea un dominio di collisione per ogni porta, lo Switch ne ha uno solo",
+            "B. L'Hub ha un unico dominio di collisione per tutte le porte, lo Switch ne crea uno per ogni porta",
+            "C. Entrambi creano un unico dominio di collisione",
+            "D. Nessuno dei due gestisce i domini di collisione"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Lo switch isola il traffico su ogni porta, eliminando le collisioni tipiche degli hub che trasmettono in broadcast su tutte le porte."
+    },
+    {
+        "id": 2004,
+        "capitolo": "Chapter 2: Livello Collegamento (Data Link)",
+        "argomento": "Apparati di rete di livello 2",
+        "tipo": "singola",
+        "domanda": "Come decide uno Switch su quale porta inoltrare un frame Ethernet in arrivo?",
+        "opzioni": [
+            "A. Consulta la tabella di routing IP",
+            "B. Invia sempre il frame a tutte le porte (Flooding)",
+            "C. Consulta la sua tabella dei MAC address (CAM Table)",
+            "D. Verifica il numero di porta TCP"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Lo switch associa gli indirizzi MAC sorgente alle porte fisiche e consulta questa tabella per inoltrare i frame verso il MAC di destinazione corretto."
+    },
+    {
+        "id": 2005,
+        "capitolo": "Chapter 2: Livello Collegamento (Data Link)",
+        "argomento": "VLAN",
+        "tipo": "singola",
+        "domanda": "Qual è lo scopo principale della creazione di una VLAN (Virtual LAN)?",
+        "opzioni": [
+            "A. Aumentare la velocità fisica del cavo",
+            "B. Segmentare una rete fisica in più reti logiche riducendo i domini di broadcast",
+            "C. Collegare tra loro reti geograficamente distanti",
+            "D. Assegnare indirizzi IP pubblici ai dispositivi"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Le VLAN permettono di separare il traffico a livello 2, migliorando la sicurezza e riducendo il traffico di broadcast non necessario."
+    },
+    {
+        "id": 2006,
+        "capitolo": "Chapter 2: Livello Collegamento (Data Link)",
+        "argomento": "VLAN",
+        "tipo": "singola",
+        "domanda": "Quale standard IEEE definisce il 'tagging' dei frame Ethernet per il trasporto di più VLAN su un singolo collegamento (Trunk)?",
+        "opzioni": [
+            "A. 802.11ac",
+            "B. 802.3ad",
+            "C. 802.1Q",
+            "D. 802.1X"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Lo standard 802.1Q aggiunge un tag di 4 byte al frame Ethernet per identificare la VLAN di appartenenza."
+    },
+    {
+        "id": 2007,
+        "capitolo": "Chapter 2: Livello Collegamento (Data Link)",
+        "argomento": "MAC Address",
+        "tipo": "singola",
+        "domanda": "Qual è l'indirizzo MAC di broadcast utilizzato per inviare un frame a tutti i dispositivi nello stesso segmento di rete?",
+        "opzioni": [
+            "A. 00:00:00:00:00:00",
+            "B. 192.168.1.255",
+            "C. FF:FF:FF:FF:FF:FF",
+            "D. AA:AA:AA:AA:AA:AA"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "L'indirizzo FF:FF:FF:FF:FF:FF (tutti i bit a 1) è l'indirizzo di broadcast di livello 2."
+    },
+    {
+        "id": 2008,
+        "capitolo": "Chapter 2: Livello Collegamento (Data Link)",
+        "argomento": "Apparati di rete di livello 2",
+        "tipo": "singola",
+        "domanda": "In cosa differisce un Bridge da uno Switch moderno?",
+        "opzioni": [
+            "A. Il Bridge opera al livello 3, lo Switch al livello 2",
+            "B. Lo Switch è essenzialmente un Bridge multiporta che esegue l'inoltro via hardware (ASIC)",
+            "C. Il Bridge non può gestire le VLAN",
+            "D. Lo Switch è più lento del Bridge"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Gli switch moderni evolvono dai bridge, offrendo una densità di porte molto maggiore e prestazioni superiori grazie all'elaborazione hardware."
+    },
+    {
+        "id": 2009,
+        "capitolo": "Chapter 2: Livello Collegamento (Data Link)",
+        "argomento": "Accesso residenziale",
+        "tipo": "singola",
+        "domanda": "Quale tecnologia di accesso residenziale utilizza la fibra ottica fino all'abitazione dell'utente finale?",
+        "opzioni": [
+            "A. ADSL",
+            "B. FTTC (Fiber To The Cabinet)",
+            "C. FTTH (Fiber To The Home)",
+            "D. HFC (Hybrid Fiber Coaxial)"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "FTTH indica che il collegamento in fibra ottica arriva direttamente dentro l'appartamento o l'edificio dell'utente."
+    },
+    {
+        "id": 2010,
+        "capitolo": "Chapter 2: Livello Collegamento (Data Link)",
+        "argomento": "Accesso residenziale",
+        "tipo": "singola",
+        "domanda": "Qual è la funzione principale di un modem in un collegamento di accesso residenziale?",
+        "opzioni": [
+            "A. Instradare i pacchetti IP",
+            "B. Convertire i segnali digitali del computer in segnali analogici (e viceversa) per la trasmissione sul mezzo fisico",
+            "C. Assegnare indirizzi MAC",
+            "D. Filtrare il traffico malevolo"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il modem (Modulatore/Demodulatore) adatta il segnale digitale ai requisiti di trasmissione del mezzo fisico (es. doppino telefonico o cavo coassiale)."
+    },
+    {
+        "id": 3001,
+        "capitolo": "Chapter 3: Livello di Rete (IP e Routing)",
+        "argomento": "Scopo del livello IP e Datagram",
+        "tipo": "singola",
+        "domanda": "Qual è la caratteristica principale del protocollo IP in termini di affidabilità?",
+        "opzioni": [
+            "A. È un protocollo orientato alla connessione.",
+            "B. Garantisce la consegna di tutti i pacchetti.",
+            "C. È un protocollo 'best-effort' non orientato alla connessione.",
+            "D. Gestisce autonomamente la ritrasmissione dei pacchetti persi."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "IP è un protocollo 'connectionless' e 'best-effort'; non garantisce la consegna né l'ordine dei pacchetti, compiti delegati ai livelli superiori come TCP."
+    },
+    {
+        "id": 3002,
+        "capitolo": "Chapter 3: Livello di Rete (IP e Routing)",
+        "argomento": "Protocollo ARP",
+        "tipo": "singola",
+        "domanda": "Qual è lo scopo del protocollo ARP (Address Resolution Protocol)?",
+        "opzioni": [
+            "A. Risolvere un nome di dominio in un indirizzo IP.",
+            "B. Ottenere l'indirizzo MAC conoscendo l'indirizzo IP di un host nella stessa sottorete.",
+            "C. Assegnare dinamicamente indirizzi IP agli host.",
+            "D. Tradurre indirizzi IP privati in indirizzi IP pubblici."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "ARP permette di mappare un indirizzo di livello 3 (IP) in un indirizzo di livello 2 (MAC) per permettere l'incapsulamento dei frame sulla rete locale."
+    },
+    {
+        "id": 3003,
+        "capitolo": "Chapter 3: Livello di Rete (IP e Routing)",
+        "argomento": "Indirizzi IP e classi",
+        "tipo": "singola",
+        "domanda": "Qual è il range del primo ottetto per un indirizzo IP di Classe C?",
+        "opzioni": [
+            "A. 1-126",
+            "B. 128-191",
+            "C. 192-223",
+            "D. 224-239"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Gli indirizzi di Classe C iniziano con i bit '110', il che corrisponde al range decimale 192-223 per il primo ottetto."
+    },
+    {
+        "id": 3004,
+        "capitolo": "Chapter 3: Livello di Rete (IP e Routing)",
+        "argomento": "CIDR, Subnetting e Supernetting",
+        "tipo": "singola",
+        "domanda": "Data la subnet 192.168.1.0/26, quanti host utilizzabili sono disponibili per questa rete?",
+        "opzioni": [
+            "A. 254",
+            "B. 64",
+            "C. 62",
+            "D. 30"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Un /26 usa 6 bit per gli host ($$2^6 = 64$$). Sottraendo l'indirizzo di rete e quello di broadcast, restano 62 host utilizzabili."
+    },
+    {
+        "id": 3005,
+        "capitolo": "Chapter 3: Livello di Rete (IP e Routing)",
+        "argomento": "NAT (Network Address Translation)",
+        "tipo": "singola",
+        "domanda": "Perché il NAT è considerato fondamentale per la sopravvivenza di IPv4?",
+        "opzioni": [
+            "A. Perché rende la connessione Internet più veloce.",
+            "B. Perché permette a più dispositivi in una rete privata di condividere un unico indirizzo IP pubblico.",
+            "C. Perché sostituisce completamente l'uso dei router.",
+            "D. Perché elimina la necessità di avere un firewall."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il NAT (specialmente il PAT) ha permesso di mitigare l'esaurimento degli indirizzi IPv4 consentendo l'uso massivo di indirizzi privati dietro un unico IP pubblico."
+    },
+    {
+        "id": 3006,
+        "capitolo": "Chapter 3: Livello di Rete (IP e Routing)",
+        "argomento": "Router e Routing",
+        "tipo": "singola",
+        "domanda": "Cosa utilizza un router per determinare il percorso migliore verso una rete di destinazione?",
+        "opzioni": [
+            "A. La tabella dei MAC address.",
+            "B. La tabella di routing.",
+            "C. Il numero di porta sorgente.",
+            "D. L'estensione del file nel pacchetto."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "La tabella di routing contiene i prefissi di rete e le interfacce di uscita (o next-hop) necessari per inoltrare correttamente i pacchetti."
+    },
+    {
+        "id": 3007,
+        "capitolo": "Chapter 3: Livello di Rete (IP e Routing)",
+        "argomento": "Protocollo ICMP",
+        "tipo": "singola",
+        "domanda": "Quale utility di rete utilizza i messaggi ICMP 'Echo Request' e 'Echo Reply' per verificare la connettività?",
+        "opzioni": [
+            "A. Traceroute",
+            "B. FTP",
+            "C. Ping",
+            "D. NSLookup"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Ping invia pacchetti ICMP Echo Request all'host di destinazione per misurare la raggiungibilità e il tempo di risposta."
+    },
+    {
+        "id": 3008,
+        "capitolo": "Chapter 3: Livello di Rete (IP e Routing)",
+        "argomento": "L'infrastruttura di Internet",
+        "tipo": "singola",
+        "domanda": "Qual è la funzione principale di un Autonomous System (AS) nell'infrastruttura di Internet?",
+        "opzioni": [
+            "A. Assegnare indirizzi MAC ai router.",
+            "B. Gestire un gruppo di reti sotto il controllo di un'unica entità amministrativa che utilizza protocolli di routing comuni.",
+            "C. Fornire l'accesso Wi-Fi agli utenti finali.",
+            "D. Criptare tutto il traffico web mondiale."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Internet è una rete di reti composta da Autonomous Systems (come ISP o Università) che comunicano tra loro principalmente tramite il protocollo BGP."
+    },
+    {
+        "id": 3009,
+        "capitolo": "Chapter 3: Livello di Rete (IP e Routing)",
+        "argomento": "Gestione degli indirizzi IP",
+        "tipo": "singola",
+        "domanda": "Quale delle seguenti è una valida abbreviazione dell'indirizzo IPv6 2001:0db8:0000:0000:0000:ff00:0042:8329?",
+        "opzioni": [
+            "A. 2001:db8::ff00:42:8329",
+            "B. 2001:db8:0:ff:42:8329",
+            "C. 2001:db8:::ff00:42:8329",
+            "D. 2001:db8:0:0:0:ff:42:8329"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "In IPv6 è possibile rimuovere gli zeri iniziali e sostituire un gruppo consecutivo di zeri con '::' (ma solo una volta per indirizzo)."
+    },
+    {
+        "id": 3010,
+        "capitolo": "Chapter 3: Livello di Rete (IP e Routing)",
+        "argomento": "Router e Routing",
+        "tipo": "singola",
+        "domanda": "In una tabella di routing, cosa si intende per 'Default Gateway' (o rotta di default)?",
+        "opzioni": [
+            "A. Il percorso verso la rete locale più veloce.",
+            "B. L'indirizzo a cui inviare i pacchetti quando non esiste una rotta specifica per la destinazione richiesta.",
+            "C. Il server che assegna gli indirizzi IP.",
+            "D. L'indirizzo del server DNS."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "La rotta di default (spesso indicata come 0.0.0.0/0) è l'ultima risorsa usata dal router per inoltrare traffico verso destinazioni ignote, tipicamente verso Internet."
+    },
+    {
+        "id": 4001,
+        "capitolo": "Chapter 4: Livello di Trasporto e Socket",
+        "argomento": "Funzioni del livello trasporto",
+        "tipo": "singola",
+        "domanda": "Qual è il compito principale del livello di trasporto nel fornire la comunicazione tra processi?",
+        "opzioni": [
+            "A. Gestire l'instradamento dei pacchetti attraverso i router.",
+            "B. Fornire una comunicazione logica tra processi applicativi in esecuzione su host diversi.",
+            "C. Definire le specifiche elettriche del cavo di rete.",
+            "D. Assegnare indirizzi MAC univoci alle schede di rete."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Mentre il livello di rete fornisce comunicazione tra host, il livello di trasporto (Layer 4) estende questa connettività ai singoli processi applicativi tramite il multiplexing."
+    },
+    {
+        "id": 4002,
+        "capitolo": "Chapter 4: Livello di Trasporto e Socket",
+        "argomento": "Funzioni del livello trasporto",
+        "tipo": "singola",
+        "domanda": "Quale meccanismo permette al livello di trasporto di distinguere tra diverse applicazioni in esecuzione contemporaneamente sullo stesso host?",
+        "opzioni": [
+            "A. Indirizzo IP",
+            "B. Numero di porta",
+            "C. Indirizzo MAC",
+            "D. Estensione del file"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "I numeri di porta (16 bit) identificano in modo univoco le applicazioni mittenti e destinatarie, permettendo il multiplexing e demultiplexing dei flussi di dati."
+    },
+    {
+        "id": 4003,
+        "capitolo": "Chapter 4: Livello di Trasporto e Socket",
+        "argomento": "Il protocollo UDP",
+        "tipo": "singola",
+        "domanda": "Perché il protocollo UDP (User Datagram Protocol) è definito 'inaffidabile'?",
+        "opzioni": [
+            "A. Perché non cripta i dati.",
+            "B. Perché non prevede instaurazione di connessione, conferme di ricezione (ACK) né controllo di flusso.",
+            "C. Perché i pacchetti UDP non possono attraversare i router.",
+            "D. Perché è un protocollo proprietario non standard."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "UDP è un protocollo 'leggero' che non garantisce la consegna, l'ordine o l'integrità dei dati, privilegiando la velocità e il basso overhead."
+    },
+    {
+        "id": 4004,
+        "capitolo": "Chapter 4: Livello di Trasporto e Socket",
+        "argomento": "Il protocollo UDP",
+        "tipo": "singola",
+        "domanda": "In quale scenario l'utilizzo di UDP è preferibile rispetto a TCP?",
+        "opzioni": [
+            "A. Trasferimento di file bancari critici.",
+            "B. Streaming video in tempo reale o chiamate VoIP.",
+            "C. Accesso remoto tramite SSH.",
+            "D. Caricamento di pagine web tramite HTTPS."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Nelle applicazioni real-time, la velocità è più importante del recupero di ogni singolo pacchetto perso, poiché la ritrasmissione causerebbe ritardi inaccettabili."
+    },
+    {
+        "id": 4005,
+        "capitolo": "Chapter 4: Livello di Trasporto e Socket",
+        "argomento": "Il protocollo TCP",
+        "tipo": "singola",
+        "domanda": "Qual è il processo utilizzato da TCP per instaurare una connessione affidabile prima di scambiare dati?",
+        "opzioni": [
+            "A. DNS Lookup",
+            "B. Sliding Window",
+            "C. Three-Way Handshake (SYN, SYN-ACK, ACK)",
+            "D. ARP Request"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "TCP utilizza la stretta di mano a tre vie per sincronizzare i numeri di sequenza e confermare che entrambi gli host siano pronti a comunicare."
+    },
+    {
+        "id": 4006,
+        "capitolo": "Chapter 4: Livello di Trasporto e Socket",
+        "argomento": "Il protocollo TCP",
+        "tipo": "singola",
+        "domanda": "In TCP, a cosa serve il meccanismo della 'Finestra Scorrevole' (Sliding Window)?",
+        "opzioni": [
+            "A. A nascondere l'indirizzo IP del mittente.",
+            "B. A gestire il controllo del flusso, regolando la quantità di dati inviati prima di attendere un riscontro.",
+            "C. A chiudere la connessione in modo forzato.",
+            "D. A mappare i nomi di dominio."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "La Sliding Window permette di ottimizzare la banda evitando di inondare il ricevitore con più dati di quanti ne possa bufferizzare."
+    },
+    {
+        "id": 4007,
+        "capitolo": "Chapter 4: Livello di Trasporto e Socket",
+        "argomento": "Cos'è un socket",
+        "tipo": "singola",
+        "domanda": "Da quali elementi è composta la 'coppia socket' (socket pair) che identifica univocamente una connessione TCP in rete?",
+        "opzioni": [
+            "A. Solo dagli indirizzi MAC mittente e destinatario.",
+            "B. Indirizzo IP e numero di porta di entrambi gli host (mittente e destinatario).",
+            "C. Nome utente e password.",
+            "D. Numero di sequenza e numero di acknowledgment."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Un socket è l'astrazione di un endpoint di comunicazione definito dalla combinazione di un indirizzo IP e una porta."
+    },
+    {
+        "id": 4008,
+        "capitolo": "Chapter 4: Livello di Trasporto e Socket",
+        "argomento": "I paradigmi client-server",
+        "tipo": "singola",
+        "domanda": "Nel modello client-server, quale entità è solitamente in attesa passiva (listening) su una porta ben nota (well-known port)?",
+        "opzioni": [
+            "A. Il Client",
+            "B. Il Server",
+            "C. Il Router",
+            "D. Lo Switch"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il server è un processo sempre attivo che attende richieste di connessione dai client su porte standard (es. 80 per HTTP)."
+    },
+    {
+        "id": 4009,
+        "capitolo": "Chapter 4: Livello di Trasporto e Socket",
+        "argomento": "Cos'è un socket",
+        "tipo": "singola",
+        "domanda": "Quale chiamata di sistema (system call) viene utilizzata da un'applicazione server per iniziare ad accettare connessioni su un socket precedentemente creato?",
+        "opzioni": [
+            "A. connect()",
+            "B. send()",
+            "C. listen()",
+            "D. close()"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "La funzione listen() mette il socket in uno stato passivo in cui attende che i client arrivino."
+    },
+    {
+        "id": 4010,
+        "capitolo": "Chapter 4: Livello di Trasporto e Socket",
+        "argomento": "Il protocollo TCP",
+        "tipo": "singola",
+        "domanda": "Quale flag del pacchetto TCP viene impostato per terminare correttamente una connessione (chiusura graziosa)?",
+        "opzioni": [
+            "A. SYN",
+            "B. RST",
+            "C. FIN",
+            "D. PSH"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il flag FIN (Finish) viene utilizzato per segnalare che il mittente ha terminato l'invio dei dati e desidera chiudere la connessione."
+    },
+    {
+        "id": 5001,
+        "capitolo": "Chapter 5: Servizi di Risoluzione (DNS)",
+        "argomento": "Cos'è e come funziona il DNS",
+        "tipo": "singola",
+        "domanda": "Qual è la funzione principale del sistema DNS (Domain Name System)?",
+        "opzioni": [
+            "A. Criptare le comunicazioni tra browser e server.",
+            "B. Tradurre nomi di dominio leggibili dall'uomo in indirizzi IP numerici.",
+            "C. Assegnare dinamicamente indirizzi IP agli host della rete.",
+            "D. Instradare i pacchetti attraverso la rete Internet."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il DNS funge da 'rubrica' di Internet, permettendo agli utenti di utilizzare nomi mnemonici (come www.google.com) invece di dover ricordare indirizzi IP complessi."
+    },
+    {
+        "id": 5002,
+        "capitolo": "Chapter 5: Servizi di Risoluzione (DNS)",
+        "argomento": "Organizzazione gerarchica dei nomi",
+        "tipo": "singola",
+        "domanda": "Nella gerarchia DNS, cosa rappresenta il punto ('.') all'estrema destra di un nome di dominio completo (FQDN)?",
+        "opzioni": [
+            "A. Il dominio di secondo livello.",
+            "B. Il Top-Level Domain (TLD).",
+            "C. La radice (Root) della gerarchia.",
+            "D. Il sottodominio dell'host."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "La gerarchia DNS parte dal Root Domain, rappresentato da un punto vuoto. Sotto la radice si trovano i TLD (.com, .it, .org, ecc.)."
+    },
+    {
+        "id": 5003,
+        "capitolo": "Chapter 5: Servizi di Risoluzione (DNS)",
+        "argomento": "Server DNS",
+        "tipo": "singola",
+        "domanda": "Quale tipo di server DNS contatta per primo un resolver quando deve risolvere un nome di cui non ha memoria in cache?",
+        "opzioni": [
+            "A. Authoritative Name Server.",
+            "B. TLD Server.",
+            "C. Root Name Server.",
+            "D. Mail Server."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il processo di risoluzione ricorsiva inizia sempre interrogando uno dei 13 Root Name Server mondiali per sapere a quale TLD rivolgersi."
+    },
+    {
+        "id": 5004,
+        "capitolo": "Chapter 5: Servizi di Risoluzione (DNS)",
+        "argomento": "Zone e server autoritativi",
+        "tipo": "singola",
+        "domanda": "Qual è la differenza principale tra un DNS recursivo e un DNS autoritativo?",
+        "opzioni": [
+            "A. Il recursivo possiede i record originali, l'autoritativo li cerca per conto dell'utente.",
+            "B. L'autoritativo fornisce la risposta finale 'ufficiale' per un dominio, il recursivo interroga altri server per trovare la risposta.",
+            "C. Il recursivo è usato solo per IPv6, l'autoritativo per IPv4.",
+            "D. Non c'è differenza, sono sinonimi."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Un server autoritativo ha la configurazione effettiva di una zona; un server recursivo (come quelli degli ISP o di Google 8.8.8.8) lavora per conto del client navigando la gerarchia."
+    },
+    {
+        "id": 5005,
+        "capitolo": "Chapter 5: Servizi di Risoluzione (DNS)",
+        "argomento": "Resource Records",
+        "tipo": "singola",
+        "domanda": "Quale tipo di record DNS viene utilizzato per mappare un nome di dominio a un indirizzo IPv6?",
+        "opzioni": [
+            "A. Record A",
+            "B. Record MX",
+            "C. Record AAAA",
+            "D. Record CNAME"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Mentre il record 'A' mappa un nome a un indirizzo IPv4 (32 bit), il record 'AAAA' (quad-A) mappa un nome a un indirizzo IPv6 (128 bit)."
+    },
+    {
+        "id": 5006,
+        "capitolo": "Chapter 5: Servizi di Risoluzione (DNS)",
+        "argomento": "Resource Records",
+        "tipo": "singola",
+        "domanda": "A cosa serve il record MX (Mail Exchange) in una zona DNS?",
+        "opzioni": [
+            "A. A definire l'indirizzo IP del server web.",
+            "B. A specificare i server responsabili della ricezione dei messaggi di posta elettronica per quel dominio.",
+            "C. A creare un alias (soprannome) per un host.",
+            "D. A delegare la gestione di un sottodominio."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il record MX indica agli altri server di posta dove inviare le email dirette a un determinato dominio."
+    },
+    {
+        "id": 5007,
+        "capitolo": "Chapter 5: Servizi di Risoluzione (DNS)",
+        "argomento": "Meccanismo distribuito per la risoluzione dei nomi",
+        "tipo": "singola",
+        "domanda": "Cosa si intende per 'TTL' (Time To Live) in un record DNS?",
+        "opzioni": [
+            "A. Il tempo necessario per inviare un pacchetto al server.",
+            "B. La durata massima (in secondi) per cui un record può essere conservato in cache da un resolver prima di essere aggiornato.",
+            "C. Il numero di router che un pacchetto DNS può attraversare.",
+            "D. La priorità del server di posta."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il TTL determina quanto tempo un'informazione DNS rimane valida nella cache locale, riducendo il carico sui server autoritativi."
+    },
+    {
+        "id": 5008,
+        "capitolo": "Chapter 5: Servizi di Risoluzione (DNS)",
+        "argomento": "I pacchetti del DNS",
+        "tipo": "singola",
+        "domanda": "Quale protocollo di trasporto e quale porta utilizza normalmente il DNS per le interrogazioni standard?",
+        "opzioni": [
+            "A. TCP porta 80",
+            "B. UDP porta 53",
+            "C. TCP porta 443",
+            "D. UDP porta 67"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il DNS utilizza prevalentemente UDP sulla porta 53 per la sua velocità. TCP viene utilizzato solo per risposte molto grandi o per i trasferimenti di zona."
+    },
+    {
+        "id": 5009,
+        "capitolo": "Chapter 5: Servizi di Risoluzione (DNS)",
+        "argomento": "Strumenti utili",
+        "tipo": "singola",
+        "domanda": "Quale comando da riga di comando è comunemente usato per interrogare i server DNS e diagnosticare problemi di risoluzione?",
+        "opzioni": [
+            "A. ping",
+            "B. tracert",
+            "C. nslookup",
+            "D. netstat"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "nslookup (e anche dig sui sistemi Unix-like) permette di interrogare manualmente i server DNS per verificare i record di una zona."
+    },
+    {
+        "id": 5010,
+        "capitolo": "Chapter 5: Servizi di Risoluzione (DNS)",
+        "argomento": "Resource Records",
+        "tipo": "singola",
+        "domanda": "Cosa permette di fare un record CNAME (Canonical Name)?",
+        "opzioni": [
+            "A. Definire l'indirizzo IP principale di un server.",
+            "B. Creare un alias che punta a un altro nome di dominio esistente.",
+            "C. Invertire la risoluzione da IP a nome.",
+            "D. Firmare digitalmente le risposte DNS."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il record CNAME è utile per associare più nomi (es. ftp.dominio.com e www.dominio.com) a un unico nome host principale."
+    },
+    {
+        "id": 6001,
+        "capitolo": "Chapter 6: Protocolli Applicativi e Messaggistica",
+        "argomento": "FTP",
+        "tipo": "singola",
+        "domanda": "Qual è una caratteristica distintiva del protocollo FTP (File Transfer Protocol) riguardo alle connessioni?",
+        "opzioni": [
+            "A. Utilizza un'unica connessione per dati e comandi.",
+            "B. Utilizza due connessioni separate: una per il controllo (comandi) e una per il trasferimento dati.",
+            "C. Non utilizza connessioni, è basato su UDP.",
+            "D. Funziona solo in modalità broadcast."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "FTP separa il traffico di controllo (porta 21) dal trasferimento dei dati effettivo (porta 20 in modalità attiva), rendendo la gestione più complessa per i firewall."
+    },
+    {
+        "id": 6002,
+        "capitolo": "Chapter 6: Protocolli Applicativi e Messaggistica",
+        "argomento": "TELNET",
+        "tipo": "singola",
+        "domanda": "Perché l'uso di TELNET è oggi fortemente sconsigliato a favore di SSH?",
+        "opzioni": [
+            "A. Perché è troppo lento per le reti moderne.",
+            "B. Perché trasmette tutti i dati, incluse le password, in chiaro (testo semplice).",
+            "C. Perché non permette l'accesso remoto ai router.",
+            "D. Perché occupa troppa banda."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "TELNET non offre alcuna crittografia. Chiunque possa intercettare i pacchetti sulla rete (sniffing) può leggere le credenziali di accesso."
+    },
+    {
+        "id": 6003,
+        "capitolo": "Chapter 6: Protocolli Applicativi e Messaggistica",
+        "argomento": "Email e Mail server",
+        "tipo": "singola",
+        "domanda": "Qual è la funzione del Mail Transfer Agent (MTA) nel sistema di posta elettronica?",
+        "opzioni": [
+            "A. Visualizzare le email all'utente finale.",
+            "B. Inviare e ricevere messaggi tra server di posta utilizzando il protocollo SMTP.",
+            "C. Archiviare le email sul disco locale del PC.",
+            "D. Convertire le email in formato cartaceo."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "L'MTA è il software server (come Postfix o Exchange) che si occupa di instradare i messaggi attraverso Internet verso il server di destinazione."
+    },
+    {
+        "id": 6004,
+        "capitolo": "Chapter 6: Protocolli Applicativi e Messaggistica",
+        "argomento": "Il protocollo SMTP",
+        "tipo": "singola",
+        "domanda": "Quale protocollo viene utilizzato specificamente per l'INVIO di email da un client verso un server o tra server?",
+        "opzioni": [
+            "A. POP3",
+            "B. IMAP",
+            "C. SMTP",
+            "D. HTTP"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "SMTP (Simple Mail Transfer Protocol) è il protocollo standard 'push' utilizzato per spingere i messaggi verso il destinatario."
+    },
+    {
+        "id": 6005,
+        "capitolo": "Chapter 6: Protocolli Applicativi e Messaggistica",
+        "argomento": "Il protocollo SMTP",
+        "tipo": "singola",
+        "domanda": "Quale porta standard utilizza SMTP per la comunicazione non crittografata tra server?",
+        "opzioni": [
+            "A. 25",
+            "B. 110",
+            "C. 143",
+            "D. 443"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "La porta 25 è la porta storica e standard per il relay SMTP tra mail server su Internet."
+    },
+    {
+        "id": 6006,
+        "capitolo": "Chapter 6: Protocolli Applicativi e Messaggistica",
+        "argomento": "Formato di un messaggio SMTP",
+        "tipo": "singola",
+        "domanda": "In un'interazione SMTP, quale comando viene inviato dal client per specificare l'indirizzo del destinatario del messaggio?",
+        "opzioni": [
+            "A. HELO",
+            "B. MAIL FROM",
+            "C. RCPT TO",
+            "D. DATA"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il comando RCPT TO (Recipient To) comunica al server l'indirizzo di posta elettronica a cui il messaggio deve essere consegnato."
+    },
+    {
+        "id": 6007,
+        "capitolo": "Chapter 6: Protocolli Applicativi e Messaggistica",
+        "argomento": "cos'è MIME",
+        "tipo": "singola",
+        "domanda": "Qual è lo scopo principale dello standard MIME (Multipurpose Internet Mail Extensions)?",
+        "opzioni": [
+            "A. Velocizzare la consegna delle email.",
+            "B. Permettere l'invio di contenuti non testuali (immagini, audio, allegati) e caratteri non ASCII all'interno delle email.",
+            "C. Crittografare il corpo del messaggio.",
+            "D. Sostituire il protocollo IP."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "MIME estende il formato originale delle email (solo testo ASCII a 7 bit) permettendo l'inclusione di file multimediali e set di caratteri internazionali."
+    },
+    {
+        "id": 6008,
+        "capitolo": "Chapter 6: Protocolli Applicativi e Messaggistica",
+        "argomento": "Email e Mail server",
+        "tipo": "singola",
+        "domanda": "Quale protocollo permette a un utente di consultare la posta mantenendo i messaggi sul server, permettendo la sincronizzazione tra più dispositivi?",
+        "opzioni": [
+            "A. POP3",
+            "B. IMAP",
+            "C. SMTP",
+            "D. FTP"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "A differenza di POP3 che solitamente scarica e rimuove, IMAP (Internet Message Access Protocol) è progettato per la gestione remota e la sincronizzazione."
+    },
+    {
+        "id": 6009,
+        "capitolo": "Chapter 6: Protocolli Applicativi e Messaggistica",
+        "argomento": "Il protocollo SMTP",
+        "tipo": "singola",
+        "domanda": "Cosa indica il codice di risposta SMTP '250'?",
+        "opzioni": [
+            "A. Errore permanente del server.",
+            "B. Azione completata con successo (OK).",
+            "C. Inizio della trasmissione dei dati.",
+            "D. Utente non trovato."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il codice 250 è la risposta affermativa standard che il server invia dopo comandi come MAIL FROM o RCPT TO."
+    },
+    {
+        "id": 6010,
+        "capitolo": "Chapter 6: Protocolli Applicativi e Messaggistica",
+        "argomento": "TELNET",
+        "tipo": "singola",
+        "domanda": "Quale porta standard utilizza il protocollo TELNET?",
+        "opzioni": [
+            "A. 21",
+            "B. 22",
+            "C. 23",
+            "D. 25"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "TELNET opera sulla porta TCP 23, mentre il suo successore sicuro SSH utilizza la porta 22."
+    },
+    {
+        "id": 7001,
+        "capitolo": "Chapter 7: World Wide Web e Protocollo HTTP",
+        "argomento": "WWW (World-Wide Web)",
+        "tipo": "singola",
+        "domanda": "Qual è la differenza fondamentale tra Internet e il World Wide Web (WWW)?",
+        "opzioni": [
+            "A. Sono la stessa cosa.",
+            "B. Internet è l'infrastruttura di rete globale; il Web è un servizio che gira su di essa basato su documenti ipertestuali.",
+            "C. Il Web è l'hardware, mentre Internet è il software.",
+            "D. Internet funziona solo con i cavi, il Web solo via Wi-Fi."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Internet è la 'rete delle reti' fisica e logica, mentre il Web è una delle tante applicazioni (come l'Email o l'FTP) che sfrutta Internet per trasmettere dati tramite il protocollo HTTP."
+    },
+    {
+        "id": 7002,
+        "capitolo": "Chapter 7: World Wide Web e Protocollo HTTP",
+        "argomento": "Il protocollo HTTP",
+        "tipo": "singola",
+        "domanda": "Perché il protocollo HTTP è definito 'stateless' (senza stato)?",
+        "opzioni": [
+            "A. Perché non richiede una connessione TCP.",
+            "B. Perché ogni richiesta viene gestita in modo indipendente e il server non ricorda le interazioni precedenti per impostazione predefinita.",
+            "C. Perché i dati vengono trasmessi in modo anonimo.",
+            "D. Perché è un protocollo molto veloce."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "HTTP è stateless poiché il server non mantiene memoria delle richieste passate dello stesso client. Per gestire sessioni o carrelli della spesa, è necessario usare meccanismi aggiuntivi come i Cookies."
+    },
+    {
+        "id": 7003,
+        "capitolo": "Chapter 7: World Wide Web e Protocollo HTTP",
+        "argomento": "Metodi HTTP (GET, POST, PUT, ...)",
+        "tipo": "singola",
+        "domanda": "Quale metodo HTTP viene utilizzato tipicamente per richiedere la visualizzazione di una risorsa (come una pagina HTML) senza modificarla?",
+        "opzioni": [
+            "A. POST",
+            "B. PUT",
+            "C. GET",
+            "D. DELETE"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "Il metodo GET è utilizzato per recuperare informazioni dal server. I parametri vengono solitamente passati direttamente nell'URL."
+    },
+    {
+        "id": 7004,
+        "capitolo": "Chapter 7: World Wide Web e Protocollo HTTP",
+        "argomento": "Metodi HTTP (GET, POST, PUT, ...)",
+        "tipo": "singola",
+        "domanda": "Qual è il vantaggio principale dell'usare il metodo POST rispetto a GET per inviare dati sensibili (come una password)?",
+        "opzioni": [
+            "A. POST è intrinsecamente crittografato.",
+            "B. I dati in POST sono inclusi nel corpo della richiesta e non sono visibili nell'URL o nella cronologia del browser.",
+            "C. POST è più veloce di GET.",
+            "D. POST non richiede una risposta dal server."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Mentre GET espone i dati nell'URL, POST li inserisce nel corpo del messaggio, rendendo la comunicazione più pulita e meno soggetta a fughe di dati accidentali tramite log o cronologia."
+    },
+    {
+        "id": 7005,
+        "capitolo": "Chapter 7: World Wide Web e Protocollo HTTP",
+        "argomento": "Connessione e Cookies",
+        "tipo": "singola",
+        "domanda": "Qual è lo scopo principale dei Cookies in un'architettura Web?",
+        "opzioni": [
+            "A. Velocizzare il caricamento delle immagini.",
+            "B. Memorizzare informazioni di stato sul lato client per permettere al server di riconoscere l'utente nelle visite successive.",
+            "C. Proteggere il computer dai virus.",
+            "D. Tradurre automaticamente le pagine in altre lingue."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "I cookies permettono di superare la natura stateless di HTTP, consentendo funzionalità come il mantenimento del login o la memorizzazione delle preferenze dell'utente."
+    },
+    {
+        "id": 7006,
+        "capitolo": "Chapter 7: World Wide Web e Protocollo HTTP",
+        "argomento": "Il protocollo HTTP",
+        "tipo": "singola",
+        "domanda": "Cosa indica un codice di stato HTTP della famiglia '4xx' (es. 404 Not Found)?",
+        "opzioni": [
+            "A. Successo della richiesta.",
+            "B. Errore del server.",
+            "C. Errore del client (es. risorsa non trovata o richiesta malformata).",
+            "D. Reindirizzamento a un altro indirizzo."
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "I codici 4xx indicano problemi imputabili alla richiesta del client. I codici 5xx indicano invece errori interni al server."
+    },
+    {
+        "id": 7007,
+        "capitolo": "Chapter 7: World Wide Web e Protocollo HTTP",
+        "argomento": "Il protocollo HTTP",
+        "tipo": "singola",
+        "domanda": "Qual è la differenza principale tra HTTP/1.1 e HTTP/2?",
+        "opzioni": [
+            "A. HTTP/2 non usa più TCP.",
+            "B. HTTP/2 introduce il multiplexing, permettendo di inviare più richieste e risposte contemporaneamente su una singola connessione TCP.",
+            "C. HTTP/2 è solo per dispositivi mobili.",
+            "D. HTTP/2 non supporta più i cookies."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "HTTP/2 ottimizza le prestazioni riducendo la latenza grazie al multiplexing dei flussi, evitando il problema del 'head-of-line blocking' tipico delle versioni precedenti."
+    },
+    {
+        "id": 7008,
+        "capitolo": "Chapter 7: World Wide Web e Protocollo HTTP",
+        "argomento": "Autenticazione",
+        "tipo": "singola",
+        "domanda": "In un'intestazione HTTP, quale campo viene comunemente utilizzato per inviare credenziali o token per l'autenticazione?",
+        "opzioni": [
+            "A. User-Agent",
+            "B. Authorization",
+            "C. Content-Type",
+            "D. Host"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "L'header 'Authorization' trasporta le informazioni necessarie per autenticare il client, come schemi Basic, Digest o Bearer token (OAuth2)."
+    },
+    {
+        "id": 7009,
+        "capitolo": "Chapter 7: World Wide Web e Protocollo HTTP",
+        "argomento": "Il protocollo HTTP",
+        "tipo": "singola",
+        "domanda": "Quale porta TCP viene utilizzata di default per le connessioni HTTPS (HTTP Secure)?",
+        "opzioni": [
+            "A. 80",
+            "B. 21",
+            "C. 443",
+            "D. 8080"
+        ],
+        "risposta_corretta": "C",
+        "spiegazione": "HTTPS, che utilizza SSL/TLS per cifrare il traffico, opera sulla porta standard 443, mentre HTTP non cifrato usa la porta 80."
+    },
+    {
+        "id": 7010,
+        "capitolo": "Chapter 7: World Wide Web e Protocollo HTTP",
+        "argomento": "Connessione e Cookies",
+        "tipo": "singola",
+        "domanda": "Nelle intestazioni HTTP, quale direttiva viene usata dal server per ordinare al browser di salvare un cookie?",
+        "opzioni": [
+            "A. Cookie:",
+            "B. Set-Cookie:",
+            "C. Get-Cookie:",
+            "D. Save-Data:"
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il server invia l'header 'Set-Cookie' nella risposta. Il browser, da quel momento in poi, includerà l'header 'Cookie' in ogni successiva richiesta verso quel server."
+    },
+    {
+        "id": 8001,
+        "capitolo": "Chapter 8: Sicurezza e Tecnologie Avanzate",
+        "argomento": "Crittografia asimmetrica RSA e Firma digitale",
+        "tipo": "singola",
+        "domanda": "Nella crittografia asimmetrica (come RSA), quale chiave deve essere utilizzata dal mittente per cifrare un messaggio affinché solo il destinatario possa leggerlo?",
+        "opzioni": [
+            "A. La chiave privata del mittente.",
+            "B. La chiave pubblica del destinatario.",
+            "C. La chiave privata del destinatario.",
+            "D. Una chiave segreta condivisa."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "In un sistema a chiave pubblica, si usa la chiave pubblica del destinatario per cifrare; solo la chiave privata corrispondente (in possesso esclusivo del destinatario) potrà decifrare il messaggio."
+    },
+    {
+        "id": 8002,
+        "capitolo": "Chapter 8: Sicurezza e Tecnologie Avanzate",
+        "argomento": "Crittografia asimmetrica RSA e Firma digitale",
+        "tipo": "singola",
+        "domanda": "Qual è lo scopo principale della Firma Digitale in una comunicazione di rete?",
+        "opzioni": [
+            "A. Nascondere il contenuto del messaggio agli estranei.",
+            "B. Garantire l'autenticità del mittente e l'integrità del messaggio (non ripudio).",
+            "C. Velocizzare la trasmissione dei dati.",
+            "D. Comprimere il file inviato."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "La firma digitale, creata con la chiave privata del mittente, permette al destinatario di verificare che il messaggio provenga effettivamente dal mittente dichiarato e che non sia stato alterato."
+    },
+    {
+        "id": 8003,
+        "capitolo": "Chapter 8: Sicurezza e Tecnologie Avanzate",
+        "argomento": "Come funzionano le chiavi SSH",
+        "tipo": "singola",
+        "domanda": "Nel processo di autenticazione SSH tramite chiavi, cosa deve essere caricato sul server remoto per permettere l'accesso senza password?",
+        "opzioni": [
+            "A. La chiave privata dell'utente.",
+            "B. La chiave pubblica dell'utente (solitamente in authorized_keys).",
+            "C. Il certificato SSL del server.",
+            "D. L'indirizzo MAC del client."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il server deve conoscere la chiave pubblica dell'utente. Durante il login, il server invia una sfida che solo chi possiede la chiave privata corrispondente può risolvere."
+    },
+    {
+        "id": 8004,
+        "capitolo": "Chapter 8: Sicurezza e Tecnologie Avanzate",
+        "argomento": "DHCP",
+        "tipo": "singola",
+        "domanda": "Qual è la funzione principale del protocollo DHCP (Dynamic Host Configuration Protocol)?",
+        "opzioni": [
+            "A. Tradurre nomi di dominio in indirizzi IP.",
+            "B. Assegnare automaticamente indirizzi IP e altri parametri di rete agli host.",
+            "C. Criptare il traffico della rete locale.",
+            "D. Bloccare l'accesso a siti web non autorizzati."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il DHCP centralizza e automatizza la configurazione degli host, evitando conflitti di indirizzi IP e facilitando la gestione della rete."
+    },
+    {
+        "id": 8005,
+        "capitolo": "Chapter 8: Sicurezza e Tecnologie Avanzate",
+        "argomento": "DHCP",
+        "tipo": "singola",
+        "domanda": "Qual è la sequenza corretta dei messaggi scambiati tra client e server durante l'assegnazione di un indirizzo IP (Processo DORA)?",
+        "opzioni": [
+            "A. Discover, Offer, Request, Acknowledgment",
+            "B. Discover, Request, Offer, Acknowledgment",
+            "C. Request, Discover, Offer, Acknowledgment",
+            "D. Data, Offer, Request, ARP"
+        ],
+        "risposta_corretta": "A",
+        "spiegazione": "Il client invia un Discover, il server risponde con un'Offer, il client invia una Request per quell'indirizzo e il server conclude con un Acknowledgment (ACK)."
+    },
+    {
+        "id": 8006,
+        "capitolo": "Chapter 8: Sicurezza e Tecnologie Avanzate",
+        "argomento": "I Proxy e la rete TOR",
+        "tipo": "singola",
+        "domanda": "Qual è il concetto alla base del funzionamento della rete TOR (The Onion Router) per garantire l'anonimato?",
+        "opzioni": [
+            "A. Utilizza un unico server proxy molto veloce.",
+            "B. Cifra i dati in più strati e li instrada attraverso una serie di nodi gestiti da volontari, nascondendo l'origine.",
+            "C. Funziona solo tramite connessioni satellitari.",
+            "D. Disabilita completamente il protocollo TCP."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "TOR instrada il traffico attraverso tre nodi (entry, relay, exit). Ogni nodo rimuove solo uno strato di crittografia, rendendo impossibile per un singolo nodo conoscere sia l'origine che la destinazione finale."
+    },
+    {
+        "id": 8007,
+        "capitolo": "Chapter 8: Sicurezza e Tecnologie Avanzate",
+        "argomento": "I Proxy e la rete TOR",
+        "tipo": "singola",
+        "domanda": "Qual è la funzione principale di un Forward Proxy in una rete aziendale?",
+        "opzioni": [
+            "A. Bilanciare il carico tra i server web interni.",
+            "B. Agire come intermediario per le richieste dei client interni verso Internet, spesso per filtraggio o caching.",
+            "C. Proteggere il database dagli attacchi SQL injection.",
+            "D. Assegnare indirizzi IPv6."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Un forward proxy riceve le richieste dei dipendenti, le invia su Internet per loro conto e può bloccare contenuti non sicuri o conservare copie dei siti per velocizzare l'accesso."
+    },
+    {
+        "id": 8008,
+        "capitolo": "Chapter 8: Sicurezza e Tecnologie Avanzate",
+        "argomento": "Tunnel e Gateway applicativi",
+        "tipo": "singola",
+        "domanda": "Cosa si intende per 'Tunneling' nel contesto delle reti?",
+        "opzioni": [
+            "A. L'uso di cavi sotterranei per evitare interferenze.",
+            "B. L'incapsulamento di un protocollo di rete all'interno di un altro per trasportarlo attraverso una rete non compatibile o non sicura.",
+            "C. La rimozione di tutti gli header dai pacchetti.",
+            "D. Una tecnica per raddoppiare la frequenza del segnale."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Il tunneling permette di trasportare dati (es. pacchetti IPv6) dentro altri protocolli (es. pacchetti IPv4) o di creare reti private sicure (VPN) sopra reti pubbliche."
+    },
+    {
+        "id": 8009,
+        "capitolo": "Chapter 8: Sicurezza e Tecnologie Avanzate",
+        "argomento": "Firewall",
+        "tipo": "singola",
+        "domanda": "Qual è la differenza principale tra un firewall 'Packet Filter' e un firewall 'Stateful Inspection'?",
+        "opzioni": [
+            "A. Il packet filter è più costoso.",
+            "B. Lo stateful inspection tiene traccia dello stato delle connessioni attive, permettendo o bloccando i pacchetti in base al contesto della sessione.",
+            "C. Il packet filter analizza solo i file allegati alle email.",
+            "D. Non c'è differenza, sono la stessa tecnologia."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "Mentre un filtro a pacchetti analizza ogni pacchetto isolatamente, un firewall stateful capisce se un pacchetto in arrivo è la risposta a una richiesta legittima partita dall'interno."
+    },
+    {
+        "id": 8010,
+        "capitolo": "Chapter 8: Sicurezza e Tecnologie Avanzate",
+        "argomento": "Firewall",
+        "tipo": "singola",
+        "domanda": "Cosa si intende per 'Next-Generation Firewall' (NGFW)?",
+        "opzioni": [
+            "A. Un firewall che non richiede alimentazione elettrica.",
+            "B. Un firewall che integra funzioni avanzate come l'ispezione profonda dei pacchetti (DPI), IPS e il riconoscimento delle applicazioni.",
+            "C. Un router che supporta solo il protocollo BGP.",
+            "D. Un software installato esclusivamente sui PC degli utenti."
+        ],
+        "risposta_corretta": "B",
+        "spiegazione": "I NGFW vanno oltre il semplice blocco di porte e IP, essendo in grado di identificare e filtrare il traffico basandosi sull'applicazione specifica (es. distinguere tra chat di Facebook e giochi di Facebook)."
+    }
+]
